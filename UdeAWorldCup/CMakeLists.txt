@@ -12,8 +12,10 @@ add_executable(UdeAWorldCup main.cpp
     bombo.h bombo.cpp
     torneo.h torneo.cpp
     fecha.h fecha.cpp
-    estadisticajugador.h estadisticajugador.cpp
-    confederacion.h confederacion.cpp)
+    jugador.h jugador.cpp
+    jugador.cpp
+
+)
 
 include(GNUInstallDirs)
 install(TARGETS UdeAWorldCup
