@@ -25,6 +25,7 @@ public:
     Jugador();
     Jugador(const string& nombre, const string& apellido, int numeroCamiseta);
     Jugador(const Jugador& otro);
+    ~Jugador();
 
     string getNombre() const;
     string getApellido() const;

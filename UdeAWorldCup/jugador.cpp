@@ -45,6 +45,10 @@ Jugador::Jugador(const Jugador& otro)
     faltas = otro.faltas;
 }
 
+Jugador::~Jugador()
+{
+}
+
 string Jugador::getNombre() const
 {
     return nombre;

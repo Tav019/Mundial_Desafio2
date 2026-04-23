@@ -14,6 +14,7 @@ add_executable(UdeAWorldCup main.cpp
     fecha.h fecha.cpp
     jugador.h jugador.cpp
     jugador.cpp
+    registrojugadorpartido.h registrojugadorpartido.cpp
 
 )
 
