@@ -5,39 +5,41 @@ template <class T>
 class Lista
 {
 private:
+    // La lista usa un arreglo dinámico propio para cumplir la restricción de no usar STL.
     T* datos;
-    int tamano;
+    int cantidad;
     int capacidad;
 
     void redimensionar()
     {
-        capacidad = capacidad * 2;
-        T* nuevo = new T[capacidad];
+        // Se duplica la capacidad para no reservar memoria en cada inserción.
+        capacidad *= 2;
+        T* nuevosDatos = new T[capacidad];
 
-        for (int i = 0; i < tamano; i++)
+        for (int i = 0; i < cantidad; i++)
         {
-            nuevo[i] = datos[i];
+            nuevosDatos[i] = datos[i];
         }
 
         delete[] datos;
-        datos = nuevo;
+        datos = nuevosDatos;
     }
 
 public:
     Lista()
     {
         capacidad = 10;
-        tamano = 0;
+        cantidad = 0;
         datos = new T[capacidad];
     }
 
     Lista(const Lista<T>& otra)
     {
         capacidad = otra.capacidad;
-        tamano = otra.tamano;
+        cantidad = otra.cantidad;
         datos = new T[capacidad];
 
-        for (int i = 0; i < tamano; i++)
+        for (int i = 0; i < cantidad; i++)
         {
             datos[i] = otra.datos[i];
         }
@@ -55,10 +57,10 @@ public:
             delete[] datos;
 
             capacidad = otra.capacidad;
-            tamano = otra.tamano;
+            cantidad = otra.cantidad;
             datos = new T[capacidad];
 
-            for (int i = 0; i < tamano; i++)
+            for (int i = 0; i < cantidad; i++)
             {
                 datos[i] = otra.datos[i];
             }
@@ -67,50 +69,75 @@ public:
         return *this;
     }
 
-    void agregar(const T& valor)
+    void agregar(const T& elemento)
     {
-        if (tamano == capacidad)
+        if (cantidad == capacidad)
         {
             redimensionar();
         }
 
-        datos[tamano] = valor;
-        tamano++;
+        datos[cantidad] = elemento;
+        cantidad++;
     }
 
-    void eliminar(int indice)
+    void eliminar(int pos)
     {
-        if (indice < 0 || indice >= tamano)
+        if (pos < 0 || pos >= cantidad)
         {
             return;
         }
 
-        for (int i = indice; i < tamano - 1; i++)
+        for (int i = pos; i < cantidad - 1; i++)
         {
             datos[i] = datos[i + 1];
         }
 
-        tamano--;
+        cantidad--;
     }
 
-    T& operator[](int indice)
+    T obtener(int pos) const
     {
-        return datos[indice];
+        if (pos < 0 || pos >= cantidad)
+        {
+            return T();
+        }
+
+        return datos[pos];
     }
 
-    const T& operator[](int indice) const
+    int getCantidad() const
     {
-        return datos[indice];
+        return cantidad;
     }
 
     int getTamano() const
     {
-        return tamano;
+        return cantidad;
+    }
+
+    bool estaVacia() const
+    {
+        return cantidad == 0;
     }
 
     bool vacia() const
     {
-        return tamano == 0;
+        return estaVacia();
+    }
+
+    void limpiar()
+    {
+        cantidad = 0;
+    }
+
+    T& operator[](int pos)
+    {
+        return datos[pos];
+    }
+
+    const T& operator[](int pos) const
+    {
+        return datos[pos];
     }
 };
 

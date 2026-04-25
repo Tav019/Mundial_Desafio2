@@ -1,32 +1,30 @@
-#include "Jugador.h"
+#include "jugador.h"
 
 Jugador::Jugador()
 {
     nombre = "";
     apellido = "";
     numeroCamiseta = 0;
-
     partidosJugados = 0;
     goles = 0;
-    minutos = 0;
+    minutosJugados = 0;
     asistencias = 0;
-    amarillas = 0;
-    rojas = 0;
+    tarjetasAmarillas = 0;
+    tarjetasRojas = 0;
     faltas = 0;
 }
 
-Jugador::Jugador(const string& nombre, const string& apellido, int numeroCamiseta)
+Jugador::Jugador(const std::string& nombre, const std::string& apellido, int numero)
 {
     this->nombre = nombre;
     this->apellido = apellido;
-    this->numeroCamiseta = numeroCamiseta;
-
+    numeroCamiseta = numero;
     partidosJugados = 0;
     goles = 0;
-    minutos = 0;
+    minutosJugados = 0;
     asistencias = 0;
-    amarillas = 0;
-    rojas = 0;
+    tarjetasAmarillas = 0;
+    tarjetasRojas = 0;
     faltas = 0;
 }
 
@@ -35,13 +33,12 @@ Jugador::Jugador(const Jugador& otro)
     nombre = otro.nombre;
     apellido = otro.apellido;
     numeroCamiseta = otro.numeroCamiseta;
-
     partidosJugados = otro.partidosJugados;
     goles = otro.goles;
-    minutos = otro.minutos;
+    minutosJugados = otro.minutosJugados;
     asistencias = otro.asistencias;
-    amarillas = otro.amarillas;
-    rojas = otro.rojas;
+    tarjetasAmarillas = otro.tarjetasAmarillas;
+    tarjetasRojas = otro.tarjetasRojas;
     faltas = otro.faltas;
 }
 
@@ -49,12 +46,12 @@ Jugador::~Jugador()
 {
 }
 
-string Jugador::getNombre() const
+std::string Jugador::getNombre() const
 {
     return nombre;
 }
 
-string Jugador::getApellido() const
+std::string Jugador::getApellido() const
 {
     return apellido;
 }
@@ -74,9 +71,14 @@ int Jugador::getGoles() const
     return goles;
 }
 
+int Jugador::getMinutosJugados() const
+{
+    return minutosJugados;
+}
+
 int Jugador::getMinutos() const
 {
-    return minutos;
+    return minutosJugados;
 }
 
 int Jugador::getAsistencias() const
@@ -84,14 +86,24 @@ int Jugador::getAsistencias() const
     return asistencias;
 }
 
+int Jugador::getTarjetasAmarillas() const
+{
+    return tarjetasAmarillas;
+}
+
 int Jugador::getAmarillas() const
 {
-    return amarillas;
+    return tarjetasAmarillas;
+}
+
+int Jugador::getTarjetasRojas() const
+{
+    return tarjetasRojas;
 }
 
 int Jugador::getRojas() const
 {
-    return rojas;
+    return tarjetasRojas;
 }
 
 int Jugador::getFaltas() const
@@ -107,13 +119,39 @@ void Jugador::setGoles(int golesIniciales)
     }
 }
 
-void Jugador::registrarPartido(int minutosJugados)
+void Jugador::actualizarEstadisticas(int goles, int amarillas, int rojas, int faltas, int minutos)
 {
-    if (minutosJugados > 0)
+    // Este método resume la actualización histórica del jugador después de un partido.
+    if (minutos > 0)
     {
         partidosJugados++;
-        minutos += minutosJugados;
+        minutosJugados += minutos;
     }
+
+    if (goles > 0)
+    {
+        this->goles += goles;
+    }
+
+    if (amarillas > 0)
+    {
+        tarjetasAmarillas += amarillas;
+    }
+
+    if (rojas > 0)
+    {
+        tarjetasRojas += rojas;
+    }
+
+    if (faltas > 0)
+    {
+        this->faltas += faltas;
+    }
+}
+
+void Jugador::registrarPartido(int minutos)
+{
+    actualizarEstadisticas(0, 0, 0, 0, minutos);
 }
 
 void Jugador::sumarGol()
@@ -128,17 +166,28 @@ void Jugador::sumarAsistencia()
 
 void Jugador::sumarAmarilla()
 {
-    amarillas++;
+    tarjetasAmarillas++;
 }
 
 void Jugador::sumarRoja()
 {
-    rojas++;
+    tarjetasRojas++;
 }
 
 void Jugador::sumarFalta()
 {
     faltas++;
+}
+
+bool Jugador::operator<(const Jugador& otro) const
+{
+    // Se priorizan los goles para facilitar ordenamientos simples de goleadores.
+    if (goles != otro.goles)
+    {
+        return goles < otro.goles;
+    }
+
+    return numeroCamiseta < otro.numeroCamiseta;
 }
 
 bool Jugador::operator==(const Jugador& otro) const
@@ -148,18 +197,17 @@ bool Jugador::operator==(const Jugador& otro) const
            numeroCamiseta == otro.numeroCamiseta;
 }
 
-ostream& operator<<(ostream& os, const Jugador& j)
+std::ostream& operator<<(std::ostream& os, const Jugador& jugador)
 {
-    os << "Nombre: " << j.nombre
-       << " " << j.apellido
-       << " | Camiseta: " << j.numeroCamiseta
-       << " | PJ: " << j.partidosJugados
-       << " | Goles: " << j.goles
-       << " | Minutos: " << j.minutos
-       << " | Asistencias: " << j.asistencias
-       << " | Amarillas: " << j.amarillas
-       << " | Rojas: " << j.rojas
-       << " | Faltas: " << j.faltas;
+    os << jugador.nombre << " " << jugador.apellido
+       << " | #" << jugador.numeroCamiseta
+       << " | PJ: " << jugador.partidosJugados
+       << " | Goles: " << jugador.goles
+       << " | Min: " << jugador.minutosJugados
+       << " | A: " << jugador.asistencias
+       << " | TA: " << jugador.tarjetasAmarillas
+       << " | TR: " << jugador.tarjetasRojas
+       << " | F: " << jugador.faltas;
 
     return os;
 }

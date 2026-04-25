@@ -11,28 +11,27 @@ private:
     int anio;
 
     bool esBisiesto(int anio) const;
-    int diasMes(int mes, int anio) const;
-    bool validacion(int dia, int mes, int anio) const;
-    int convDias() const;
-
+    int diasDelMes(int mes, int anio) const;
+    bool esValidaInterna(int dia, int mes, int anio) const;
+    int convertirADias() const;
 
 public:
     Fecha();
     Fecha(int dia, int mes, int anio);
+    ~Fecha();
+
+    void avanzarDias(int dias);
+    int diferencia(const Fecha& otra) const;
+    bool esValida() const;
 
     int getDia() const;
     int getMes() const;
     int getAnio() const;
 
-    int diferencia(const Fecha& otra) const;
-    Fecha avanzar(int n) const;
-
     bool operator==(const Fecha& otra) const;
     bool operator<(const Fecha& otra) const;
 
-    int dias2026() const;
-
-    friend std::ostream& operator <<(std::ostream& os, const Fecha& f);
+    friend std::ostream& operator<<(std::ostream& os, const Fecha& fecha);
 };
 
-#endif // FECHA_H
+#endif

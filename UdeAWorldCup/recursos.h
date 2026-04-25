@@ -8,25 +8,22 @@ class Recursos
 private:
     long iteraciones;
     long bytes;
-     bool validacion(long interaciones, long bytes);
 
 public:
     Recursos();
     Recursos(long iteraciones, long bytes);
+    ~Recursos();
 
-    void contarIteraciones(long iteraciones = 1);
-    void contarBytes(long bytes);
-    void liberarBytes(long bytes);
-
+    void contarIteracion();
+    void contarIteraciones(long cantidad);
+    void contarBytes(long cantidad);
+    void liberarBytes(long cantidad);
     void reiniciar();
 
-    long getIteraciones();
-    long getBytes();
+    long getIteraciones() const;
+    long getBytes() const;
 
-
-
-    friend std::ostream& operator <<(std::ostream& os, const Recursos& r);
-
+    friend std::ostream& operator<<(std::ostream& os, const Recursos& recursos);
 };
 
-#endif // RECURSOS_H
+#endif

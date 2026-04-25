@@ -2,19 +2,18 @@
 #define REGISTROJUGADORPARTIDO_H
 
 #include <iostream>
-#include "Jugador.h"
 
-using namespace std;
+#include "jugador.h"
 
 class RegistroJugadorPartido
 {
 private:
     Jugador* jugador;
     int goles;
-    int amarillas;
-    int rojas;
+    int tarjetasAmarillas;
+    int tarjetasRojas;
     int faltas;
-    int minutos;
+    int minutosJugados;
 
 public:
     RegistroJugadorPartido();
@@ -24,9 +23,12 @@ public:
 
     Jugador* getJugador() const;
     int getGoles() const;
+    int getTarjetasAmarillas() const;
     int getAmarillas() const;
+    int getTarjetasRojas() const;
     int getRojas() const;
     int getFaltas() const;
+    int getMinutosJugados() const;
     int getMinutos() const;
 
     void incrementarGol();
@@ -34,8 +36,9 @@ public:
     void registrarRoja();
     void registrarFalta();
     void setMinutos(int minutos);
+    void actualizarHistorico();
 
-    friend ostream& operator<<(ostream& os, const RegistroJugadorPartido& r);
+    friend std::ostream& operator<<(std::ostream& os, const RegistroJugadorPartido& registro);
 };
 
 #endif

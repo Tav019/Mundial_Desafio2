@@ -6,16 +6,23 @@ set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 add_executable(UdeAWorldCup main.cpp
-    equipo.h equipo.cpp
-    grupo.h grupo.cpp
-    recursos.h recursos.cpp
-    bombo.h bombo.cpp
-    torneo.h torneo.cpp
-    fecha.h fecha.cpp
-    jugador.h jugador.cpp
-    jugador.cpp
-    registrojugadorpartido.h registrojugadorpartido.cpp
     Lista.h
+    equipo.h
+    equipo.cpp
+    fecha.h
+    fecha.cpp
+    grupo.h
+    grupo.cpp
+    jugador.h
+    jugador.cpp
+    partido.h
+    partido.cpp
+    recursos.h
+    recursos.cpp
+    registrojugadorpartido.h
+    registrojugadorpartido.cpp
+    torneo.h
+    torneo.cpp
 
 )
 
