@@ -3,6 +3,8 @@
 
 #include <iostream>
 
+using namespace std;
+
 class Recursos
 {
 private:
@@ -18,12 +20,13 @@ public:
     void contarIteraciones(long cantidad);
     void contarBytes(long cantidad);
     void liberarBytes(long cantidad);
+    void setBytes(long bytes);
     void reiniciar();
 
     long getIteraciones() const;
     long getBytes() const;
 
-    friend std::ostream& operator<<(std::ostream& os, const Recursos& recursos);
+    friend ostream& operator<<(ostream& os, const Recursos& recursos);
 };
 
 #endif

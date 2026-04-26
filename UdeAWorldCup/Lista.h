@@ -5,16 +5,14 @@ template <class T>
 class Lista
 {
 private:
-    // La lista usa un arreglo dinámico propio para cumplir la restricción de no usar STL.
     T* datos;
     int cantidad;
     int capacidad;
 
     void redimensionar()
     {
-        // Se duplica la capacidad para no reservar memoria en cada inserción.
-        capacidad *= 2;
-        T* nuevosDatos = new T[capacidad];
+        int nuevaCapacidad = capacidad * 2;
+        T* nuevosDatos = new T[nuevaCapacidad];
 
         for (int i = 0; i < cantidad; i++)
         {
@@ -23,20 +21,21 @@ private:
 
         delete[] datos;
         datos = nuevosDatos;
+        capacidad = nuevaCapacidad;
     }
 
 public:
     Lista()
     {
-        capacidad = 10;
         cantidad = 0;
+        capacidad = 10;
         datos = new T[capacidad];
     }
 
     Lista(const Lista<T>& otra)
     {
-        capacidad = otra.capacidad;
         cantidad = otra.cantidad;
+        capacidad = otra.capacidad;
         datos = new T[capacidad];
 
         for (int i = 0; i < cantidad; i++)
@@ -55,9 +54,8 @@ public:
         if (this != &otra)
         {
             delete[] datos;
-
-            capacidad = otra.capacidad;
             cantidad = otra.cantidad;
+            capacidad = otra.capacidad;
             datos = new T[capacidad];
 
             for (int i = 0; i < cantidad; i++)
@@ -80,14 +78,14 @@ public:
         cantidad++;
     }
 
-    void eliminar(int pos)
+    void eliminar(int posicion)
     {
-        if (pos < 0 || pos >= cantidad)
+        if (posicion < 0 || posicion >= cantidad)
         {
             return;
         }
 
-        for (int i = pos; i < cantidad - 1; i++)
+        for (int i = posicion; i < cantidad - 1; i++)
         {
             datos[i] = datos[i + 1];
         }
@@ -95,14 +93,14 @@ public:
         cantidad--;
     }
 
-    T obtener(int pos) const
+    T obtener(int posicion) const
     {
-        if (pos < 0 || pos >= cantidad)
+        if (posicion < 0 || posicion >= cantidad)
         {
             return T();
         }
 
-        return datos[pos];
+        return datos[posicion];
     }
 
     int getCantidad() const
@@ -113,6 +111,11 @@ public:
     int getTamano() const
     {
         return cantidad;
+    }
+
+    int getCapacidad() const
+    {
+        return capacidad;
     }
 
     bool estaVacia() const
@@ -130,14 +133,14 @@ public:
         cantidad = 0;
     }
 
-    T& operator[](int pos)
+    T& operator[](int posicion)
     {
-        return datos[pos];
+        return datos[posicion];
     }
 
-    const T& operator[](int pos) const
+    const T& operator[](int posicion) const
     {
-        return datos[pos];
+        return datos[posicion];
     }
 };
 

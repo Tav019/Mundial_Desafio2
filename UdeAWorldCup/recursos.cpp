@@ -1,5 +1,7 @@
 #include "recursos.h"
 
+using namespace std;
+
 Recursos::Recursos()
 {
     iteraciones = 0;
@@ -42,11 +44,13 @@ void Recursos::liberarBytes(long cantidad)
     if (cantidad > 0)
     {
         bytes -= cantidad;
-        if (bytes < 0)
-        {
-            bytes = 0;
-        }
+        if (bytes < 0) bytes = 0;
     }
+}
+
+void Recursos::setBytes(long bytes)
+{
+    this->bytes = bytes >= 0 ? bytes : 0;
 }
 
 void Recursos::reiniciar()
@@ -55,19 +59,12 @@ void Recursos::reiniciar()
     bytes = 0;
 }
 
-long Recursos::getIteraciones() const
-{
-    return iteraciones;
-}
+long Recursos::getIteraciones() const { return iteraciones; }
+long Recursos::getBytes() const { return bytes; }
 
-long Recursos::getBytes() const
+ostream& operator<<(ostream& os, const Recursos& recursos)
 {
-    return bytes;
-}
-
-std::ostream& operator<<(std::ostream& os, const Recursos& recursos)
-{
-    os << "Iteraciones: " << recursos.iteraciones
-       << " | Bytes estimados: " << recursos.bytes;
+    os << "Iteraciones estimadas: " << recursos.iteraciones
+       << " | Memoria estimada: " << recursos.bytes << " bytes";
     return os;
 }

@@ -4,11 +4,13 @@
 #include <iostream>
 #include <string>
 
+using namespace std;
+
 class Jugador
 {
 private:
-    std::string nombre;
-    std::string apellido;
+    string nombre;
+    string apellido;
     int numeroCamiseta;
     int partidosJugados;
     int goles;
@@ -20,12 +22,12 @@ private:
 
 public:
     Jugador();
-    Jugador(const std::string& nombre, const std::string& apellido, int numero);
+    Jugador(const string& nombre, const string& apellido, int numeroCamiseta);
     Jugador(const Jugador& otro);
     ~Jugador();
 
-    std::string getNombre() const;
-    std::string getApellido() const;
+    string getNombre() const;
+    string getApellido() const;
     int getNumeroCamiseta() const;
     int getPartidosJugados() const;
     int getGoles() const;
@@ -50,7 +52,7 @@ public:
     bool operator<(const Jugador& otro) const;
     bool operator==(const Jugador& otro) const;
 
-    friend std::ostream& operator<<(std::ostream& os, const Jugador& jugador);
+    friend ostream& operator<<(ostream& os, const Jugador& jugador);
 };
 
 #endif

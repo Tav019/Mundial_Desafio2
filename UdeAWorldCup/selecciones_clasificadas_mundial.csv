@@ -1,0 +1,49 @@
+pais,director,federacion,confederacion,ranking,golesFavor,golesContra,ganados,empatados,perdidos
+Estados Unidos,DT Estados Unidos,Federacion Estados Unidos,CONCACAF,12,140,80,45,20,25
+Argentina,DT Argentina,Federacion Argentina,CONMEBOL,1,190,90,60,25,20
+Francia,DT Francia,Federacion Francia,UEFA,2,180,95,58,24,21
+Brasil,DT Brasil,Federacion Brasil,CONMEBOL,3,210,100,65,22,19
+Inglaterra,DT Inglaterra,Federacion Inglaterra,UEFA,4,170,110,54,23,23
+Belgica,DT Belgica,Federacion Belgica,UEFA,5,150,115,48,24,26
+Portugal,DT Portugal,Federacion Portugal,UEFA,6,165,105,52,23,22
+Paises Bajos,DT Paises Bajos,Federacion Paises Bajos,UEFA,7,155,100,50,25,23
+Espana,DT Espana,Federacion Espana,UEFA,8,160,95,51,24,22
+Italia,DT Italia,Federacion Italia,UEFA,9,158,98,50,23,24
+Alemania,DT Alemania,Federacion Alemania,UEFA,10,200,120,62,22,25
+Croacia,DT Croacia,Federacion Croacia,UEFA,11,120,92,39,25,28
+Mexico,DT Mexico,Federacion Mexico,CONCACAF,13,145,118,46,23,31
+Uruguay,DT Uruguay,Federacion Uruguay,CONMEBOL,14,150,105,49,21,27
+Colombia,DT Colombia,Federacion Colombia,CONMEBOL,15,130,112,41,24,29
+Marruecos,DT Marruecos,Federacion Marruecos,CAF,16,110,90,36,22,26
+Suiza,DT Suiza,Federacion Suiza,UEFA,17,115,97,37,23,27
+Japon,DT Japon,Federacion Japon,AFC,18,125,108,39,20,30
+Senegal,DT Senegal,Federacion Senegal,CAF,19,105,88,34,23,25
+Dinamarca,DT Dinamarca,Federacion Dinamarca,UEFA,20,112,99,35,24,28
+Iran,DT Iran,Federacion Iran,AFC,21,118,110,36,20,32
+Corea del Sur,DT Corea,Federacion Corea,AFC,22,122,116,37,19,33
+Australia,DT Australia,Federacion Australia,AFC,23,102,105,31,22,34
+Ecuador,DT Ecuador,Federacion Ecuador,CONMEBOL,24,98,90,30,21,29
+Canada,DT Canada,Federacion Canada,CONCACAF,25,95,89,29,22,28
+Costa Rica,DT Costa Rica,Federacion Costa Rica,CONCACAF,26,88,96,27,20,31
+Camerun,DT Camerun,Federacion Camerun,CAF,27,100,103,30,19,33
+Ghana,DT Ghana,Federacion Ghana,CAF,28,92,95,28,21,32
+Nigeria,DT Nigeria,Federacion Nigeria,CAF,29,108,97,32,22,29
+Egipto,DT Egipto,Federacion Egipto,CAF,30,90,84,27,23,25
+Tunez,DT Tunez,Federacion Tunez,CAF,31,86,91,25,22,30
+Argelia,DT Argelia,Federacion Argelia,CAF,32,94,90,28,21,27
+Arabia Saudi,DT Arabia,Federacion Arabia,AFC,33,84,110,24,18,35
+Qatar,DT Qatar,Federacion Qatar,AFC,34,76,98,22,19,32
+Irak,DT Irak,Federacion Irak,AFC,35,80,95,23,18,31
+Uzbekistan,DT Uzbekistan,Federacion Uzbekistan,AFC,36,78,92,22,20,30
+Nueva Zelanda,DT Nueva Zelanda,Federacion Nueva Zelanda,OFC,37,70,80,20,19,25
+Panama,DT Panama,Federacion Panama,CONCACAF,38,82,95,23,20,31
+Jamaica,DT Jamaica,Federacion Jamaica,CONCACAF,39,79,100,22,19,33
+Honduras,DT Honduras,Federacion Honduras,CONCACAF,40,75,98,21,18,32
+Paraguay,DT Paraguay,Federacion Paraguay,CONMEBOL,41,89,94,26,21,30
+Chile,DT Chile,Federacion Chile,CONMEBOL,42,96,99,28,20,31
+Peru,DT Peru,Federacion Peru,CONMEBOL,43,83,94,24,20,30
+Bolivia,DT Bolivia,Federacion Bolivia,CONMEBOL,44,69,105,18,18,34
+Venezuela,DT Venezuela,Federacion Venezuela,CONMEBOL,45,72,100,19,19,32
+Suecia,DT Suecia,Federacion Suecia,UEFA,46,102,101,31,21,31
+Noruega,DT Noruega,Federacion Noruega,UEFA,47,100,104,30,20,32
+Polonia,DT Polonia,Federacion Polonia,UEFA,48,110,108,33,20,34

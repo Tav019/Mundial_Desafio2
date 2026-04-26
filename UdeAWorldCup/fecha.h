@@ -3,6 +3,8 @@
 
 #include <iostream>
 
+using namespace std;
+
 class Fecha
 {
 private:
@@ -31,7 +33,7 @@ public:
     bool operator==(const Fecha& otra) const;
     bool operator<(const Fecha& otra) const;
 
-    friend std::ostream& operator<<(std::ostream& os, const Fecha& fecha);
+    friend ostream& operator<<(ostream& os, const Fecha& fecha);
 };
 
 #endif

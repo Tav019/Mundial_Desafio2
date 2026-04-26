@@ -1,8 +1,10 @@
 #include "registrojugadorpartido.h"
 
+using namespace std;
+
 RegistroJugadorPartido::RegistroJugadorPartido()
 {
-    jugador = nullptr;
+    jugador = 0;
     goles = 0;
     tarjetasAmarillas = 0;
     tarjetasRojas = 0;
@@ -34,70 +36,20 @@ RegistroJugadorPartido::~RegistroJugadorPartido()
 {
 }
 
-Jugador* RegistroJugadorPartido::getJugador() const
-{
-    return jugador;
-}
+Jugador* RegistroJugadorPartido::getJugador() const { return jugador; }
+int RegistroJugadorPartido::getGoles() const { return goles; }
+int RegistroJugadorPartido::getTarjetasAmarillas() const { return tarjetasAmarillas; }
+int RegistroJugadorPartido::getAmarillas() const { return tarjetasAmarillas; }
+int RegistroJugadorPartido::getTarjetasRojas() const { return tarjetasRojas; }
+int RegistroJugadorPartido::getRojas() const { return tarjetasRojas; }
+int RegistroJugadorPartido::getFaltas() const { return faltas; }
+int RegistroJugadorPartido::getMinutosJugados() const { return minutosJugados; }
+int RegistroJugadorPartido::getMinutos() const { return minutosJugados; }
 
-int RegistroJugadorPartido::getGoles() const
-{
-    return goles;
-}
-
-int RegistroJugadorPartido::getTarjetasAmarillas() const
-{
-    return tarjetasAmarillas;
-}
-
-int RegistroJugadorPartido::getAmarillas() const
-{
-    return tarjetasAmarillas;
-}
-
-int RegistroJugadorPartido::getTarjetasRojas() const
-{
-    return tarjetasRojas;
-}
-
-int RegistroJugadorPartido::getRojas() const
-{
-    return tarjetasRojas;
-}
-
-int RegistroJugadorPartido::getFaltas() const
-{
-    return faltas;
-}
-
-int RegistroJugadorPartido::getMinutosJugados() const
-{
-    return minutosJugados;
-}
-
-int RegistroJugadorPartido::getMinutos() const
-{
-    return minutosJugados;
-}
-
-void RegistroJugadorPartido::incrementarGol()
-{
-    goles++;
-}
-
-void RegistroJugadorPartido::registrarAmarilla()
-{
-    tarjetasAmarillas++;
-}
-
-void RegistroJugadorPartido::registrarRoja()
-{
-    tarjetasRojas++;
-}
-
-void RegistroJugadorPartido::registrarFalta()
-{
-    faltas++;
-}
+void RegistroJugadorPartido::incrementarGol() { goles++; }
+void RegistroJugadorPartido::registrarAmarilla() { tarjetasAmarillas++; }
+void RegistroJugadorPartido::registrarRoja() { tarjetasRojas++; }
+void RegistroJugadorPartido::registrarFalta() { faltas++; }
 
 void RegistroJugadorPartido::setMinutos(int minutos)
 {
@@ -109,35 +61,28 @@ void RegistroJugadorPartido::setMinutos(int minutos)
 
 void RegistroJugadorPartido::actualizarHistorico()
 {
-    // El registro del partido transfiere sus datos al histórico del jugador asociado.
-    if (jugador != nullptr)
+    if (jugador != 0)
     {
         jugador->actualizarEstadisticas(goles, tarjetasAmarillas, tarjetasRojas, faltas, minutosJugados);
     }
 }
 
-std::ostream& operator<<(std::ostream& os, const RegistroJugadorPartido& r)
+ostream& operator<<(ostream& os, const RegistroJugadorPartido& registro)
 {
-    if (r.jugador != nullptr)
+    if (registro.jugador != 0)
     {
-        os << "Jugador: " << r.jugador->getNombre()
-        << " " << r.jugador->getApellido()
-        << " | Camiseta: " << r.jugador->getNumeroCamiseta()
-        << " | Goles: " << r.goles
-        << " | Amarillas: " << r.tarjetasAmarillas
-        << " | Rojas: " << r.tarjetasRojas
-        << " | Faltas: " << r.faltas
-        << " | Minutos: " << r.minutosJugados;
+        os << registro.jugador->getNombre() << " " << registro.jugador->getApellido()
+           << " (#" << registro.jugador->getNumeroCamiseta() << ")";
     }
     else
     {
-        os << "Jugador no asignado"
-           << " | Goles: " << r.goles
-           << " | Amarillas: " << r.tarjetasAmarillas
-           << " | Rojas: " << r.tarjetasRojas
-           << " | Faltas: " << r.faltas
-           << " | Minutos: " << r.minutosJugados;
+        os << "Jugador no asignado";
     }
 
+    os << " | Goles: " << registro.goles
+       << " | TA: " << registro.tarjetasAmarillas
+       << " | TR: " << registro.tarjetasRojas
+       << " | Faltas: " << registro.faltas
+       << " | Min: " << registro.minutosJugados;
     return os;
 }

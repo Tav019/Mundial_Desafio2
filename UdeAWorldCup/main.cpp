@@ -1,13 +1,43 @@
 #include <iostream>
-#include "fecha.h"
+#include <string>
+#include "torneo.h"
 
 using namespace std;
 
-int main()
+int main(int argc, char* argv[])
 {
-    Fecha a(12,3,2026);
-    Fecha b(22,3,2026);
+    string archivoEntrada = "selecciones_clasificadas_mundial.csv";
 
-    cout<<a.diferencia(b)<<endl;
+    if (argc > 1)
+    {
+        archivoEntrada = argv[1];
+    }
+
+    Torneo mundial("UdeAWorldCup");
+
+    cout << "========== INICIO DE SIMULACION UdeAWorldCup ==========\n\n";
+
+    mundial.cargarDatosEquipos(archivoEntrada);
+    mundial.crearJugadoresArtificiales();
+
+    mundial.crearBombos();
+    mundial.formarGrupos();
+
+    mundial.configurarPartidosGrupos();
+    mundial.simularFaseGrupos();
+
+    mundial.clasificarADieciseisavos();
+    mundial.configurarDieciseisavos();
+
+    mundial.simularEliminatorias();
+
+    mundial.generarEstadisticasFinales(cout);
+
+    mundial.guardarDatosJugadores("jugadores_actualizados.csv");
+
+    mundial.mostrarRecursos(cout);
+
+    cout << "\n========== FIN DE SIMULACION ==========\n";
+
     return 0;
 }

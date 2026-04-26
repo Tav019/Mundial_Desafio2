@@ -2,8 +2,9 @@
 #define REGISTROJUGADORPARTIDO_H
 
 #include <iostream>
-
 #include "jugador.h"
+
+using namespace std;
 
 class RegistroJugadorPartido
 {
@@ -38,7 +39,7 @@ public:
     void setMinutos(int minutos);
     void actualizarHistorico();
 
-    friend std::ostream& operator<<(std::ostream& os, const RegistroJugadorPartido& registro);
+    friend ostream& operator<<(ostream& os, const RegistroJugadorPartido& registro);
 };
 
 #endif

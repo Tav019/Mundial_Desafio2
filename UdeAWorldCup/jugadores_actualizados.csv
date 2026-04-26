@@ -1,0 +1,1249 @@
+pais,nombre,apellido,camiseta,partidos,goles,minutos,asistencias,amarillas,rojas,faltas
+Estados Unidos,nombre1,apellido1,1,1,6,90,0,0,0,0
+Estados Unidos,nombre2,apellido2,2,1,6,90,0,0,0,0
+Estados Unidos,nombre3,apellido3,3,0,6,0,0,0,0,0
+Estados Unidos,nombre4,apellido4,4,1,6,90,0,0,0,0
+Estados Unidos,nombre5,apellido5,5,1,6,90,0,1,0,0
+Estados Unidos,nombre6,apellido6,6,1,6,90,0,0,0,2
+Estados Unidos,nombre7,apellido7,7,0,6,0,0,0,0,0
+Estados Unidos,nombre8,apellido8,8,2,6,180,0,3,1,0
+Estados Unidos,nombre9,apellido9,9,1,6,90,0,0,0,0
+Estados Unidos,nombre10,apellido10,10,2,6,180,0,0,0,0
+Estados Unidos,nombre11,apellido11,11,1,5,90,0,0,0,0
+Estados Unidos,nombre12,apellido12,12,2,5,180,0,0,0,0
+Estados Unidos,nombre13,apellido13,13,3,6,270,0,0,0,1
+Estados Unidos,nombre14,apellido14,14,1,5,90,0,0,0,0
+Estados Unidos,nombre15,apellido15,15,2,6,180,0,0,0,0
+Estados Unidos,nombre16,apellido16,16,0,5,0,0,0,0,0
+Estados Unidos,nombre17,apellido17,17,1,5,90,0,0,0,0
+Estados Unidos,nombre18,apellido18,18,3,6,270,0,0,0,0
+Estados Unidos,nombre19,apellido19,19,2,5,180,0,0,0,0
+Estados Unidos,nombre20,apellido20,20,0,5,0,0,0,0,0
+Estados Unidos,nombre21,apellido21,21,2,6,180,0,0,0,2
+Estados Unidos,nombre22,apellido22,22,1,5,90,0,0,0,0
+Estados Unidos,nombre23,apellido23,23,2,5,180,0,0,0,0
+Estados Unidos,nombre24,apellido24,24,1,6,90,0,0,0,0
+Estados Unidos,nombre25,apellido25,25,1,5,90,0,0,0,1
+Estados Unidos,nombre26,apellido26,26,1,5,90,0,0,0,0
+Argentina,nombre1,apellido1,1,4,8,360,0,0,0,0
+Argentina,nombre2,apellido2,2,1,8,90,0,0,0,1
+Argentina,nombre3,apellido3,3,1,9,90,0,0,0,0
+Argentina,nombre4,apellido4,4,0,8,0,0,0,0,0
+Argentina,nombre5,apellido5,5,2,10,210,0,0,0,0
+Argentina,nombre6,apellido6,6,6,8,570,0,0,0,2
+Argentina,nombre7,apellido7,7,5,9,480,0,0,0,0
+Argentina,nombre8,apellido8,8,3,8,270,0,0,0,1
+Argentina,nombre9,apellido9,9,3,8,300,0,0,0,0
+Argentina,nombre10,apellido10,10,0,7,0,0,0,0,0
+Argentina,nombre11,apellido11,11,3,7,300,0,0,0,0
+Argentina,nombre12,apellido12,12,5,8,450,0,0,0,0
+Argentina,nombre13,apellido13,13,4,7,360,0,1,0,1
+Argentina,nombre14,apellido14,14,1,7,90,0,0,0,0
+Argentina,nombre15,apellido15,15,2,7,210,0,0,0,0
+Argentina,nombre16,apellido16,16,0,7,0,0,0,0,0
+Argentina,nombre17,apellido17,17,2,8,210,0,0,0,1
+Argentina,nombre18,apellido18,18,2,7,210,0,1,0,1
+Argentina,nombre19,apellido19,19,4,7,390,0,0,0,0
+Argentina,nombre20,apellido20,20,1,8,90,0,0,0,0
+Argentina,nombre21,apellido21,21,1,7,90,0,0,0,0
+Argentina,nombre22,apellido22,22,3,7,270,0,0,0,1
+Argentina,nombre23,apellido23,23,5,10,480,0,0,0,0
+Argentina,nombre24,apellido24,24,3,7,300,0,0,0,1
+Argentina,nombre25,apellido25,25,3,7,270,0,0,0,0
+Argentina,nombre26,apellido26,26,2,7,180,0,0,0,1
+Francia,nombre1,apellido1,1,3,8,270,0,0,0,1
+Francia,nombre2,apellido2,2,1,8,90,0,0,0,0
+Francia,nombre3,apellido3,3,0,7,0,0,0,0,0
+Francia,nombre4,apellido4,4,2,7,180,0,0,0,1
+Francia,nombre5,apellido5,5,1,7,90,0,0,0,1
+Francia,nombre6,apellido6,6,3,7,270,0,1,0,0
+Francia,nombre7,apellido7,7,2,8,180,0,0,0,0
+Francia,nombre8,apellido8,8,1,7,90,0,0,0,0
+Francia,nombre9,apellido9,9,4,7,360,0,0,0,1
+Francia,nombre10,apellido10,10,4,7,360,0,2,0,0
+Francia,nombre11,apellido11,11,2,7,180,0,0,0,1
+Francia,nombre12,apellido12,12,2,8,180,0,0,0,0
+Francia,nombre13,apellido13,13,2,7,180,0,0,0,1
+Francia,nombre14,apellido14,14,1,7,90,0,0,0,1
+Francia,nombre15,apellido15,15,1,7,90,0,0,0,0
+Francia,nombre16,apellido16,16,1,7,90,0,0,0,0
+Francia,nombre17,apellido17,17,2,7,180,0,0,0,0
+Francia,nombre18,apellido18,18,2,9,180,0,0,0,0
+Francia,nombre19,apellido19,19,2,7,180,0,0,0,0
+Francia,nombre20,apellido20,20,1,7,90,0,0,0,0
+Francia,nombre21,apellido21,21,2,7,180,0,0,0,0
+Francia,nombre22,apellido22,22,1,7,90,0,0,0,0
+Francia,nombre23,apellido23,23,1,7,90,0,0,0,0
+Francia,nombre24,apellido24,24,1,7,90,0,0,0,0
+Francia,nombre25,apellido25,25,2,6,180,0,1,0,1
+Francia,nombre26,apellido26,26,0,6,0,0,0,0,0
+Brasil,nombre1,apellido1,1,0,9,0,0,0,0,0
+Brasil,nombre2,apellido2,2,2,10,180,0,0,0,0
+Brasil,nombre3,apellido3,3,3,8,300,0,0,0,0
+Brasil,nombre4,apellido4,4,4,9,360,0,1,0,0
+Brasil,nombre5,apellido5,5,5,11,480,0,0,0,0
+Brasil,nombre6,apellido6,6,2,8,180,0,1,0,0
+Brasil,nombre7,apellido7,7,4,9,360,0,0,0,0
+Brasil,nombre8,apellido8,8,3,8,300,0,0,0,1
+Brasil,nombre9,apellido9,9,4,8,390,0,0,0,0
+Brasil,nombre10,apellido10,10,2,8,180,0,0,0,0
+Brasil,nombre11,apellido11,11,5,8,450,0,1,0,2
+Brasil,nombre12,apellido12,12,1,8,90,0,0,0,0
+Brasil,nombre13,apellido13,13,4,10,390,0,0,0,0
+Brasil,nombre14,apellido14,14,2,8,180,0,1,0,0
+Brasil,nombre15,apellido15,15,6,8,570,0,1,0,2
+Brasil,nombre16,apellido16,16,5,8,480,0,0,0,0
+Brasil,nombre17,apellido17,17,1,8,90,0,0,0,0
+Brasil,nombre18,apellido18,18,4,10,360,0,1,0,0
+Brasil,nombre19,apellido19,19,3,9,270,0,0,0,0
+Brasil,nombre20,apellido20,20,5,8,480,0,1,0,1
+Brasil,nombre21,apellido21,21,5,8,480,0,0,0,0
+Brasil,nombre22,apellido22,22,4,8,390,0,0,0,0
+Brasil,nombre23,apellido23,23,4,8,360,0,0,0,0
+Brasil,nombre24,apellido24,24,3,10,270,0,0,0,1
+Brasil,nombre25,apellido25,25,4,10,390,0,0,0,0
+Brasil,nombre26,apellido26,26,3,8,270,0,1,0,0
+Inglaterra,nombre1,apellido1,1,3,7,300,0,0,0,0
+Inglaterra,nombre2,apellido2,2,4,8,390,0,1,0,0
+Inglaterra,nombre3,apellido3,3,4,8,420,0,1,0,1
+Inglaterra,nombre4,apellido4,4,4,9,360,0,0,0,2
+Inglaterra,nombre5,apellido5,5,4,7,420,0,0,0,0
+Inglaterra,nombre6,apellido6,6,4,7,420,0,0,0,0
+Inglaterra,nombre7,apellido7,7,4,7,420,0,0,0,0
+Inglaterra,nombre8,apellido8,8,3,7,270,0,0,0,0
+Inglaterra,nombre9,apellido9,9,2,7,210,0,0,0,0
+Inglaterra,nombre10,apellido10,10,2,8,180,0,0,0,1
+Inglaterra,nombre11,apellido11,11,4,8,420,0,0,0,0
+Inglaterra,nombre12,apellido12,12,5,7,480,0,0,0,1
+Inglaterra,nombre13,apellido13,13,3,8,300,0,0,0,0
+Inglaterra,nombre14,apellido14,14,5,8,540,0,1,0,1
+Inglaterra,nombre15,apellido15,15,3,6,270,0,0,0,0
+Inglaterra,nombre16,apellido16,16,3,6,330,0,0,0,1
+Inglaterra,nombre17,apellido17,17,7,8,720,0,0,0,1
+Inglaterra,nombre18,apellido18,18,3,7,330,0,0,0,0
+Inglaterra,nombre19,apellido19,19,3,8,360,0,1,0,0
+Inglaterra,nombre20,apellido20,20,4,7,390,0,1,0,0
+Inglaterra,nombre21,apellido21,21,3,7,300,0,0,0,0
+Inglaterra,nombre22,apellido22,22,1,6,90,0,0,0,0
+Inglaterra,nombre23,apellido23,23,4,8,360,0,0,0,1
+Inglaterra,nombre24,apellido24,24,1,6,90,0,0,0,0
+Inglaterra,nombre25,apellido25,25,5,8,540,0,1,0,1
+Inglaterra,nombre26,apellido26,26,0,6,0,0,0,0,0
+Belgica,nombre1,apellido1,1,1,7,90,0,0,0,0
+Belgica,nombre2,apellido2,2,0,6,0,0,0,0,0
+Belgica,nombre3,apellido3,3,1,6,90,0,1,0,0
+Belgica,nombre4,apellido4,4,1,6,90,0,0,0,0
+Belgica,nombre5,apellido5,5,2,6,180,0,0,0,0
+Belgica,nombre6,apellido6,6,2,6,180,0,0,0,1
+Belgica,nombre7,apellido7,7,1,6,90,0,0,0,1
+Belgica,nombre8,apellido8,8,1,6,90,0,0,0,0
+Belgica,nombre9,apellido9,9,1,7,90,0,0,0,0
+Belgica,nombre10,apellido10,10,1,6,90,0,0,0,0
+Belgica,nombre11,apellido11,11,2,6,180,0,0,0,0
+Belgica,nombre12,apellido12,12,1,6,90,0,0,0,1
+Belgica,nombre13,apellido13,13,2,6,180,0,0,0,0
+Belgica,nombre14,apellido14,14,1,6,90,0,0,0,0
+Belgica,nombre15,apellido15,15,1,6,90,0,0,0,0
+Belgica,nombre16,apellido16,16,2,7,180,0,0,0,0
+Belgica,nombre17,apellido17,17,2,6,180,0,1,0,1
+Belgica,nombre18,apellido18,18,1,7,90,0,0,0,0
+Belgica,nombre19,apellido19,19,1,6,90,0,0,0,0
+Belgica,nombre20,apellido20,20,3,6,270,0,0,0,0
+Belgica,nombre21,apellido21,21,0,5,0,0,0,0,0
+Belgica,nombre22,apellido22,22,1,5,90,0,0,0,1
+Belgica,nombre23,apellido23,23,0,5,0,0,0,0,0
+Belgica,nombre24,apellido24,24,2,5,180,0,1,0,0
+Belgica,nombre25,apellido25,25,3,6,270,0,0,0,1
+Belgica,nombre26,apellido26,26,0,5,0,0,0,0,0
+Portugal,nombre1,apellido1,1,3,8,300,0,0,0,0
+Portugal,nombre2,apellido2,2,1,7,90,0,0,0,0
+Portugal,nombre3,apellido3,3,4,9,390,0,0,0,0
+Portugal,nombre4,apellido4,4,0,7,0,0,0,0,0
+Portugal,nombre5,apellido5,5,5,8,480,0,0,0,0
+Portugal,nombre6,apellido6,6,2,7,180,0,0,0,0
+Portugal,nombre7,apellido7,7,0,7,0,0,0,0,0
+Portugal,nombre8,apellido8,8,3,9,300,0,0,0,0
+Portugal,nombre9,apellido9,9,5,8,480,0,0,0,0
+Portugal,nombre10,apellido10,10,3,6,270,0,2,0,1
+Portugal,nombre11,apellido11,11,1,6,90,0,0,0,0
+Portugal,nombre12,apellido12,12,2,7,180,0,0,0,1
+Portugal,nombre13,apellido13,13,4,6,390,0,0,0,1
+Portugal,nombre14,apellido14,14,2,6,180,0,2,0,0
+Portugal,nombre15,apellido15,15,3,7,270,0,0,0,0
+Portugal,nombre16,apellido16,16,2,6,210,0,0,0,1
+Portugal,nombre17,apellido17,17,2,6,180,0,1,0,0
+Portugal,nombre18,apellido18,18,3,6,300,0,0,0,0
+Portugal,nombre19,apellido19,19,2,6,180,0,0,0,1
+Portugal,nombre20,apellido20,20,3,6,300,0,1,0,1
+Portugal,nombre21,apellido21,21,2,6,180,0,0,0,0
+Portugal,nombre22,apellido22,22,2,6,180,0,0,0,0
+Portugal,nombre23,apellido23,23,3,7,270,0,1,0,1
+Portugal,nombre24,apellido24,24,3,6,300,0,0,0,1
+Portugal,nombre25,apellido25,25,3,7,270,0,0,0,0
+Portugal,nombre26,apellido26,26,3,7,300,0,0,0,0
+Paises Bajos,nombre1,apellido1,1,3,7,270,0,0,0,1
+Paises Bajos,nombre2,apellido2,2,2,6,180,0,0,0,0
+Paises Bajos,nombre3,apellido3,3,2,6,180,0,1,0,0
+Paises Bajos,nombre4,apellido4,4,1,6,90,0,0,0,0
+Paises Bajos,nombre5,apellido5,5,2,6,180,0,0,0,0
+Paises Bajos,nombre6,apellido6,6,0,6,0,0,0,0,0
+Paises Bajos,nombre7,apellido7,7,4,6,360,0,0,0,0
+Paises Bajos,nombre8,apellido8,8,2,6,180,0,0,0,0
+Paises Bajos,nombre9,apellido9,9,1,6,90,0,0,0,0
+Paises Bajos,nombre10,apellido10,10,0,6,0,0,0,0,0
+Paises Bajos,nombre11,apellido11,11,4,6,360,0,2,0,0
+Paises Bajos,nombre12,apellido12,12,1,6,90,0,0,0,0
+Paises Bajos,nombre13,apellido13,13,2,6,180,0,0,0,0
+Paises Bajos,nombre14,apellido14,14,1,6,90,0,1,0,1
+Paises Bajos,nombre15,apellido15,15,3,6,270,0,0,0,0
+Paises Bajos,nombre16,apellido16,16,1,6,90,0,0,0,0
+Paises Bajos,nombre17,apellido17,17,5,7,450,0,0,0,1
+Paises Bajos,nombre18,apellido18,18,2,6,180,0,0,0,0
+Paises Bajos,nombre19,apellido19,19,4,7,360,0,0,0,3
+Paises Bajos,nombre20,apellido20,20,2,7,180,0,0,0,0
+Paises Bajos,nombre21,apellido21,21,2,7,180,0,1,0,1
+Paises Bajos,nombre22,apellido22,22,2,6,180,0,0,0,1
+Paises Bajos,nombre23,apellido23,23,3,6,270,0,0,0,0
+Paises Bajos,nombre24,apellido24,24,2,7,180,0,0,0,0
+Paises Bajos,nombre25,apellido25,25,2,6,180,0,0,0,0
+Paises Bajos,nombre26,apellido26,26,2,7,180,0,0,0,1
+Espana,nombre1,apellido1,1,5,7,480,0,0,0,1
+Espana,nombre2,apellido2,2,4,8,390,0,0,0,1
+Espana,nombre3,apellido3,3,4,9,390,0,0,0,2
+Espana,nombre4,apellido4,4,5,8,450,0,1,0,0
+Espana,nombre5,apellido5,5,3,6,270,0,0,0,1
+Espana,nombre6,apellido6,6,4,6,360,0,0,0,1
+Espana,nombre7,apellido7,7,4,6,360,0,0,0,2
+Espana,nombre8,apellido8,8,6,7,540,0,1,0,1
+Espana,nombre9,apellido9,9,5,7,480,0,0,0,1
+Espana,nombre10,apellido10,10,6,7,570,0,1,0,1
+Espana,nombre11,apellido11,11,0,6,0,0,0,0,0
+Espana,nombre12,apellido12,12,6,8,540,0,0,0,0
+Espana,nombre13,apellido13,13,2,7,180,0,0,0,0
+Espana,nombre14,apellido14,14,2,6,210,0,0,0,0
+Espana,nombre15,apellido15,15,2,7,210,0,0,0,0
+Espana,nombre16,apellido16,16,6,6,570,0,0,0,0
+Espana,nombre17,apellido17,17,1,6,90,0,0,0,0
+Espana,nombre18,apellido18,18,3,6,270,0,1,0,0
+Espana,nombre19,apellido19,19,3,6,300,0,0,0,0
+Espana,nombre20,apellido20,20,3,6,300,0,0,0,0
+Espana,nombre21,apellido21,21,3,7,300,0,0,0,0
+Espana,nombre22,apellido22,22,2,7,180,0,0,0,0
+Espana,nombre23,apellido23,23,2,6,180,0,0,0,0
+Espana,nombre24,apellido24,24,2,6,180,0,0,0,0
+Espana,nombre25,apellido25,25,3,7,270,0,0,0,0
+Espana,nombre26,apellido26,26,2,6,180,0,0,0,0
+Italia,nombre1,apellido1,1,1,7,120,0,0,0,0
+Italia,nombre2,apellido2,2,3,7,270,0,0,0,0
+Italia,nombre3,apellido3,3,2,7,180,0,0,0,0
+Italia,nombre4,apellido4,4,3,6,300,0,0,0,0
+Italia,nombre5,apellido5,5,3,6,270,0,0,0,0
+Italia,nombre6,apellido6,6,2,7,210,0,0,0,1
+Italia,nombre7,apellido7,7,1,6,90,0,0,0,0
+Italia,nombre8,apellido8,8,1,7,120,0,0,0,0
+Italia,nombre9,apellido9,9,2,7,180,0,0,0,0
+Italia,nombre10,apellido10,10,1,6,90,0,0,0,0
+Italia,nombre11,apellido11,11,1,6,90,0,0,0,1
+Italia,nombre12,apellido12,12,2,6,180,0,0,0,0
+Italia,nombre13,apellido13,13,2,6,210,0,0,0,0
+Italia,nombre14,apellido14,14,4,7,390,0,1,0,0
+Italia,nombre15,apellido15,15,3,8,300,0,0,0,1
+Italia,nombre16,apellido16,16,1,6,90,0,0,0,0
+Italia,nombre17,apellido17,17,4,6,390,0,0,0,0
+Italia,nombre18,apellido18,18,1,7,90,0,0,0,0
+Italia,nombre19,apellido19,19,2,6,180,0,0,0,0
+Italia,nombre20,apellido20,20,3,6,300,0,0,0,0
+Italia,nombre21,apellido21,21,1,6,90,0,1,0,0
+Italia,nombre22,apellido22,22,3,8,300,0,0,0,1
+Italia,nombre23,apellido23,23,3,7,270,0,0,0,1
+Italia,nombre24,apellido24,24,1,6,90,0,1,0,0
+Italia,nombre25,apellido25,25,3,6,270,0,0,0,0
+Italia,nombre26,apellido26,26,2,6,210,0,0,0,0
+Alemania,nombre1,apellido1,1,2,8,180,0,0,0,1
+Alemania,nombre2,apellido2,2,0,8,0,0,0,0,0
+Alemania,nombre3,apellido3,3,2,9,210,0,0,0,0
+Alemania,nombre4,apellido4,4,4,11,390,0,0,0,0
+Alemania,nombre5,apellido5,5,1,8,90,0,0,0,0
+Alemania,nombre6,apellido6,6,1,8,90,0,0,0,1
+Alemania,nombre7,apellido7,7,1,8,90,0,0,0,0
+Alemania,nombre8,apellido8,8,0,8,0,0,0,0,0
+Alemania,nombre9,apellido9,9,3,9,300,0,0,0,1
+Alemania,nombre10,apellido10,10,3,8,300,0,0,0,0
+Alemania,nombre11,apellido11,11,3,8,300,0,0,0,0
+Alemania,nombre12,apellido12,12,1,8,90,0,0,0,1
+Alemania,nombre13,apellido13,13,1,8,120,0,0,0,0
+Alemania,nombre14,apellido14,14,1,8,90,0,0,0,0
+Alemania,nombre15,apellido15,15,3,8,300,0,0,0,0
+Alemania,nombre16,apellido16,16,1,9,90,0,0,0,0
+Alemania,nombre17,apellido17,17,1,8,90,0,0,0,0
+Alemania,nombre18,apellido18,18,0,8,0,0,0,0,0
+Alemania,nombre19,apellido19,19,1,7,120,0,0,0,1
+Alemania,nombre20,apellido20,20,1,7,90,0,0,0,0
+Alemania,nombre21,apellido21,21,3,7,300,0,0,0,0
+Alemania,nombre22,apellido22,22,2,8,180,0,0,0,0
+Alemania,nombre23,apellido23,23,2,8,180,0,0,0,1
+Alemania,nombre24,apellido24,24,2,7,210,0,0,0,0
+Alemania,nombre25,apellido25,25,3,7,270,0,0,0,0
+Alemania,nombre26,apellido26,26,2,7,210,0,0,0,0
+Croacia,nombre1,apellido1,1,2,5,180,0,0,0,0
+Croacia,nombre2,apellido2,2,2,5,180,0,0,0,0
+Croacia,nombre3,apellido3,3,2,5,180,0,0,0,0
+Croacia,nombre4,apellido4,4,0,5,0,0,0,0,0
+Croacia,nombre5,apellido5,5,2,6,180,0,0,0,0
+Croacia,nombre6,apellido6,6,1,5,90,0,0,0,0
+Croacia,nombre7,apellido7,7,1,5,90,0,0,0,0
+Croacia,nombre8,apellido8,8,2,5,180,0,0,0,0
+Croacia,nombre9,apellido9,9,1,5,90,0,1,0,1
+Croacia,nombre10,apellido10,10,2,5,180,0,0,0,0
+Croacia,nombre11,apellido11,11,1,7,90,0,0,0,0
+Croacia,nombre12,apellido12,12,2,5,180,0,1,0,2
+Croacia,nombre13,apellido13,13,1,5,90,0,0,0,1
+Croacia,nombre14,apellido14,14,1,5,90,0,0,0,0
+Croacia,nombre15,apellido15,15,3,5,270,0,0,0,0
+Croacia,nombre16,apellido16,16,2,5,180,0,0,0,0
+Croacia,nombre17,apellido17,17,2,4,180,0,0,0,0
+Croacia,nombre18,apellido18,18,2,4,180,0,0,0,0
+Croacia,nombre19,apellido19,19,1,4,90,0,0,0,0
+Croacia,nombre20,apellido20,20,1,4,90,0,0,0,0
+Croacia,nombre21,apellido21,21,2,4,180,0,0,0,0
+Croacia,nombre22,apellido22,22,2,5,180,0,0,0,0
+Croacia,nombre23,apellido23,23,3,4,270,0,0,0,0
+Croacia,nombre24,apellido24,24,2,4,180,0,0,0,0
+Croacia,nombre25,apellido25,25,1,4,90,0,0,0,0
+Croacia,nombre26,apellido26,26,3,4,270,0,1,0,3
+Mexico,nombre1,apellido1,1,2,6,180,0,0,0,0
+Mexico,nombre2,apellido2,2,2,6,180,0,0,0,0
+Mexico,nombre3,apellido3,3,1,7,90,0,0,0,1
+Mexico,nombre4,apellido4,4,1,6,90,0,0,0,0
+Mexico,nombre5,apellido5,5,0,6,0,0,0,0,0
+Mexico,nombre6,apellido6,6,2,6,180,0,0,0,0
+Mexico,nombre7,apellido7,7,0,6,0,0,0,0,0
+Mexico,nombre8,apellido8,8,3,6,270,0,0,0,0
+Mexico,nombre9,apellido9,9,1,6,90,0,0,0,0
+Mexico,nombre10,apellido10,10,3,6,270,0,0,0,0
+Mexico,nombre11,apellido11,11,2,6,180,0,1,0,0
+Mexico,nombre12,apellido12,12,0,6,0,0,0,0,0
+Mexico,nombre13,apellido13,13,1,6,90,0,0,0,0
+Mexico,nombre14,apellido14,14,2,6,180,0,0,0,0
+Mexico,nombre15,apellido15,15,2,6,180,0,0,0,1
+Mexico,nombre16,apellido16,16,1,5,90,0,0,0,0
+Mexico,nombre17,apellido17,17,0,5,0,0,0,0,0
+Mexico,nombre18,apellido18,18,0,5,0,0,0,0,0
+Mexico,nombre19,apellido19,19,1,5,90,0,0,0,0
+Mexico,nombre20,apellido20,20,2,6,180,0,0,0,0
+Mexico,nombre21,apellido21,21,1,5,90,0,0,0,0
+Mexico,nombre22,apellido22,22,2,6,180,0,0,0,0
+Mexico,nombre23,apellido23,23,1,5,90,0,0,0,0
+Mexico,nombre24,apellido24,24,1,6,90,0,0,0,0
+Mexico,nombre25,apellido25,25,2,5,180,0,0,0,1
+Mexico,nombre26,apellido26,26,0,5,0,0,0,0,0
+Uruguay,nombre1,apellido1,1,2,6,180,0,0,0,0
+Uruguay,nombre2,apellido2,2,3,7,270,0,0,0,0
+Uruguay,nombre3,apellido3,3,1,6,90,0,0,0,0
+Uruguay,nombre4,apellido4,4,3,6,270,0,0,0,1
+Uruguay,nombre5,apellido5,5,2,6,180,0,0,0,0
+Uruguay,nombre6,apellido6,6,2,6,180,0,0,0,0
+Uruguay,nombre7,apellido7,7,3,6,270,0,0,0,1
+Uruguay,nombre8,apellido8,8,3,6,270,0,0,0,0
+Uruguay,nombre9,apellido9,9,2,6,180,0,0,0,0
+Uruguay,nombre10,apellido10,10,1,7,90,0,0,0,1
+Uruguay,nombre11,apellido11,11,1,6,90,0,0,0,0
+Uruguay,nombre12,apellido12,12,4,7,360,0,0,0,0
+Uruguay,nombre13,apellido13,13,3,7,270,0,0,0,0
+Uruguay,nombre14,apellido14,14,2,6,180,0,1,0,0
+Uruguay,nombre15,apellido15,15,3,7,270,0,0,0,1
+Uruguay,nombre16,apellido16,16,1,6,90,0,0,0,0
+Uruguay,nombre17,apellido17,17,2,6,180,0,0,0,2
+Uruguay,nombre18,apellido18,18,0,6,0,0,0,0,0
+Uruguay,nombre19,apellido19,19,2,6,180,0,0,0,0
+Uruguay,nombre20,apellido20,20,2,6,180,0,0,0,0
+Uruguay,nombre21,apellido21,21,3,5,270,0,0,0,0
+Uruguay,nombre22,apellido22,22,1,5,90,0,0,0,0
+Uruguay,nombre23,apellido23,23,2,5,180,0,0,0,0
+Uruguay,nombre24,apellido24,24,3,6,270,0,1,0,0
+Uruguay,nombre25,apellido25,25,4,5,360,0,1,0,0
+Uruguay,nombre26,apellido26,26,0,5,0,0,0,0,0
+Colombia,nombre1,apellido1,1,2,5,180,0,1,0,0
+Colombia,nombre2,apellido2,2,4,6,360,0,0,0,0
+Colombia,nombre3,apellido3,3,2,6,180,0,0,0,1
+Colombia,nombre4,apellido4,4,3,6,270,0,0,0,2
+Colombia,nombre5,apellido5,5,3,5,270,0,0,0,0
+Colombia,nombre6,apellido6,6,0,5,0,0,0,0,0
+Colombia,nombre7,apellido7,7,1,5,90,0,0,0,0
+Colombia,nombre8,apellido8,8,1,5,90,0,0,0,0
+Colombia,nombre9,apellido9,9,1,5,90,0,0,0,0
+Colombia,nombre10,apellido10,10,3,6,270,0,0,0,1
+Colombia,nombre11,apellido11,11,1,5,90,0,0,0,1
+Colombia,nombre12,apellido12,12,4,7,360,0,0,0,0
+Colombia,nombre13,apellido13,13,2,5,180,0,1,0,0
+Colombia,nombre14,apellido14,14,0,5,0,0,0,0,0
+Colombia,nombre15,apellido15,15,2,5,180,0,0,0,0
+Colombia,nombre16,apellido16,16,3,5,270,0,0,0,0
+Colombia,nombre17,apellido17,17,2,6,180,0,0,0,0
+Colombia,nombre18,apellido18,18,5,6,450,0,2,0,0
+Colombia,nombre19,apellido19,19,2,6,180,0,0,0,0
+Colombia,nombre20,apellido20,20,2,5,180,0,0,0,1
+Colombia,nombre21,apellido21,21,2,5,180,0,0,0,2
+Colombia,nombre22,apellido22,22,0,5,0,0,0,0,0
+Colombia,nombre23,apellido23,23,4,5,360,0,1,0,0
+Colombia,nombre24,apellido24,24,2,5,180,0,0,0,1
+Colombia,nombre25,apellido25,25,2,5,180,0,0,0,0
+Colombia,nombre26,apellido26,26,2,5,180,0,0,0,0
+Marruecos,nombre1,apellido1,1,1,5,90,0,0,0,0
+Marruecos,nombre2,apellido2,2,1,5,90,0,1,0,0
+Marruecos,nombre3,apellido3,3,2,5,180,0,0,0,0
+Marruecos,nombre4,apellido4,4,0,5,0,0,0,0,0
+Marruecos,nombre5,apellido5,5,1,5,90,0,0,0,1
+Marruecos,nombre6,apellido6,6,1,5,90,0,0,0,0
+Marruecos,nombre7,apellido7,7,0,4,0,0,0,0,0
+Marruecos,nombre8,apellido8,8,1,4,90,0,0,0,0
+Marruecos,nombre9,apellido9,9,0,4,0,0,0,0,0
+Marruecos,nombre10,apellido10,10,1,4,90,0,0,0,0
+Marruecos,nombre11,apellido11,11,3,4,270,0,0,0,0
+Marruecos,nombre12,apellido12,12,0,4,0,0,0,0,0
+Marruecos,nombre13,apellido13,13,0,4,0,0,0,0,0
+Marruecos,nombre14,apellido14,14,2,4,180,0,0,0,0
+Marruecos,nombre15,apellido15,15,2,5,180,0,0,0,1
+Marruecos,nombre16,apellido16,16,1,4,90,0,0,0,0
+Marruecos,nombre17,apellido17,17,2,5,180,0,0,0,0
+Marruecos,nombre18,apellido18,18,2,4,180,0,1,0,1
+Marruecos,nombre19,apellido19,19,0,4,0,0,0,0,0
+Marruecos,nombre20,apellido20,20,3,4,270,0,0,0,0
+Marruecos,nombre21,apellido21,21,2,5,180,0,0,0,0
+Marruecos,nombre22,apellido22,22,0,4,0,0,0,0,0
+Marruecos,nombre23,apellido23,23,2,5,180,0,0,0,0
+Marruecos,nombre24,apellido24,24,3,4,270,0,0,0,0
+Marruecos,nombre25,apellido25,25,1,4,90,0,0,0,0
+Marruecos,nombre26,apellido26,26,2,4,180,0,0,0,1
+Suiza,nombre1,apellido1,1,3,6,270,0,0,0,1
+Suiza,nombre2,apellido2,2,3,5,270,0,0,0,0
+Suiza,nombre3,apellido3,3,3,6,270,0,0,0,0
+Suiza,nombre4,apellido4,4,2,5,180,0,0,0,1
+Suiza,nombre5,apellido5,5,2,5,180,0,0,0,0
+Suiza,nombre6,apellido6,6,1,5,90,0,0,0,0
+Suiza,nombre7,apellido7,7,0,5,0,0,0,0,0
+Suiza,nombre8,apellido8,8,2,5,180,0,0,0,1
+Suiza,nombre9,apellido9,9,1,5,90,0,0,0,0
+Suiza,nombre10,apellido10,10,0,5,0,0,0,0,0
+Suiza,nombre11,apellido11,11,1,5,90,0,0,0,1
+Suiza,nombre12,apellido12,12,3,5,270,0,0,0,0
+Suiza,nombre13,apellido13,13,2,4,180,0,1,0,0
+Suiza,nombre14,apellido14,14,1,4,90,0,1,0,0
+Suiza,nombre15,apellido15,15,1,4,90,0,0,0,0
+Suiza,nombre16,apellido16,16,2,4,180,0,0,0,0
+Suiza,nombre17,apellido17,17,3,4,270,0,0,0,0
+Suiza,nombre18,apellido18,18,1,4,90,0,1,0,2
+Suiza,nombre19,apellido19,19,1,4,90,0,0,0,0
+Suiza,nombre20,apellido20,20,1,4,90,0,0,0,0
+Suiza,nombre21,apellido21,21,2,4,180,0,0,0,0
+Suiza,nombre22,apellido22,22,3,5,270,0,0,0,1
+Suiza,nombre23,apellido23,23,1,4,90,0,0,0,0
+Suiza,nombre24,apellido24,24,1,4,90,0,0,0,1
+Suiza,nombre25,apellido25,25,2,4,180,0,0,0,0
+Suiza,nombre26,apellido26,26,2,5,180,0,0,0,0
+Japon,nombre1,apellido1,1,2,5,180,0,1,0,1
+Japon,nombre2,apellido2,2,1,5,90,0,0,0,0
+Japon,nombre3,apellido3,3,4,5,360,0,0,0,2
+Japon,nombre4,apellido4,4,1,5,90,0,0,0,0
+Japon,nombre5,apellido5,5,2,5,180,0,0,0,0
+Japon,nombre6,apellido6,6,1,5,90,0,0,0,0
+Japon,nombre7,apellido7,7,3,5,270,0,0,0,0
+Japon,nombre8,apellido8,8,3,5,270,0,0,0,0
+Japon,nombre9,apellido9,9,1,5,90,0,1,0,0
+Japon,nombre10,apellido10,10,2,6,180,0,0,0,0
+Japon,nombre11,apellido11,11,2,6,180,0,0,0,1
+Japon,nombre12,apellido12,12,1,5,90,0,0,0,0
+Japon,nombre13,apellido13,13,2,6,180,0,0,0,0
+Japon,nombre14,apellido14,14,2,5,180,0,0,0,0
+Japon,nombre15,apellido15,15,2,5,180,0,2,0,0
+Japon,nombre16,apellido16,16,1,5,90,0,0,0,0
+Japon,nombre17,apellido17,17,2,6,180,0,0,0,0
+Japon,nombre18,apellido18,18,0,5,0,0,0,0,0
+Japon,nombre19,apellido19,19,1,5,90,0,0,0,0
+Japon,nombre20,apellido20,20,2,5,180,0,0,0,1
+Japon,nombre21,apellido21,21,1,5,90,0,0,0,0
+Japon,nombre22,apellido22,22,3,4,270,0,0,0,1
+Japon,nombre23,apellido23,23,0,4,0,0,0,0,0
+Japon,nombre24,apellido24,24,0,4,0,0,0,0,0
+Japon,nombre25,apellido25,25,1,5,90,0,0,0,1
+Japon,nombre26,apellido26,26,4,4,360,0,0,0,1
+Senegal,nombre1,apellido1,1,2,6,180,0,0,0,1
+Senegal,nombre2,apellido2,2,1,4,90,0,0,0,0
+Senegal,nombre3,apellido3,3,2,4,180,0,0,0,0
+Senegal,nombre4,apellido4,4,2,5,180,0,0,0,0
+Senegal,nombre5,apellido5,5,0,4,0,0,0,0,0
+Senegal,nombre6,apellido6,6,1,4,90,0,0,0,1
+Senegal,nombre7,apellido7,7,1,4,90,0,0,0,0
+Senegal,nombre8,apellido8,8,1,4,90,0,0,0,0
+Senegal,nombre9,apellido9,9,0,4,0,0,0,0,0
+Senegal,nombre10,apellido10,10,1,4,90,0,1,0,0
+Senegal,nombre11,apellido11,11,3,4,270,0,1,0,0
+Senegal,nombre12,apellido12,12,3,4,270,0,0,0,1
+Senegal,nombre13,apellido13,13,1,4,90,0,0,0,0
+Senegal,nombre14,apellido14,14,1,4,90,0,0,0,0
+Senegal,nombre15,apellido15,15,1,4,90,0,0,0,0
+Senegal,nombre16,apellido16,16,1,4,90,0,0,0,0
+Senegal,nombre17,apellido17,17,2,4,180,0,0,0,0
+Senegal,nombre18,apellido18,18,3,4,270,0,1,0,0
+Senegal,nombre19,apellido19,19,2,5,180,0,1,0,0
+Senegal,nombre20,apellido20,20,1,4,90,0,0,0,0
+Senegal,nombre21,apellido21,21,1,4,90,0,0,0,0
+Senegal,nombre22,apellido22,22,0,4,0,0,0,0,0
+Senegal,nombre23,apellido23,23,0,4,0,0,0,0,0
+Senegal,nombre24,apellido24,24,1,4,90,0,0,0,1
+Senegal,nombre25,apellido25,25,2,4,180,0,0,0,0
+Senegal,nombre26,apellido26,26,0,4,0,0,0,0,0
+Dinamarca,nombre1,apellido1,1,1,5,90,0,0,0,0
+Dinamarca,nombre2,apellido2,2,1,5,90,0,0,0,0
+Dinamarca,nombre3,apellido3,3,0,5,0,0,0,0,0
+Dinamarca,nombre4,apellido4,4,2,5,180,0,0,0,1
+Dinamarca,nombre5,apellido5,5,1,6,90,0,0,0,0
+Dinamarca,nombre6,apellido6,6,2,5,180,0,0,0,0
+Dinamarca,nombre7,apellido7,7,2,5,180,0,0,0,0
+Dinamarca,nombre8,apellido8,8,1,5,90,0,0,0,0
+Dinamarca,nombre9,apellido9,9,2,5,180,0,0,0,0
+Dinamarca,nombre10,apellido10,10,0,4,0,0,0,0,0
+Dinamarca,nombre11,apellido11,11,2,4,180,0,0,0,0
+Dinamarca,nombre12,apellido12,12,0,4,0,0,0,0,0
+Dinamarca,nombre13,apellido13,13,0,4,0,0,0,0,0
+Dinamarca,nombre14,apellido14,14,1,4,90,0,0,0,0
+Dinamarca,nombre15,apellido15,15,1,4,90,0,0,0,0
+Dinamarca,nombre16,apellido16,16,1,4,90,0,0,0,0
+Dinamarca,nombre17,apellido17,17,1,4,90,0,0,0,0
+Dinamarca,nombre18,apellido18,18,2,4,180,0,0,0,0
+Dinamarca,nombre19,apellido19,19,0,4,0,0,0,0,0
+Dinamarca,nombre20,apellido20,20,3,7,270,0,0,0,0
+Dinamarca,nombre21,apellido21,21,3,4,270,0,1,0,0
+Dinamarca,nombre22,apellido22,22,0,4,0,0,0,0,0
+Dinamarca,nombre23,apellido23,23,2,4,180,0,0,0,0
+Dinamarca,nombre24,apellido24,24,1,4,90,0,0,0,0
+Dinamarca,nombre25,apellido25,25,2,4,180,0,0,0,2
+Dinamarca,nombre26,apellido26,26,2,4,180,0,0,0,1
+Iran,nombre1,apellido1,1,2,6,180,0,1,0,1
+Iran,nombre2,apellido2,2,4,5,390,0,1,0,1
+Iran,nombre3,apellido3,3,3,5,300,0,0,0,0
+Iran,nombre4,apellido4,4,3,5,270,0,0,0,0
+Iran,nombre5,apellido5,5,3,5,270,0,1,0,0
+Iran,nombre6,apellido6,6,2,5,210,0,0,0,0
+Iran,nombre7,apellido7,7,4,5,360,0,0,0,2
+Iran,nombre8,apellido8,8,2,5,180,0,0,0,0
+Iran,nombre9,apellido9,9,2,5,210,0,0,0,0
+Iran,nombre10,apellido10,10,3,6,270,0,0,0,0
+Iran,nombre11,apellido11,11,3,6,300,0,0,0,0
+Iran,nombre12,apellido12,12,2,5,210,0,0,0,1
+Iran,nombre13,apellido13,13,2,5,180,0,1,0,0
+Iran,nombre14,apellido14,14,2,5,210,0,0,0,1
+Iran,nombre15,apellido15,15,4,4,390,0,0,0,0
+Iran,nombre16,apellido16,16,2,5,180,0,1,0,0
+Iran,nombre17,apellido17,17,3,6,270,0,1,0,0
+Iran,nombre18,apellido18,18,3,4,270,0,0,0,1
+Iran,nombre19,apellido19,19,3,4,270,0,0,0,1
+Iran,nombre20,apellido20,20,2,4,210,0,0,0,0
+Iran,nombre21,apellido21,21,2,5,210,0,0,0,0
+Iran,nombre22,apellido22,22,2,5,180,0,0,0,0
+Iran,nombre23,apellido23,23,3,6,300,0,0,0,1
+Iran,nombre24,apellido24,24,0,4,0,0,0,0,0
+Iran,nombre25,apellido25,25,2,4,180,0,0,0,0
+Iran,nombre26,apellido26,26,3,4,270,0,1,0,1
+Corea del Sur,nombre1,apellido1,1,2,7,210,0,0,0,0
+Corea del Sur,nombre2,apellido2,2,1,5,120,0,0,0,0
+Corea del Sur,nombre3,apellido3,3,0,5,0,0,0,0,0
+Corea del Sur,nombre4,apellido4,4,0,5,0,0,0,0,0
+Corea del Sur,nombre5,apellido5,5,0,5,0,0,0,0,0
+Corea del Sur,nombre6,apellido6,6,2,5,180,0,0,0,2
+Corea del Sur,nombre7,apellido7,7,1,5,120,0,0,0,0
+Corea del Sur,nombre8,apellido8,8,2,5,210,0,0,0,0
+Corea del Sur,nombre9,apellido9,9,2,5,180,0,0,0,1
+Corea del Sur,nombre10,apellido10,10,1,6,90,0,0,0,0
+Corea del Sur,nombre11,apellido11,11,1,5,90,0,0,0,0
+Corea del Sur,nombre12,apellido12,12,2,6,180,0,0,0,0
+Corea del Sur,nombre13,apellido13,13,1,5,120,0,1,0,0
+Corea del Sur,nombre14,apellido14,14,2,6,180,0,1,0,0
+Corea del Sur,nombre15,apellido15,15,1,5,90,0,0,0,1
+Corea del Sur,nombre16,apellido16,16,1,5,90,0,0,0,0
+Corea del Sur,nombre17,apellido17,17,4,5,390,0,1,0,2
+Corea del Sur,nombre18,apellido18,18,1,5,90,0,0,0,0
+Corea del Sur,nombre19,apellido19,19,2,4,180,0,1,0,0
+Corea del Sur,nombre20,apellido20,20,4,4,390,0,0,0,0
+Corea del Sur,nombre21,apellido21,21,1,4,120,0,0,0,0
+Corea del Sur,nombre22,apellido22,22,4,5,390,0,0,0,0
+Corea del Sur,nombre23,apellido23,23,3,4,300,0,0,0,1
+Corea del Sur,nombre24,apellido24,24,3,5,300,0,1,0,1
+Corea del Sur,nombre25,apellido25,25,2,5,180,0,0,0,0
+Corea del Sur,nombre26,apellido26,26,1,4,90,0,0,0,0
+Australia,nombre1,apellido1,1,0,4,0,0,0,0,0
+Australia,nombre2,apellido2,2,1,4,90,0,0,0,0
+Australia,nombre3,apellido3,3,4,4,360,0,0,0,0
+Australia,nombre4,apellido4,4,1,4,90,0,0,0,0
+Australia,nombre5,apellido5,5,2,4,180,0,1,0,1
+Australia,nombre6,apellido6,6,1,4,90,0,0,0,0
+Australia,nombre7,apellido7,7,3,4,270,0,1,0,0
+Australia,nombre8,apellido8,8,1,4,90,0,0,0,0
+Australia,nombre9,apellido9,9,3,5,270,0,0,0,0
+Australia,nombre10,apellido10,10,1,4,90,0,0,0,0
+Australia,nombre11,apellido11,11,2,4,180,0,0,0,0
+Australia,nombre12,apellido12,12,2,4,180,0,0,0,0
+Australia,nombre13,apellido13,13,3,4,270,0,1,0,1
+Australia,nombre14,apellido14,14,1,4,90,0,0,0,0
+Australia,nombre15,apellido15,15,2,4,180,0,0,0,0
+Australia,nombre16,apellido16,16,1,4,90,0,0,0,0
+Australia,nombre17,apellido17,17,3,4,270,0,0,0,0
+Australia,nombre18,apellido18,18,0,4,0,0,0,0,0
+Australia,nombre19,apellido19,19,3,4,270,0,1,0,3
+Australia,nombre20,apellido20,20,2,4,180,0,1,0,0
+Australia,nombre21,apellido21,21,1,4,90,0,0,0,0
+Australia,nombre22,apellido22,22,2,6,180,0,0,0,0
+Australia,nombre23,apellido23,23,2,4,180,0,0,0,0
+Australia,nombre24,apellido24,24,1,4,90,0,0,0,1
+Australia,nombre25,apellido25,25,0,3,0,0,0,0,0
+Australia,nombre26,apellido26,26,2,4,180,0,0,0,0
+Ecuador,nombre1,apellido1,1,3,4,270,0,1,0,0
+Ecuador,nombre2,apellido2,2,0,4,0,0,0,0,0
+Ecuador,nombre3,apellido3,3,2,4,180,0,0,0,1
+Ecuador,nombre4,apellido4,4,0,4,0,0,0,0,0
+Ecuador,nombre5,apellido5,5,2,5,180,0,0,0,1
+Ecuador,nombre6,apellido6,6,0,4,0,0,0,0,0
+Ecuador,nombre7,apellido7,7,1,4,90,0,0,0,0
+Ecuador,nombre8,apellido8,8,0,4,0,0,0,0,0
+Ecuador,nombre9,apellido9,9,1,5,90,0,0,0,0
+Ecuador,nombre10,apellido10,10,3,5,270,0,0,0,0
+Ecuador,nombre11,apellido11,11,2,4,180,0,0,0,1
+Ecuador,nombre12,apellido12,12,3,4,270,0,0,0,0
+Ecuador,nombre13,apellido13,13,0,4,0,0,0,0,0
+Ecuador,nombre14,apellido14,14,1,4,90,0,0,0,0
+Ecuador,nombre15,apellido15,15,1,4,90,0,0,0,0
+Ecuador,nombre16,apellido16,16,1,4,90,0,0,0,1
+Ecuador,nombre17,apellido17,17,1,4,90,0,0,0,0
+Ecuador,nombre18,apellido18,18,1,4,90,0,1,0,0
+Ecuador,nombre19,apellido19,19,2,4,180,0,0,0,0
+Ecuador,nombre20,apellido20,20,1,4,90,0,0,0,1
+Ecuador,nombre21,apellido21,21,2,3,180,0,1,0,0
+Ecuador,nombre22,apellido22,22,1,3,90,0,0,0,0
+Ecuador,nombre23,apellido23,23,1,3,90,0,0,0,0
+Ecuador,nombre24,apellido24,24,1,3,90,0,0,0,0
+Ecuador,nombre25,apellido25,25,1,3,90,0,0,0,0
+Ecuador,nombre26,apellido26,26,2,3,180,0,0,0,0
+Canada,nombre1,apellido1,1,3,4,270,0,0,0,0
+Canada,nombre2,apellido2,2,0,4,0,0,0,0,0
+Canada,nombre3,apellido3,3,4,4,360,0,0,0,0
+Canada,nombre4,apellido4,4,4,4,360,0,0,0,0
+Canada,nombre5,apellido5,5,1,4,90,0,1,0,0
+Canada,nombre6,apellido6,6,1,4,90,0,0,0,0
+Canada,nombre7,apellido7,7,1,4,90,0,0,0,0
+Canada,nombre8,apellido8,8,2,4,180,0,0,0,0
+Canada,nombre9,apellido9,9,1,4,90,0,0,0,0
+Canada,nombre10,apellido10,10,1,4,90,0,0,0,0
+Canada,nombre11,apellido11,11,1,5,90,0,0,0,0
+Canada,nombre12,apellido12,12,1,4,90,0,0,0,0
+Canada,nombre13,apellido13,13,3,5,270,0,0,0,0
+Canada,nombre14,apellido14,14,1,4,90,0,0,0,0
+Canada,nombre15,apellido15,15,2,4,180,0,0,0,0
+Canada,nombre16,apellido16,16,2,5,180,0,0,0,1
+Canada,nombre17,apellido17,17,2,4,180,0,0,0,0
+Canada,nombre18,apellido18,18,2,4,180,0,1,0,0
+Canada,nombre19,apellido19,19,3,3,270,0,1,0,0
+Canada,nombre20,apellido20,20,2,4,180,0,0,0,0
+Canada,nombre21,apellido21,21,2,3,180,0,0,0,0
+Canada,nombre22,apellido22,22,1,3,90,0,0,0,0
+Canada,nombre23,apellido23,23,1,4,90,0,0,0,0
+Canada,nombre24,apellido24,24,1,3,90,0,0,0,0
+Canada,nombre25,apellido25,25,1,3,90,0,0,0,0
+Canada,nombre26,apellido26,26,1,3,90,0,0,0,1
+Costa Rica,nombre1,apellido1,1,1,5,120,0,0,0,0
+Costa Rica,nombre2,apellido2,2,1,4,90,0,0,0,1
+Costa Rica,nombre3,apellido3,3,2,4,180,0,0,0,0
+Costa Rica,nombre4,apellido4,4,1,4,90,0,0,0,0
+Costa Rica,nombre5,apellido5,5,3,4,270,0,0,0,0
+Costa Rica,nombre6,apellido6,6,1,4,90,0,0,0,0
+Costa Rica,nombre7,apellido7,7,1,4,90,0,0,0,0
+Costa Rica,nombre8,apellido8,8,2,4,210,0,1,0,0
+Costa Rica,nombre9,apellido9,9,2,4,210,0,0,0,1
+Costa Rica,nombre10,apellido10,10,2,4,210,0,0,0,0
+Costa Rica,nombre11,apellido11,11,3,3,300,0,0,0,0
+Costa Rica,nombre12,apellido12,12,1,3,120,0,0,0,1
+Costa Rica,nombre13,apellido13,13,0,3,0,0,0,0,0
+Costa Rica,nombre14,apellido14,14,2,3,180,0,0,0,0
+Costa Rica,nombre15,apellido15,15,3,3,300,0,0,0,1
+Costa Rica,nombre16,apellido16,16,3,5,270,0,0,0,1
+Costa Rica,nombre17,apellido17,17,1,3,90,0,0,0,0
+Costa Rica,nombre18,apellido18,18,1,3,120,0,0,0,0
+Costa Rica,nombre19,apellido19,19,3,4,270,0,0,0,0
+Costa Rica,nombre20,apellido20,20,2,4,180,0,0,0,0
+Costa Rica,nombre21,apellido21,21,1,3,90,0,0,0,1
+Costa Rica,nombre22,apellido22,22,2,3,210,0,0,0,0
+Costa Rica,nombre23,apellido23,23,2,4,180,0,0,0,0
+Costa Rica,nombre24,apellido24,24,2,3,210,0,0,0,0
+Costa Rica,nombre25,apellido25,25,1,3,120,0,0,0,1
+Costa Rica,nombre26,apellido26,26,1,3,90,0,0,0,0
+Camerun,nombre1,apellido1,1,0,4,0,0,0,0,0
+Camerun,nombre2,apellido2,2,3,4,270,0,0,0,0
+Camerun,nombre3,apellido3,3,2,5,180,0,0,0,0
+Camerun,nombre4,apellido4,4,1,4,90,0,0,0,1
+Camerun,nombre5,apellido5,5,2,4,180,0,0,0,0
+Camerun,nombre6,apellido6,6,0,4,0,0,0,0,0
+Camerun,nombre7,apellido7,7,0,4,0,0,0,0,0
+Camerun,nombre8,apellido8,8,0,4,0,0,0,0,0
+Camerun,nombre9,apellido9,9,3,4,270,0,0,0,0
+Camerun,nombre10,apellido10,10,2,4,180,0,0,0,0
+Camerun,nombre11,apellido11,11,3,4,270,0,0,0,0
+Camerun,nombre12,apellido12,12,2,4,180,0,0,0,0
+Camerun,nombre13,apellido13,13,2,4,180,0,1,0,0
+Camerun,nombre14,apellido14,14,2,4,180,0,0,0,0
+Camerun,nombre15,apellido15,15,0,4,0,0,0,0,0
+Camerun,nombre16,apellido16,16,2,5,180,0,0,0,0
+Camerun,nombre17,apellido17,17,1,4,90,0,0,0,1
+Camerun,nombre18,apellido18,18,1,4,90,0,0,0,0
+Camerun,nombre19,apellido19,19,1,4,90,0,0,0,0
+Camerun,nombre20,apellido20,20,2,4,180,0,0,0,0
+Camerun,nombre21,apellido21,21,0,4,0,0,0,0,0
+Camerun,nombre22,apellido22,22,3,5,270,0,0,0,0
+Camerun,nombre23,apellido23,23,3,3,270,0,1,0,0
+Camerun,nombre24,apellido24,24,3,5,270,0,0,0,0
+Camerun,nombre25,apellido25,25,3,3,270,0,0,0,1
+Camerun,nombre26,apellido26,26,3,3,270,0,0,0,0
+Ghana,nombre1,apellido1,1,1,4,90,0,0,0,0
+Ghana,nombre2,apellido2,2,2,4,180,0,0,0,2
+Ghana,nombre3,apellido3,3,2,5,180,0,0,0,0
+Ghana,nombre4,apellido4,4,1,4,90,0,0,0,0
+Ghana,nombre5,apellido5,5,1,4,90,0,0,0,0
+Ghana,nombre6,apellido6,6,1,4,90,0,0,0,0
+Ghana,nombre7,apellido7,7,2,4,180,0,0,0,0
+Ghana,nombre8,apellido8,8,1,4,90,0,0,0,0
+Ghana,nombre9,apellido9,9,3,5,270,0,0,0,1
+Ghana,nombre10,apellido10,10,3,4,270,0,1,0,0
+Ghana,nombre11,apellido11,11,1,4,90,0,0,0,0
+Ghana,nombre12,apellido12,12,1,4,90,0,0,0,0
+Ghana,nombre13,apellido13,13,1,4,90,0,0,0,0
+Ghana,nombre14,apellido14,14,2,4,180,0,0,0,1
+Ghana,nombre15,apellido15,15,2,3,180,0,1,0,0
+Ghana,nombre16,apellido16,16,2,3,180,0,0,0,0
+Ghana,nombre17,apellido17,17,1,3,90,0,0,0,0
+Ghana,nombre18,apellido18,18,2,3,180,0,0,0,0
+Ghana,nombre19,apellido19,19,3,3,270,0,0,0,0
+Ghana,nombre20,apellido20,20,3,3,270,0,0,0,1
+Ghana,nombre21,apellido21,21,0,3,0,0,0,0,0
+Ghana,nombre22,apellido22,22,3,3,270,0,0,0,0
+Ghana,nombre23,apellido23,23,0,3,0,0,0,0,0
+Ghana,nombre24,apellido24,24,2,4,180,0,0,0,1
+Ghana,nombre25,apellido25,25,2,4,180,0,0,0,1
+Ghana,nombre26,apellido26,26,2,3,180,0,0,0,0
+Nigeria,nombre1,apellido1,1,3,5,270,0,0,0,0
+Nigeria,nombre2,apellido2,2,4,6,360,0,0,0,0
+Nigeria,nombre3,apellido3,3,1,6,90,0,0,0,0
+Nigeria,nombre4,apellido4,4,6,8,570,0,1,0,0
+Nigeria,nombre5,apellido5,5,4,5,360,0,0,0,0
+Nigeria,nombre6,apellido6,6,7,5,660,0,0,0,0
+Nigeria,nombre7,apellido7,7,2,5,180,0,1,0,0
+Nigeria,nombre8,apellido8,8,2,4,210,0,0,0,0
+Nigeria,nombre9,apellido9,9,5,4,480,0,0,0,0
+Nigeria,nombre10,apellido10,10,3,4,270,0,0,0,0
+Nigeria,nombre11,apellido11,11,3,4,300,0,0,0,0
+Nigeria,nombre12,apellido12,12,6,5,570,0,0,0,0
+Nigeria,nombre13,apellido13,13,1,4,90,0,0,0,0
+Nigeria,nombre14,apellido14,14,4,4,390,0,0,0,0
+Nigeria,nombre15,apellido15,15,4,5,360,0,0,0,2
+Nigeria,nombre16,apellido16,16,3,5,300,0,0,0,0
+Nigeria,nombre17,apellido17,17,3,4,270,0,2,1,0
+Nigeria,nombre18,apellido18,18,4,4,390,0,1,0,1
+Nigeria,nombre19,apellido19,19,3,4,270,0,0,0,2
+Nigeria,nombre20,apellido20,20,1,4,90,0,0,0,0
+Nigeria,nombre21,apellido21,21,3,4,300,0,0,0,0
+Nigeria,nombre22,apellido22,22,3,5,270,0,0,0,0
+Nigeria,nombre23,apellido23,23,5,6,480,0,1,0,0
+Nigeria,nombre24,apellido24,24,3,4,270,0,0,0,0
+Nigeria,nombre25,apellido25,25,2,4,180,0,0,0,0
+Nigeria,nombre26,apellido26,26,3,5,270,0,0,0,0
+Egipto,nombre1,apellido1,1,1,4,90,0,0,0,0
+Egipto,nombre2,apellido2,2,1,4,90,0,0,0,1
+Egipto,nombre3,apellido3,3,0,4,0,0,0,0,0
+Egipto,nombre4,apellido4,4,1,4,90,0,0,0,0
+Egipto,nombre5,apellido5,5,1,4,90,0,0,0,1
+Egipto,nombre6,apellido6,6,2,4,180,0,0,0,0
+Egipto,nombre7,apellido7,7,2,4,180,0,0,0,0
+Egipto,nombre8,apellido8,8,1,4,90,0,0,0,0
+Egipto,nombre9,apellido9,9,2,4,180,0,1,0,0
+Egipto,nombre10,apellido10,10,1,4,90,0,0,0,0
+Egipto,nombre11,apellido11,11,0,4,0,0,0,0,0
+Egipto,nombre12,apellido12,12,2,5,180,0,0,0,0
+Egipto,nombre13,apellido13,13,3,6,270,0,0,0,0
+Egipto,nombre14,apellido14,14,3,3,270,0,0,0,0
+Egipto,nombre15,apellido15,15,2,3,180,0,0,0,0
+Egipto,nombre16,apellido16,16,1,3,90,0,1,0,0
+Egipto,nombre17,apellido17,17,1,3,90,0,0,0,1
+Egipto,nombre18,apellido18,18,2,3,180,0,0,0,0
+Egipto,nombre19,apellido19,19,0,3,0,0,0,0,0
+Egipto,nombre20,apellido20,20,2,3,180,0,0,0,0
+Egipto,nombre21,apellido21,21,0,3,0,0,0,0,0
+Egipto,nombre22,apellido22,22,0,3,0,0,0,0,0
+Egipto,nombre23,apellido23,23,2,3,180,0,0,0,0
+Egipto,nombre24,apellido24,24,2,3,180,0,0,0,0
+Egipto,nombre25,apellido25,25,1,3,90,0,0,0,0
+Egipto,nombre26,apellido26,26,0,3,0,0,0,0,0
+Tunez,nombre1,apellido1,1,2,4,210,0,0,0,0
+Tunez,nombre2,apellido2,2,4,5,390,0,0,0,1
+Tunez,nombre3,apellido3,3,2,4,210,0,0,0,1
+Tunez,nombre4,apellido4,4,3,4,270,0,0,0,0
+Tunez,nombre5,apellido5,5,2,4,240,0,0,0,0
+Tunez,nombre6,apellido6,6,2,4,180,0,0,0,0
+Tunez,nombre7,apellido7,7,3,5,300,0,1,0,1
+Tunez,nombre8,apellido8,8,3,4,330,0,0,0,0
+Tunez,nombre9,apellido9,9,4,3,360,0,0,0,0
+Tunez,nombre10,apellido10,10,1,3,120,0,0,0,0
+Tunez,nombre11,apellido11,11,2,3,180,0,0,0,1
+Tunez,nombre12,apellido12,12,5,4,510,0,0,0,1
+Tunez,nombre13,apellido13,13,3,4,300,0,0,0,0
+Tunez,nombre14,apellido14,14,1,3,90,0,0,0,0
+Tunez,nombre15,apellido15,15,3,4,330,0,0,0,1
+Tunez,nombre16,apellido16,16,3,3,300,0,0,0,0
+Tunez,nombre17,apellido17,17,2,4,210,0,0,0,0
+Tunez,nombre18,apellido18,18,4,5,390,0,0,0,0
+Tunez,nombre19,apellido19,19,3,3,300,0,1,0,0
+Tunez,nombre20,apellido20,20,4,4,390,0,1,0,0
+Tunez,nombre21,apellido21,21,3,4,300,0,0,0,1
+Tunez,nombre22,apellido22,22,1,4,90,0,0,0,0
+Tunez,nombre23,apellido23,23,3,3,300,0,0,0,0
+Tunez,nombre24,apellido24,24,1,3,90,0,0,0,0
+Tunez,nombre25,apellido25,25,1,3,120,0,0,0,0
+Tunez,nombre26,apellido26,26,1,3,90,0,0,0,0
+Argelia,nombre1,apellido1,1,3,4,300,0,0,0,1
+Argelia,nombre2,apellido2,2,1,4,120,0,0,0,0
+Argelia,nombre3,apellido3,3,2,5,240,0,0,0,0
+Argelia,nombre4,apellido4,4,1,5,120,0,0,0,0
+Argelia,nombre5,apellido5,5,5,5,510,0,0,0,1
+Argelia,nombre6,apellido6,6,1,4,90,0,0,0,0
+Argelia,nombre7,apellido7,7,1,4,120,0,0,0,0
+Argelia,nombre8,apellido8,8,2,4,210,0,0,0,0
+Argelia,nombre9,apellido9,9,3,4,300,0,0,0,1
+Argelia,nombre10,apellido10,10,1,4,90,0,0,0,0
+Argelia,nombre11,apellido11,11,2,4,210,0,0,0,1
+Argelia,nombre12,apellido12,12,2,4,240,0,0,0,1
+Argelia,nombre13,apellido13,13,3,4,270,0,0,0,0
+Argelia,nombre14,apellido14,14,2,4,210,0,0,0,0
+Argelia,nombre15,apellido15,15,2,6,210,0,0,0,0
+Argelia,nombre16,apellido16,16,1,5,120,0,1,0,1
+Argelia,nombre17,apellido17,17,2,3,180,0,0,0,0
+Argelia,nombre18,apellido18,18,2,3,180,0,0,0,1
+Argelia,nombre19,apellido19,19,3,3,300,0,0,0,0
+Argelia,nombre20,apellido20,20,4,3,420,0,0,0,1
+Argelia,nombre21,apellido21,21,2,4,210,0,0,0,0
+Argelia,nombre22,apellido22,22,3,3,300,0,0,0,1
+Argelia,nombre23,apellido23,23,3,3,270,0,0,0,0
+Argelia,nombre24,apellido24,24,2,3,180,0,0,0,0
+Argelia,nombre25,apellido25,25,0,3,0,0,0,0,0
+Argelia,nombre26,apellido26,26,2,4,210,0,1,0,0
+Arabia Saudi,nombre1,apellido1,1,3,4,270,0,0,0,2
+Arabia Saudi,nombre2,apellido2,2,1,5,90,0,0,0,0
+Arabia Saudi,nombre3,apellido3,3,2,4,180,0,0,0,0
+Arabia Saudi,nombre4,apellido4,4,1,4,120,0,0,0,0
+Arabia Saudi,nombre5,apellido5,5,0,4,0,0,0,0,0
+Arabia Saudi,nombre6,apellido6,6,2,4,210,0,0,0,0
+Arabia Saudi,nombre7,apellido7,7,4,3,390,0,0,0,0
+Arabia Saudi,nombre8,apellido8,8,3,3,300,0,0,0,0
+Arabia Saudi,nombre9,apellido9,9,2,3,210,0,0,0,0
+Arabia Saudi,nombre10,apellido10,10,2,3,180,0,0,0,0
+Arabia Saudi,nombre11,apellido11,11,1,4,90,0,0,0,0
+Arabia Saudi,nombre12,apellido12,12,1,3,120,0,0,0,0
+Arabia Saudi,nombre13,apellido13,13,0,3,0,0,0,0,0
+Arabia Saudi,nombre14,apellido14,14,1,3,90,0,0,0,0
+Arabia Saudi,nombre15,apellido15,15,4,5,390,0,0,0,0
+Arabia Saudi,nombre16,apellido16,16,3,3,270,0,0,0,0
+Arabia Saudi,nombre17,apellido17,17,3,4,270,0,0,0,1
+Arabia Saudi,nombre18,apellido18,18,1,3,90,0,0,0,0
+Arabia Saudi,nombre19,apellido19,19,4,4,390,0,1,0,0
+Arabia Saudi,nombre20,apellido20,20,3,6,300,0,0,0,1
+Arabia Saudi,nombre21,apellido21,21,3,3,270,0,0,0,0
+Arabia Saudi,nombre22,apellido22,22,5,3,480,0,1,0,1
+Arabia Saudi,nombre23,apellido23,23,1,3,90,0,0,0,0
+Arabia Saudi,nombre24,apellido24,24,1,3,90,0,0,0,1
+Arabia Saudi,nombre25,apellido25,25,3,3,300,0,0,0,0
+Arabia Saudi,nombre26,apellido26,26,1,3,90,0,0,0,0
+Qatar,nombre1,apellido1,1,1,4,120,0,0,0,0
+Qatar,nombre2,apellido2,2,4,4,390,0,0,0,0
+Qatar,nombre3,apellido3,3,3,3,300,0,0,0,0
+Qatar,nombre4,apellido4,4,2,3,180,0,0,0,0
+Qatar,nombre5,apellido5,5,1,3,90,0,0,0,0
+Qatar,nombre6,apellido6,6,1,3,90,0,0,0,0
+Qatar,nombre7,apellido7,7,1,4,90,0,0,0,0
+Qatar,nombre8,apellido8,8,2,3,180,0,0,0,0
+Qatar,nombre9,apellido9,9,2,3,180,0,0,0,1
+Qatar,nombre10,apellido10,10,2,3,210,0,1,0,0
+Qatar,nombre11,apellido11,11,1,3,90,0,0,0,0
+Qatar,nombre12,apellido12,12,4,3,390,0,1,0,1
+Qatar,nombre13,apellido13,13,0,3,0,0,0,0,0
+Qatar,nombre14,apellido14,14,2,4,180,0,0,0,0
+Qatar,nombre15,apellido15,15,2,3,210,0,0,0,0
+Qatar,nombre16,apellido16,16,1,3,90,0,0,0,0
+Qatar,nombre17,apellido17,17,1,3,90,0,0,0,0
+Qatar,nombre18,apellido18,18,1,4,120,0,0,0,0
+Qatar,nombre19,apellido19,19,3,3,300,0,0,0,0
+Qatar,nombre20,apellido20,20,0,3,0,0,0,0,0
+Qatar,nombre21,apellido21,21,0,3,0,0,0,0,0
+Qatar,nombre22,apellido22,22,3,3,300,0,0,0,0
+Qatar,nombre23,apellido23,23,2,3,210,0,0,0,1
+Qatar,nombre24,apellido24,24,3,3,300,0,1,0,0
+Qatar,nombre25,apellido25,25,1,2,90,0,0,0,0
+Qatar,nombre26,apellido26,26,1,2,90,0,0,0,0
+Irak,nombre1,apellido1,1,1,4,120,0,0,0,0
+Irak,nombre2,apellido2,2,1,4,90,0,0,0,0
+Irak,nombre3,apellido3,3,2,4,210,0,0,0,0
+Irak,nombre4,apellido4,4,1,6,90,0,0,0,0
+Irak,nombre5,apellido5,5,1,3,90,0,1,0,0
+Irak,nombre6,apellido6,6,2,3,180,0,0,0,2
+Irak,nombre7,apellido7,7,2,3,180,0,0,0,0
+Irak,nombre8,apellido8,8,2,3,180,0,1,0,0
+Irak,nombre9,apellido9,9,3,3,300,0,1,0,0
+Irak,nombre10,apellido10,10,1,3,120,0,0,0,0
+Irak,nombre11,apellido11,11,3,3,270,0,0,0,0
+Irak,nombre12,apellido12,12,0,3,0,0,0,0,0
+Irak,nombre13,apellido13,13,1,4,90,0,0,0,0
+Irak,nombre14,apellido14,14,1,3,90,0,0,0,0
+Irak,nombre15,apellido15,15,4,3,390,0,0,0,0
+Irak,nombre16,apellido16,16,2,3,210,0,0,0,0
+Irak,nombre17,apellido17,17,3,3,300,0,1,0,1
+Irak,nombre18,apellido18,18,1,3,120,0,1,0,1
+Irak,nombre19,apellido19,19,1,3,90,0,0,0,0
+Irak,nombre20,apellido20,20,3,4,270,0,0,0,1
+Irak,nombre21,apellido21,21,1,3,120,0,0,0,0
+Irak,nombre22,apellido22,22,1,3,90,0,0,0,0
+Irak,nombre23,apellido23,23,2,4,180,0,1,0,1
+Irak,nombre24,apellido24,24,3,4,300,0,0,0,0
+Irak,nombre25,apellido25,25,1,3,90,0,0,0,0
+Irak,nombre26,apellido26,26,1,3,120,0,1,0,1
+Uzbekistan,nombre1,apellido1,1,3,3,270,0,0,0,0
+Uzbekistan,nombre2,apellido2,2,1,3,90,0,0,0,1
+Uzbekistan,nombre3,apellido3,3,2,3,180,0,1,0,2
+Uzbekistan,nombre4,apellido4,4,1,3,90,0,0,0,0
+Uzbekistan,nombre5,apellido5,5,2,3,180,0,0,0,0
+Uzbekistan,nombre6,apellido6,6,0,3,0,0,0,0,0
+Uzbekistan,nombre7,apellido7,7,3,3,270,0,0,0,0
+Uzbekistan,nombre8,apellido8,8,1,4,90,0,0,0,0
+Uzbekistan,nombre9,apellido9,9,1,3,90,0,0,0,0
+Uzbekistan,nombre10,apellido10,10,1,3,90,0,1,0,0
+Uzbekistan,nombre11,apellido11,11,2,3,180,0,0,0,1
+Uzbekistan,nombre12,apellido12,12,2,3,180,0,0,0,0
+Uzbekistan,nombre13,apellido13,13,0,3,0,0,0,0,0
+Uzbekistan,nombre14,apellido14,14,0,3,0,0,0,0,0
+Uzbekistan,nombre15,apellido15,15,1,3,90,0,0,0,0
+Uzbekistan,nombre16,apellido16,16,3,3,270,0,0,0,1
+Uzbekistan,nombre17,apellido17,17,1,3,90,0,0,0,0
+Uzbekistan,nombre18,apellido18,18,1,3,90,0,0,0,0
+Uzbekistan,nombre19,apellido19,19,1,3,90,0,0,0,0
+Uzbekistan,nombre20,apellido20,20,1,5,90,0,0,0,0
+Uzbekistan,nombre21,apellido21,21,0,3,0,0,0,0,0
+Uzbekistan,nombre22,apellido22,22,2,3,180,0,0,0,0
+Uzbekistan,nombre23,apellido23,23,0,3,0,0,0,0,0
+Uzbekistan,nombre24,apellido24,24,2,3,180,0,0,0,0
+Uzbekistan,nombre25,apellido25,25,1,3,90,0,0,0,0
+Uzbekistan,nombre26,apellido26,26,1,3,90,0,0,0,0
+Nueva Zelanda,nombre1,apellido1,1,0,3,0,0,0,0,0
+Nueva Zelanda,nombre2,apellido2,2,1,3,90,0,0,0,1
+Nueva Zelanda,nombre3,apellido3,3,0,3,0,0,0,0,0
+Nueva Zelanda,nombre4,apellido4,4,1,3,90,0,0,0,0
+Nueva Zelanda,nombre5,apellido5,5,0,3,0,0,0,0,0
+Nueva Zelanda,nombre6,apellido6,6,0,3,0,0,0,0,0
+Nueva Zelanda,nombre7,apellido7,7,1,3,90,0,0,0,0
+Nueva Zelanda,nombre8,apellido8,8,1,4,90,0,0,0,0
+Nueva Zelanda,nombre9,apellido9,9,1,3,90,0,0,0,0
+Nueva Zelanda,nombre10,apellido10,10,0,3,0,0,0,0,0
+Nueva Zelanda,nombre11,apellido11,11,1,4,90,0,0,0,0
+Nueva Zelanda,nombre12,apellido12,12,1,3,90,0,0,0,0
+Nueva Zelanda,nombre13,apellido13,13,0,3,0,0,0,0,0
+Nueva Zelanda,nombre14,apellido14,14,1,4,90,0,0,0,0
+Nueva Zelanda,nombre15,apellido15,15,2,4,180,0,0,0,0
+Nueva Zelanda,nombre16,apellido16,16,2,3,180,0,0,0,0
+Nueva Zelanda,nombre17,apellido17,17,3,3,270,0,0,0,2
+Nueva Zelanda,nombre18,apellido18,18,2,3,180,0,0,0,0
+Nueva Zelanda,nombre19,apellido19,19,2,2,180,0,0,0,0
+Nueva Zelanda,nombre20,apellido20,20,1,2,90,0,0,0,0
+Nueva Zelanda,nombre21,apellido21,21,3,2,270,0,0,0,0
+Nueva Zelanda,nombre22,apellido22,22,2,2,180,0,0,0,0
+Nueva Zelanda,nombre23,apellido23,23,3,2,270,0,0,0,0
+Nueva Zelanda,nombre24,apellido24,24,3,2,270,0,0,0,1
+Nueva Zelanda,nombre25,apellido25,25,0,2,0,0,0,0,0
+Nueva Zelanda,nombre26,apellido26,26,2,2,180,0,0,0,1
+Panama,nombre1,apellido1,1,3,4,270,0,1,0,1
+Panama,nombre2,apellido2,2,1,4,90,0,0,0,0
+Panama,nombre3,apellido3,3,3,4,270,0,0,0,1
+Panama,nombre4,apellido4,4,0,4,0,0,0,0,0
+Panama,nombre5,apellido5,5,3,4,270,0,1,0,0
+Panama,nombre6,apellido6,6,2,4,180,0,0,0,0
+Panama,nombre7,apellido7,7,1,3,90,0,0,0,0
+Panama,nombre8,apellido8,8,1,3,90,0,0,0,0
+Panama,nombre9,apellido9,9,3,4,270,0,0,0,1
+Panama,nombre10,apellido10,10,2,4,180,0,0,0,0
+Panama,nombre11,apellido11,11,2,3,180,0,0,0,0
+Panama,nombre12,apellido12,12,3,3,270,0,0,0,0
+Panama,nombre13,apellido13,13,3,3,270,0,0,0,0
+Panama,nombre14,apellido14,14,1,3,90,0,0,0,0
+Panama,nombre15,apellido15,15,0,3,0,0,0,0,0
+Panama,nombre16,apellido16,16,3,3,270,0,0,0,0
+Panama,nombre17,apellido17,17,1,3,90,0,0,0,1
+Panama,nombre18,apellido18,18,2,3,180,0,0,0,0
+Panama,nombre19,apellido19,19,1,3,90,0,0,0,1
+Panama,nombre20,apellido20,20,1,3,90,0,0,0,1
+Panama,nombre21,apellido21,21,1,3,90,0,0,0,0
+Panama,nombre22,apellido22,22,1,3,90,0,0,0,0
+Panama,nombre23,apellido23,23,2,4,180,0,2,1,0
+Panama,nombre24,apellido24,24,2,3,180,0,0,0,0
+Panama,nombre25,apellido25,25,2,3,180,0,0,0,0
+Panama,nombre26,apellido26,26,0,3,0,0,0,0,0
+Jamaica,nombre1,apellido1,1,1,4,90,0,0,0,1
+Jamaica,nombre2,apellido2,2,1,3,90,0,0,0,0
+Jamaica,nombre3,apellido3,3,1,3,90,0,0,0,0
+Jamaica,nombre4,apellido4,4,1,3,90,0,0,0,0
+Jamaica,nombre5,apellido5,5,2,3,180,0,0,0,1
+Jamaica,nombre6,apellido6,6,1,3,90,0,0,0,0
+Jamaica,nombre7,apellido7,7,2,3,180,0,0,0,1
+Jamaica,nombre8,apellido8,8,1,3,90,0,0,0,0
+Jamaica,nombre9,apellido9,9,2,3,180,0,1,0,0
+Jamaica,nombre10,apellido10,10,2,3,180,0,0,0,0
+Jamaica,nombre11,apellido11,11,0,3,0,0,0,0,0
+Jamaica,nombre12,apellido12,12,2,3,180,0,0,0,0
+Jamaica,nombre13,apellido13,13,1,3,90,0,0,0,0
+Jamaica,nombre14,apellido14,14,0,3,0,0,0,0,0
+Jamaica,nombre15,apellido15,15,2,3,180,0,0,0,0
+Jamaica,nombre16,apellido16,16,0,3,0,0,0,0,0
+Jamaica,nombre17,apellido17,17,2,3,180,0,0,0,0
+Jamaica,nombre18,apellido18,18,1,3,90,0,0,0,0
+Jamaica,nombre19,apellido19,19,2,4,180,0,0,0,0
+Jamaica,nombre20,apellido20,20,2,3,180,0,0,0,0
+Jamaica,nombre21,apellido21,21,2,4,180,0,0,0,0
+Jamaica,nombre22,apellido22,22,2,3,180,0,0,0,1
+Jamaica,nombre23,apellido23,23,0,3,0,0,0,0,0
+Jamaica,nombre24,apellido24,24,0,3,0,0,0,0,0
+Jamaica,nombre25,apellido25,25,2,3,180,0,0,0,0
+Jamaica,nombre26,apellido26,26,1,3,90,0,0,0,0
+Honduras,nombre1,apellido1,1,1,3,120,0,0,0,0
+Honduras,nombre2,apellido2,2,4,3,390,0,0,0,2
+Honduras,nombre3,apellido3,3,2,3,180,0,0,0,0
+Honduras,nombre4,apellido4,4,2,3,180,0,0,0,0
+Honduras,nombre5,apellido5,5,1,3,120,0,0,0,0
+Honduras,nombre6,apellido6,6,1,3,90,0,0,0,0
+Honduras,nombre7,apellido7,7,2,3,180,0,0,0,1
+Honduras,nombre8,apellido8,8,0,3,0,0,0,0,0
+Honduras,nombre9,apellido9,9,0,3,0,0,0,0,0
+Honduras,nombre10,apellido10,10,2,3,210,0,0,0,1
+Honduras,nombre11,apellido11,11,0,3,0,0,0,0,0
+Honduras,nombre12,apellido12,12,2,4,180,0,0,0,0
+Honduras,nombre13,apellido13,13,1,4,120,0,0,0,0
+Honduras,nombre14,apellido14,14,2,3,210,0,0,0,0
+Honduras,nombre15,apellido15,15,2,3,180,0,0,0,0
+Honduras,nombre16,apellido16,16,1,3,90,0,0,0,0
+Honduras,nombre17,apellido17,17,1,3,90,0,0,0,0
+Honduras,nombre18,apellido18,18,3,4,270,0,0,0,0
+Honduras,nombre19,apellido19,19,3,4,300,0,0,0,1
+Honduras,nombre20,apellido20,20,1,3,120,0,1,0,0
+Honduras,nombre21,apellido21,21,2,3,180,0,0,0,0
+Honduras,nombre22,apellido22,22,2,3,180,0,0,0,1
+Honduras,nombre23,apellido23,23,3,3,300,0,0,0,1
+Honduras,nombre24,apellido24,24,3,3,300,0,0,0,1
+Honduras,nombre25,apellido25,25,1,2,90,0,0,0,1
+Honduras,nombre26,apellido26,26,2,2,210,0,0,0,0
+Paraguay,nombre1,apellido1,1,4,6,360,0,0,0,1
+Paraguay,nombre2,apellido2,2,1,4,90,0,0,0,0
+Paraguay,nombre3,apellido3,3,3,4,270,0,0,0,0
+Paraguay,nombre4,apellido4,4,2,4,210,0,1,0,0
+Paraguay,nombre5,apellido5,5,1,4,90,0,0,0,0
+Paraguay,nombre6,apellido6,6,2,4,180,0,0,0,1
+Paraguay,nombre7,apellido7,7,2,5,210,0,0,0,0
+Paraguay,nombre8,apellido8,8,0,4,0,0,0,0,0
+Paraguay,nombre9,apellido9,9,4,5,390,0,0,0,0
+Paraguay,nombre10,apellido10,10,2,4,210,0,0,0,0
+Paraguay,nombre11,apellido11,11,1,4,120,0,0,0,0
+Paraguay,nombre12,apellido12,12,2,3,180,0,1,0,1
+Paraguay,nombre13,apellido13,13,2,3,180,0,0,0,0
+Paraguay,nombre14,apellido14,14,2,3,210,0,0,0,1
+Paraguay,nombre15,apellido15,15,2,4,180,0,0,0,1
+Paraguay,nombre16,apellido16,16,2,3,180,0,1,0,0
+Paraguay,nombre17,apellido17,17,3,4,300,0,1,0,0
+Paraguay,nombre18,apellido18,18,1,3,90,0,0,0,0
+Paraguay,nombre19,apellido19,19,3,3,300,0,0,0,1
+Paraguay,nombre20,apellido20,20,2,3,180,0,0,0,0
+Paraguay,nombre21,apellido21,21,3,3,300,0,0,0,0
+Paraguay,nombre22,apellido22,22,2,3,180,0,0,0,0
+Paraguay,nombre23,apellido23,23,3,3,300,0,0,0,0
+Paraguay,nombre24,apellido24,24,2,4,180,0,0,0,0
+Paraguay,nombre25,apellido25,25,1,4,90,0,0,0,0
+Paraguay,nombre26,apellido26,26,3,3,300,0,1,0,1
+Chile,nombre1,apellido1,1,3,5,270,0,0,0,0
+Chile,nombre2,apellido2,2,4,4,360,0,1,0,1
+Chile,nombre3,apellido3,3,1,4,90,0,0,0,0
+Chile,nombre4,apellido4,4,1,4,90,0,0,0,1
+Chile,nombre5,apellido5,5,1,4,90,0,0,0,0
+Chile,nombre6,apellido6,6,3,4,270,0,0,0,0
+Chile,nombre7,apellido7,7,1,4,90,0,0,0,1
+Chile,nombre8,apellido8,8,3,4,270,0,0,0,1
+Chile,nombre9,apellido9,9,3,4,270,0,0,0,0
+Chile,nombre10,apellido10,10,1,4,90,0,0,0,0
+Chile,nombre11,apellido11,11,3,4,270,0,0,0,1
+Chile,nombre12,apellido12,12,3,5,270,0,0,0,0
+Chile,nombre13,apellido13,13,1,4,90,0,0,0,0
+Chile,nombre14,apellido14,14,0,4,0,0,0,0,0
+Chile,nombre15,apellido15,15,3,4,270,0,0,0,0
+Chile,nombre16,apellido16,16,3,4,270,0,1,0,1
+Chile,nombre17,apellido17,17,2,5,180,0,0,0,0
+Chile,nombre18,apellido18,18,2,4,180,0,0,0,0
+Chile,nombre19,apellido19,19,3,4,270,0,0,0,1
+Chile,nombre20,apellido20,20,3,3,270,0,0,0,1
+Chile,nombre21,apellido21,21,1,4,90,0,0,0,0
+Chile,nombre22,apellido22,22,2,4,180,0,0,0,0
+Chile,nombre23,apellido23,23,0,3,0,0,0,0,0
+Chile,nombre24,apellido24,24,3,3,270,0,0,0,0
+Chile,nombre25,apellido25,25,3,3,270,0,0,0,1
+Chile,nombre26,apellido26,26,2,3,180,0,0,0,1
+Peru,nombre1,apellido1,1,2,4,180,0,0,0,0
+Peru,nombre2,apellido2,2,0,4,0,0,0,0,0
+Peru,nombre3,apellido3,3,2,4,180,0,0,0,0
+Peru,nombre4,apellido4,4,1,5,90,0,0,0,0
+Peru,nombre5,apellido5,5,2,4,180,0,0,0,0
+Peru,nombre6,apellido6,6,2,3,180,0,0,0,1
+Peru,nombre7,apellido7,7,1,3,90,0,0,0,0
+Peru,nombre8,apellido8,8,2,3,180,0,0,0,0
+Peru,nombre9,apellido9,9,2,3,180,0,0,0,0
+Peru,nombre10,apellido10,10,2,3,180,0,0,0,0
+Peru,nombre11,apellido11,11,1,3,90,0,0,0,0
+Peru,nombre12,apellido12,12,1,3,90,0,0,0,1
+Peru,nombre13,apellido13,13,2,3,180,0,0,0,0
+Peru,nombre14,apellido14,14,1,3,90,0,0,0,0
+Peru,nombre15,apellido15,15,1,3,90,0,0,0,0
+Peru,nombre16,apellido16,16,0,3,0,0,0,0,0
+Peru,nombre17,apellido17,17,2,3,180,0,1,0,1
+Peru,nombre18,apellido18,18,0,3,0,0,0,0,0
+Peru,nombre19,apellido19,19,2,4,180,0,0,0,0
+Peru,nombre20,apellido20,20,0,3,0,0,0,0,0
+Peru,nombre21,apellido21,21,1,3,90,0,0,0,0
+Peru,nombre22,apellido22,22,2,3,180,0,0,0,0
+Peru,nombre23,apellido23,23,1,3,90,0,0,0,0
+Peru,nombre24,apellido24,24,1,3,90,0,0,0,0
+Peru,nombre25,apellido25,25,1,3,90,0,0,0,0
+Peru,nombre26,apellido26,26,1,3,90,0,0,0,0
+Bolivia,nombre1,apellido1,1,0,3,0,0,0,0,0
+Bolivia,nombre2,apellido2,2,1,3,90,0,0,0,1
+Bolivia,nombre3,apellido3,3,0,3,0,0,0,0,0
+Bolivia,nombre4,apellido4,4,1,3,90,0,0,0,1
+Bolivia,nombre5,apellido5,5,1,3,90,0,0,0,0
+Bolivia,nombre6,apellido6,6,1,3,90,0,0,0,1
+Bolivia,nombre7,apellido7,7,1,3,90,0,0,0,0
+Bolivia,nombre8,apellido8,8,1,3,90,0,0,0,0
+Bolivia,nombre9,apellido9,9,1,3,90,0,0,0,1
+Bolivia,nombre10,apellido10,10,2,3,180,0,0,0,0
+Bolivia,nombre11,apellido11,11,2,3,180,0,0,0,0
+Bolivia,nombre12,apellido12,12,2,3,180,0,0,0,0
+Bolivia,nombre13,apellido13,13,1,3,90,0,0,0,0
+Bolivia,nombre14,apellido14,14,2,3,180,0,0,0,0
+Bolivia,nombre15,apellido15,15,1,3,90,0,0,0,0
+Bolivia,nombre16,apellido16,16,1,3,90,0,0,0,0
+Bolivia,nombre17,apellido17,17,3,3,270,0,0,0,0
+Bolivia,nombre18,apellido18,18,0,2,0,0,0,0,0
+Bolivia,nombre19,apellido19,19,2,2,180,0,0,0,0
+Bolivia,nombre20,apellido20,20,0,2,0,0,0,0,0
+Bolivia,nombre21,apellido21,21,2,2,180,0,0,0,0
+Bolivia,nombre22,apellido22,22,1,3,90,0,0,0,0
+Bolivia,nombre23,apellido23,23,1,2,90,0,0,0,0
+Bolivia,nombre24,apellido24,24,1,2,90,0,0,0,0
+Bolivia,nombre25,apellido25,25,3,2,270,0,1,0,1
+Bolivia,nombre26,apellido26,26,2,3,180,0,0,0,0
+Venezuela,nombre1,apellido1,1,0,3,0,0,0,0,0
+Venezuela,nombre2,apellido2,2,1,3,90,0,0,0,0
+Venezuela,nombre3,apellido3,3,2,3,180,0,0,0,1
+Venezuela,nombre4,apellido4,4,1,3,90,0,0,0,0
+Venezuela,nombre5,apellido5,5,1,3,90,0,0,0,0
+Venezuela,nombre6,apellido6,6,2,3,180,0,0,0,0
+Venezuela,nombre7,apellido7,7,1,3,90,0,0,0,1
+Venezuela,nombre8,apellido8,8,2,3,180,0,0,0,1
+Venezuela,nombre9,apellido9,9,1,3,90,0,0,0,0
+Venezuela,nombre10,apellido10,10,1,3,90,0,0,0,0
+Venezuela,nombre11,apellido11,11,1,3,90,0,0,0,0
+Venezuela,nombre12,apellido12,12,1,4,90,0,0,0,0
+Venezuela,nombre13,apellido13,13,1,5,90,0,1,0,0
+Venezuela,nombre14,apellido14,14,1,3,90,0,0,0,0
+Venezuela,nombre15,apellido15,15,2,3,180,0,0,0,0
+Venezuela,nombre16,apellido16,16,2,3,180,0,0,0,0
+Venezuela,nombre17,apellido17,17,2,3,180,0,0,0,0
+Venezuela,nombre18,apellido18,18,1,3,90,0,0,0,0
+Venezuela,nombre19,apellido19,19,0,3,0,0,0,0,0
+Venezuela,nombre20,apellido20,20,2,3,180,0,0,0,0
+Venezuela,nombre21,apellido21,21,3,3,270,0,0,0,0
+Venezuela,nombre22,apellido22,22,0,2,0,0,0,0,0
+Venezuela,nombre23,apellido23,23,1,2,90,0,0,0,0
+Venezuela,nombre24,apellido24,24,2,2,180,0,0,0,0
+Venezuela,nombre25,apellido25,25,1,2,90,0,1,0,0
+Venezuela,nombre26,apellido26,26,1,2,90,0,0,0,0
+Suecia,nombre1,apellido1,1,2,6,180,0,1,0,0
+Suecia,nombre2,apellido2,2,1,4,90,0,0,0,0
+Suecia,nombre3,apellido3,3,2,4,180,0,0,0,0
+Suecia,nombre4,apellido4,4,4,6,360,0,0,0,0
+Suecia,nombre5,apellido5,5,2,4,180,0,0,0,1
+Suecia,nombre6,apellido6,6,1,5,90,0,0,0,0
+Suecia,nombre7,apellido7,7,1,4,90,0,0,0,1
+Suecia,nombre8,apellido8,8,3,5,270,0,0,0,1
+Suecia,nombre9,apellido9,9,2,4,180,0,0,0,1
+Suecia,nombre10,apellido10,10,1,4,90,0,0,0,0
+Suecia,nombre11,apellido11,11,2,4,180,0,1,0,0
+Suecia,nombre12,apellido12,12,0,4,0,0,0,0,0
+Suecia,nombre13,apellido13,13,1,4,90,0,0,0,0
+Suecia,nombre14,apellido14,14,3,5,270,0,0,0,0
+Suecia,nombre15,apellido15,15,2,5,180,0,0,0,0
+Suecia,nombre16,apellido16,16,2,4,180,0,2,1,1
+Suecia,nombre17,apellido17,17,1,4,90,0,0,0,0
+Suecia,nombre18,apellido18,18,2,4,180,0,1,0,1
+Suecia,nombre19,apellido19,19,1,4,90,0,0,0,0
+Suecia,nombre20,apellido20,20,1,4,90,0,0,0,0
+Suecia,nombre21,apellido21,21,3,4,270,0,0,0,0
+Suecia,nombre22,apellido22,22,1,4,90,0,0,0,0
+Suecia,nombre23,apellido23,23,3,5,270,0,1,0,0
+Suecia,nombre24,apellido24,24,1,4,90,0,0,0,0
+Suecia,nombre25,apellido25,25,1,3,90,0,0,0,0
+Suecia,nombre26,apellido26,26,1,3,90,0,0,0,1
+Noruega,nombre1,apellido1,1,2,6,180,0,0,0,0
+Noruega,nombre2,apellido2,2,3,4,270,0,0,0,0
+Noruega,nombre3,apellido3,3,0,4,0,0,0,0,0
+Noruega,nombre4,apellido4,4,0,4,0,0,0,0,0
+Noruega,nombre5,apellido5,5,3,6,270,0,0,0,0
+Noruega,nombre6,apellido6,6,2,4,180,0,0,0,0
+Noruega,nombre7,apellido7,7,1,4,90,0,0,0,0
+Noruega,nombre8,apellido8,8,2,4,180,0,0,0,0
+Noruega,nombre9,apellido9,9,0,4,0,0,0,0,0
+Noruega,nombre10,apellido10,10,0,4,0,0,0,0,0
+Noruega,nombre11,apellido11,11,1,4,90,0,0,0,0
+Noruega,nombre12,apellido12,12,0,4,0,0,0,0,0
+Noruega,nombre13,apellido13,13,2,4,180,0,1,0,0
+Noruega,nombre14,apellido14,14,3,4,270,0,0,0,1
+Noruega,nombre15,apellido15,15,1,4,90,0,0,0,0
+Noruega,nombre16,apellido16,16,2,4,180,0,0,0,0
+Noruega,nombre17,apellido17,17,1,4,90,0,0,0,0
+Noruega,nombre18,apellido18,18,1,4,90,0,0,0,1
+Noruega,nombre19,apellido19,19,3,4,270,0,0,0,0
+Noruega,nombre20,apellido20,20,0,4,0,0,0,0,0
+Noruega,nombre21,apellido21,21,2,4,180,0,1,0,0
+Noruega,nombre22,apellido22,22,0,4,0,0,0,0,0
+Noruega,nombre23,apellido23,23,0,3,0,0,0,0,0
+Noruega,nombre24,apellido24,24,1,3,90,0,0,0,0
+Noruega,nombre25,apellido25,25,2,3,180,0,0,0,0
+Noruega,nombre26,apellido26,26,1,3,90,0,0,0,1
+Polonia,nombre1,apellido1,1,0,5,0,0,0,0,0
+Polonia,nombre2,apellido2,2,1,5,90,0,0,0,0
+Polonia,nombre3,apellido3,3,1,5,90,0,0,0,0
+Polonia,nombre4,apellido4,4,0,5,0,0,0,0,0
+Polonia,nombre5,apellido5,5,0,5,0,0,0,0,0
+Polonia,nombre6,apellido6,6,2,5,180,0,0,0,0
+Polonia,nombre7,apellido7,7,2,4,180,0,1,0,0
+Polonia,nombre8,apellido8,8,0,4,0,0,0,0,0
+Polonia,nombre9,apellido9,9,1,4,90,0,0,0,1
+Polonia,nombre10,apellido10,10,1,5,90,0,0,0,0
+Polonia,nombre11,apellido11,11,2,4,180,0,1,0,1
+Polonia,nombre12,apellido12,12,3,4,270,0,0,0,0
+Polonia,nombre13,apellido13,13,1,4,90,0,0,0,0
+Polonia,nombre14,apellido14,14,2,4,180,0,0,0,0
+Polonia,nombre15,apellido15,15,0,4,0,0,0,0,0
+Polonia,nombre16,apellido16,16,2,5,180,0,0,0,0
+Polonia,nombre17,apellido17,17,2,4,180,0,0,0,1
+Polonia,nombre18,apellido18,18,1,4,90,0,0,0,0
+Polonia,nombre19,apellido19,19,0,4,0,0,0,0,0
+Polonia,nombre20,apellido20,20,2,4,180,0,0,0,0
+Polonia,nombre21,apellido21,21,1,4,90,0,0,0,0
+Polonia,nombre22,apellido22,22,1,4,90,0,0,0,1
+Polonia,nombre23,apellido23,23,2,4,180,0,0,0,1
+Polonia,nombre24,apellido24,24,2,4,180,0,0,0,0
+Polonia,nombre25,apellido25,25,2,4,180,0,0,0,0
+Polonia,nombre26,apellido26,26,2,4,180,0,0,0,0

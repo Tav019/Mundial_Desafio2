@@ -1,10 +1,12 @@
 #include "fecha.h"
 
+using namespace std;
+
 Fecha::Fecha()
 {
     dia = 1;
     mes = 1;
-    anio = 2000;
+    anio = 2026;
 }
 
 Fecha::Fecha(int dia, int mes, int anio)
@@ -19,7 +21,7 @@ Fecha::Fecha(int dia, int mes, int anio)
     {
         this->dia = 1;
         this->mes = 1;
-        this->anio = 2000;
+        this->anio = 2026;
     }
 }
 
@@ -29,47 +31,27 @@ Fecha::~Fecha()
 
 bool Fecha::esBisiesto(int anio) const
 {
-    if (anio % 400 == 0) return true;
-    if (anio % 100 == 0) return false;
-    return anio % 4 == 0;
+    return (anio % 400 == 0) || (anio % 4 == 0 && anio % 100 != 0);
 }
 
 int Fecha::diasDelMes(int mes, int anio) const
 {
-    switch (mes)
-    {
-        case 1: return 31;
-        case 2: return esBisiesto(anio) ? 29 : 28;
-        case 3: return 31;
-        case 4: return 30;
-        case 5: return 31;
-        case 6: return 30;
-        case 7: return 31;
-        case 8: return 31;
-        case 9: return 30;
-        case 10: return 31;
-        case 11: return 30;
-        case 12: return 31;
-        default: return 0;
-    }
+    if (mes == 2) return esBisiesto(anio) ? 29 : 28;
+    if (mes == 4 || mes == 6 || mes == 9 || mes == 11) return 30;
+    return 31;
 }
 
 bool Fecha::esValidaInterna(int dia, int mes, int anio) const
 {
-    if (anio < 0 || mes < 1 || mes > 12)
-    {
-        return false;
-    }
-
-    return dia >= 1 && dia <= diasDelMes(mes, anio);
+    if (anio < 1 || mes < 1 || mes > 12 || dia < 1) return false;
+    return dia <= diasDelMes(mes, anio);
 }
 
 int Fecha::convertirADias() const
 {
-    // Se transforma la fecha a un total absoluto de días para comparar y restar fechas.
     int total = 0;
 
-    for (int a = 0; a < anio; a++)
+    for (int a = 1; a < anio; a++)
     {
         total += esBisiesto(a) ? 366 : 365;
     }
@@ -85,27 +67,29 @@ int Fecha::convertirADias() const
 
 void Fecha::avanzarDias(int dias)
 {
-    for (int i = 0; i < dias; i++)
+    if (dias < 0) return;
+
+    while (dias > 0)
     {
         dia++;
-
         if (dia > diasDelMes(mes, anio))
         {
             dia = 1;
             mes++;
-
             if (mes > 12)
             {
                 mes = 1;
                 anio++;
             }
         }
+        dias--;
     }
 }
 
 int Fecha::diferencia(const Fecha& otra) const
 {
-    return convertirADias() - otra.convertirADias();
+    int dif = otra.convertirADias() - convertirADias();
+    return dif < 0 ? -dif : dif;
 }
 
 bool Fecha::esValida() const
@@ -113,20 +97,9 @@ bool Fecha::esValida() const
     return esValidaInterna(dia, mes, anio);
 }
 
-int Fecha::getDia() const
-{
-    return dia;
-}
-
-int Fecha::getMes() const
-{
-    return mes;
-}
-
-int Fecha::getAnio() const
-{
-    return anio;
-}
+int Fecha::getDia() const { return dia; }
+int Fecha::getMes() const { return mes; }
+int Fecha::getAnio() const { return anio; }
 
 bool Fecha::operator==(const Fecha& otra) const
 {
@@ -135,24 +108,14 @@ bool Fecha::operator==(const Fecha& otra) const
 
 bool Fecha::operator<(const Fecha& otra) const
 {
-    if (anio != otra.anio) return anio < otra.anio;
-    if (mes != otra.mes) return mes < otra.mes;
-    return dia < otra.dia;
+    return convertirADias() < otra.convertirADias();
 }
 
-std::ostream& operator<<(std::ostream& os, const Fecha& fecha)
+ostream& operator<<(ostream& os, const Fecha& fecha)
 {
-    os << fecha.dia << "/" << fecha.mes << "/" << fecha.anio;
+    if (fecha.dia < 10) os << "0";
+    os << fecha.dia << "/";
+    if (fecha.mes < 10) os << "0";
+    os << fecha.mes << "/" << fecha.anio;
     return os;
 }
-
-
-
-
-
-
-
-
-
-
-

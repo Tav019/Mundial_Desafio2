@@ -1,5 +1,7 @@
 #include "equipo.h"
 
+using namespace std;
+
 Equipo::Equipo()
 {
     pais = "";
@@ -18,13 +20,13 @@ Equipo::Equipo()
     puntosGrupo = 0;
 }
 
-Equipo::Equipo(const std::string& pais, int ranking, const std::string& confederacion)
+Equipo::Equipo(const string& pais, int rankingFIFA, const string& confederacion)
 {
     this->pais = pais;
-    directorTecnico = "";
-    federacion = "";
+    directorTecnico = "DT_" + pais;
+    federacion = "Federacion_" + pais;
     this->confederacion = confederacion;
-    rankingFIFA = ranking;
+    this->rankingFIFA = rankingFIFA;
     golesFavor = 0;
     golesContra = 0;
     partidosGanados = 0;
@@ -36,27 +38,27 @@ Equipo::Equipo(const std::string& pais, int ranking, const std::string& confeder
     puntosGrupo = 0;
 }
 
-Equipo::Equipo(const std::string& pais,
-               const std::string& directorTecnico,
-               const std::string& federacion,
-               const std::string& confederacion,
-               int ranking,
+Equipo::Equipo(const string& pais,
+               const string& directorTecnico,
+               const string& federacion,
+               const string& confederacion,
+               int rankingFIFA,
                int golesFavor,
                int golesContra,
-               int ganados,
-               int empatados,
-               int perdidos)
+               int partidosGanados,
+               int partidosEmpatados,
+               int partidosPerdidos)
 {
     this->pais = pais;
     this->directorTecnico = directorTecnico;
     this->federacion = federacion;
     this->confederacion = confederacion;
-    rankingFIFA = ranking;
+    this->rankingFIFA = rankingFIFA;
     this->golesFavor = golesFavor;
     this->golesContra = golesContra;
-    partidosGanados = ganados;
-    partidosEmpatados = empatados;
-    partidosPerdidos = perdidos;
+    this->partidosGanados = partidosGanados;
+    this->partidosEmpatados = partidosEmpatados;
+    this->partidosPerdidos = partidosPerdidos;
     tarjetasAmarillas = 0;
     tarjetasRojas = 0;
     faltas = 0;
@@ -80,13 +82,9 @@ Equipo::Equipo(const Equipo& otro)
     faltas = otro.faltas;
     puntosGrupo = otro.puntosGrupo;
 
-    // Se hace copia profunda de la plantilla para que cada equipo dueño controle su memoria.
     for (int i = 0; i < otro.jugadores.getCantidad(); i++)
     {
-        if (otro.jugadores[i] != nullptr)
-        {
-            jugadores.agregar(new Jugador(*otro.jugadores[i]));
-        }
+        jugadores.agregar(new Jugador(*otro.jugadores[i]));
     }
 }
 
@@ -98,140 +96,61 @@ Equipo::~Equipo()
     }
 }
 
-std::string Equipo::getPais() const
-{
-    return pais;
-}
+string Equipo::getPais() const { return pais; }
+string Equipo::getDirectorTecnico() const { return directorTecnico; }
+string Equipo::getFederacion() const { return federacion; }
+string Equipo::getConfederacion() const { return confederacion; }
+int Equipo::getRankingFIFA() const { return rankingFIFA; }
+int Equipo::getGolesFavor() const { return golesFavor; }
+int Equipo::getGolesContra() const { return golesContra; }
+int Equipo::getDiferenciaGol() const { return golesFavor - golesContra; }
+int Equipo::getPartidosGanados() const { return partidosGanados; }
+int Equipo::getPartidosEmpatados() const { return partidosEmpatados; }
+int Equipo::getPartidosPerdidos() const { return partidosPerdidos; }
+int Equipo::getPartidosTotales() const { return partidosGanados + partidosEmpatados + partidosPerdidos; }
+int Equipo::getTarjetasAmarillas() const { return tarjetasAmarillas; }
+int Equipo::getTarjetasRojas() const { return tarjetasRojas; }
+int Equipo::getFaltas() const { return faltas; }
+int Equipo::getPuntosGrupo() const { return puntosGrupo; }
 
-std::string Equipo::getDirectorTecnico() const
-{
-    return directorTecnico;
-}
-
-std::string Equipo::getFederacion() const
-{
-    return federacion;
-}
-
-std::string Equipo::getConfederacion() const
-{
-    return confederacion;
-}
-
-int Equipo::getRankingFIFA() const
-{
-    return rankingFIFA;
-}
-
-int Equipo::getPuntosGrupo() const
-{
-    return puntosGrupo;
-}
-
-int Equipo::getGolesFavor() const
-{
-    return golesFavor;
-}
-
-int Equipo::getGolesContra() const
-{
-    return golesContra;
-}
-
-int Equipo::getDiferenciaGol() const
-{
-    return golesFavor - golesContra;
-}
-
-int Equipo::getPartidosTotales() const
-{
-    return partidosGanados + partidosEmpatados + partidosPerdidos;
-}
-
-int Equipo::getTarjetasAmarillas() const
-{
-    return tarjetasAmarillas;
-}
-
-int Equipo::getTarjetasRojas() const
-{
-    return tarjetasRojas;
-}
-
-int Equipo::getFaltas() const
-{
-    return faltas;
-}
-
-void Equipo::setDirectorTecnico(const std::string& directorTecnico)
-{
-    this->directorTecnico = directorTecnico;
-}
-
-void Equipo::setFederacion(const std::string& federacion)
-{
-    this->federacion = federacion;
-}
-
-void Equipo::setRankingFIFA(int rankingFIFA)
-{
-    this->rankingFIFA = rankingFIFA;
-}
+void Equipo::setDirectorTecnico(const string& directorTecnico) { this->directorTecnico = directorTecnico; }
+void Equipo::setFederacion(const string& federacion) { this->federacion = federacion; }
+void Equipo::setConfederacion(const string& confederacion) { this->confederacion = confederacion; }
+void Equipo::setRankingFIFA(int rankingFIFA) { this->rankingFIFA = rankingFIFA; }
 
 void Equipo::agregarJugador(Jugador* jugador)
 {
-    if (jugador != nullptr)
+    if (jugador != 0)
     {
         jugadores.agregar(jugador);
     }
 }
 
-Jugador* Equipo::getJugador(int pos) const
+Jugador* Equipo::getJugador(int posicion) const
 {
-    if (pos < 0 || pos >= jugadores.getCantidad())
+    if (posicion < 0 || posicion >= jugadores.getCantidad())
     {
-        return nullptr;
+        return 0;
     }
 
-    return jugadores[pos];
+    return jugadores[posicion];
 }
 
-int Equipo::getCantidadJugadores() const
-{
-    return jugadores.getCantidad();
-}
-
-Lista<Jugador*>& Equipo::getJugadores()
-{
-    return jugadores;
-}
-
-const Lista<Jugador*>& Equipo::getJugadores() const
-{
-    return jugadores;
-}
+int Equipo::getCantidadJugadores() const { return jugadores.getCantidad(); }
+Lista<Jugador*>& Equipo::getJugadores() { return jugadores; }
+const Lista<Jugador*>& Equipo::getJugadores() const { return jugadores; }
 
 void Equipo::actualizarEstadisticas(int gf, int gc, int amarillas, int rojas, int faltas)
 {
-    // Cada partido impacta directamente el histórico general del equipo.
     golesFavor += gf;
     golesContra += gc;
     tarjetasAmarillas += amarillas;
     tarjetasRojas += rojas;
     this->faltas += faltas;
 
-    if (gf > gc)
-    {
-        partidosGanados++;
-    }
-    else if (gf == gc)
-    {
-        partidosEmpatados++;
-    }
-    else
-    {
-        partidosPerdidos++;
-    }
+    if (gf > gc) partidosGanados++;
+    else if (gf < gc) partidosPerdidos++;
+    else partidosEmpatados++;
 }
 
 void Equipo::sumarPuntos(int puntos)
@@ -249,12 +168,7 @@ void Equipo::reiniciarPuntosGrupo()
 
 bool Equipo::operator<(const Equipo& otro) const
 {
-    if (rankingFIFA != otro.rankingFIFA)
-    {
-        return rankingFIFA < otro.rankingFIFA;
-    }
-
-    return pais < otro.pais;
+    return rankingFIFA < otro.rankingFIFA;
 }
 
 bool Equipo::operator==(const Equipo& otro) const
@@ -262,14 +176,18 @@ bool Equipo::operator==(const Equipo& otro) const
     return pais == otro.pais;
 }
 
-std::ostream& operator<<(std::ostream& os, const Equipo& equipo)
+ostream& operator<<(ostream& os, const Equipo& equipo)
 {
     os << equipo.pais
-       << " | Ranking FIFA: " << equipo.rankingFIFA
        << " | Confederacion: " << equipo.confederacion
+       << " | Ranking FIFA: " << equipo.rankingFIFA
        << " | GF: " << equipo.golesFavor
        << " | GC: " << equipo.golesContra
-       << " | Pts grupo: " << equipo.puntosGrupo;
-
+       << " | PG: " << equipo.partidosGanados
+       << " | PE: " << equipo.partidosEmpatados
+       << " | PP: " << equipo.partidosPerdidos
+       << " | TA: " << equipo.tarjetasAmarillas
+       << " | TR: " << equipo.tarjetasRojas
+       << " | Faltas: " << equipo.faltas;
     return os;
 }

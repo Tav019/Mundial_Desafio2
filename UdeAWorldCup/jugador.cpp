@@ -1,5 +1,7 @@
 #include "jugador.h"
 
+using namespace std;
+
 Jugador::Jugador()
 {
     nombre = "";
@@ -14,11 +16,11 @@ Jugador::Jugador()
     faltas = 0;
 }
 
-Jugador::Jugador(const std::string& nombre, const std::string& apellido, int numero)
+Jugador::Jugador(const string& nombre, const string& apellido, int numeroCamiseta)
 {
     this->nombre = nombre;
     this->apellido = apellido;
-    numeroCamiseta = numero;
+    this->numeroCamiseta = numeroCamiseta;
     partidosJugados = 0;
     goles = 0;
     minutosJugados = 0;
@@ -46,70 +48,19 @@ Jugador::~Jugador()
 {
 }
 
-std::string Jugador::getNombre() const
-{
-    return nombre;
-}
-
-std::string Jugador::getApellido() const
-{
-    return apellido;
-}
-
-int Jugador::getNumeroCamiseta() const
-{
-    return numeroCamiseta;
-}
-
-int Jugador::getPartidosJugados() const
-{
-    return partidosJugados;
-}
-
-int Jugador::getGoles() const
-{
-    return goles;
-}
-
-int Jugador::getMinutosJugados() const
-{
-    return minutosJugados;
-}
-
-int Jugador::getMinutos() const
-{
-    return minutosJugados;
-}
-
-int Jugador::getAsistencias() const
-{
-    return asistencias;
-}
-
-int Jugador::getTarjetasAmarillas() const
-{
-    return tarjetasAmarillas;
-}
-
-int Jugador::getAmarillas() const
-{
-    return tarjetasAmarillas;
-}
-
-int Jugador::getTarjetasRojas() const
-{
-    return tarjetasRojas;
-}
-
-int Jugador::getRojas() const
-{
-    return tarjetasRojas;
-}
-
-int Jugador::getFaltas() const
-{
-    return faltas;
-}
+string Jugador::getNombre() const { return nombre; }
+string Jugador::getApellido() const { return apellido; }
+int Jugador::getNumeroCamiseta() const { return numeroCamiseta; }
+int Jugador::getPartidosJugados() const { return partidosJugados; }
+int Jugador::getGoles() const { return goles; }
+int Jugador::getMinutosJugados() const { return minutosJugados; }
+int Jugador::getMinutos() const { return minutosJugados; }
+int Jugador::getAsistencias() const { return asistencias; }
+int Jugador::getTarjetasAmarillas() const { return tarjetasAmarillas; }
+int Jugador::getAmarillas() const { return tarjetasAmarillas; }
+int Jugador::getTarjetasRojas() const { return tarjetasRojas; }
+int Jugador::getRojas() const { return tarjetasRojas; }
+int Jugador::getFaltas() const { return faltas; }
 
 void Jugador::setGoles(int golesIniciales)
 {
@@ -121,32 +72,16 @@ void Jugador::setGoles(int golesIniciales)
 
 void Jugador::actualizarEstadisticas(int goles, int amarillas, int rojas, int faltas, int minutos)
 {
-    // Este método resume la actualización histórica del jugador después de un partido.
     if (minutos > 0)
     {
         partidosJugados++;
         minutosJugados += minutos;
     }
 
-    if (goles > 0)
-    {
-        this->goles += goles;
-    }
-
-    if (amarillas > 0)
-    {
-        tarjetasAmarillas += amarillas;
-    }
-
-    if (rojas > 0)
-    {
-        tarjetasRojas += rojas;
-    }
-
-    if (faltas > 0)
-    {
-        this->faltas += faltas;
-    }
+    if (goles > 0) this->goles += goles;
+    if (amarillas > 0) tarjetasAmarillas += amarillas;
+    if (rojas > 0) tarjetasRojas += rojas;
+    if (faltas > 0) this->faltas += faltas;
 }
 
 void Jugador::registrarPartido(int minutos)
@@ -154,60 +89,34 @@ void Jugador::registrarPartido(int minutos)
     actualizarEstadisticas(0, 0, 0, 0, minutos);
 }
 
-void Jugador::sumarGol()
-{
-    goles++;
-}
-
-void Jugador::sumarAsistencia()
-{
-    asistencias++;
-}
-
-void Jugador::sumarAmarilla()
-{
-    tarjetasAmarillas++;
-}
-
-void Jugador::sumarRoja()
-{
-    tarjetasRojas++;
-}
-
-void Jugador::sumarFalta()
-{
-    faltas++;
-}
+void Jugador::sumarGol() { goles++; }
+void Jugador::sumarAsistencia() { asistencias++; }
+void Jugador::sumarAmarilla() { tarjetasAmarillas++; }
+void Jugador::sumarRoja() { tarjetasRojas++; }
+void Jugador::sumarFalta() { faltas++; }
 
 bool Jugador::operator<(const Jugador& otro) const
 {
-    // Se priorizan los goles para facilitar ordenamientos simples de goleadores.
-    if (goles != otro.goles)
-    {
-        return goles < otro.goles;
-    }
-
-    return numeroCamiseta < otro.numeroCamiseta;
+    if (goles != otro.goles) return goles < otro.goles;
+    if (asistencias != otro.asistencias) return asistencias < otro.asistencias;
+    return numeroCamiseta > otro.numeroCamiseta;
 }
 
 bool Jugador::operator==(const Jugador& otro) const
 {
-    return nombre == otro.nombre &&
-           apellido == otro.apellido &&
-           numeroCamiseta == otro.numeroCamiseta;
+    return nombre == otro.nombre && apellido == otro.apellido && numeroCamiseta == otro.numeroCamiseta;
 }
 
-std::ostream& operator<<(std::ostream& os, const Jugador& jugador)
+ostream& operator<<(ostream& os, const Jugador& jugador)
 {
     os << jugador.nombre << " " << jugador.apellido
        << " | #" << jugador.numeroCamiseta
        << " | PJ: " << jugador.partidosJugados
        << " | Goles: " << jugador.goles
        << " | Min: " << jugador.minutosJugados
-       << " | A: " << jugador.asistencias
+       << " | Asist: " << jugador.asistencias
        << " | TA: " << jugador.tarjetasAmarillas
        << " | TR: " << jugador.tarjetasRojas
-       << " | F: " << jugador.faltas;
-
+       << " | Faltas: " << jugador.faltas;
     return os;
 }

@@ -1,5 +1,8 @@
 #include "grupo.h"
-#include "partido.h"
+
+using namespace std;
+
+#include <cstdlib>
 
 Grupo::Grupo()
 {
@@ -20,22 +23,14 @@ Grupo::Grupo(const Grupo& otro)
 
 Grupo::~Grupo()
 {
+    // Los partidos y equipos son liberados por Torneo.
 }
 
-char Grupo::getLetra() const
-{
-    return letra;
-}
-
-Lista<Equipo*>& Grupo::getEquipos()
-{
-    return equipos;
-}
-
-Lista<Partido*>& Grupo::getPartidos()
-{
-    return partidos;
-}
+char Grupo::getLetra() const { return letra; }
+Lista<Equipo*>& Grupo::getEquipos() { return equipos; }
+const Lista<Equipo*>& Grupo::getEquipos() const { return equipos; }
+Lista<Partido*>& Grupo::getPartidos() { return partidos; }
+const Lista<Partido*>& Grupo::getPartidos() const { return partidos; }
 
 int Grupo::buscarEquipo(Equipo* equipo) const
 {
@@ -52,40 +47,32 @@ int Grupo::buscarEquipo(Equipo* equipo) const
 
 bool Grupo::validarConfederacion(Equipo* equipo) const
 {
-    // Se aplica la regla del sorteo: máximo dos UEFA o una sola de cualquier otra confederación.
-    if (equipo == nullptr)
+    if (equipo == 0)
     {
         return false;
     }
 
-    int uefa = 0;
+    int cantidadMismaConfederacion = 0;
 
     for (int i = 0; i < equipos.getCantidad(); i++)
     {
         if (equipos[i]->getConfederacion() == equipo->getConfederacion())
         {
-            if (equipo->getConfederacion() == "UEFA")
-            {
-                uefa++;
-            }
-            else
-            {
-                return false;
-            }
+            cantidadMismaConfederacion++;
         }
     }
 
-    return equipo->getConfederacion() != "UEFA" || uefa < 2;
+    if (equipo->getConfederacion() == "UEFA")
+    {
+        return cantidadMismaConfederacion < 2;
+    }
+
+    return cantidadMismaConfederacion < 1;
 }
 
 bool Grupo::agregarEquipo(Equipo* equipo)
 {
-    if (equipo == nullptr || equipos.getCantidad() >= 4)
-    {
-        return false;
-    }
-
-    if (!validarConfederacion(equipo))
+    if (equipo == 0 || equipos.getCantidad() >= 4)
     {
         return false;
     }
@@ -98,48 +85,32 @@ bool Grupo::agregarEquipo(Equipo* equipo)
         }
     }
 
+    if (!validarConfederacion(equipo))
+    {
+        return false;
+    }
+
     equipos.agregar(equipo);
     return true;
 }
 
-void Grupo::agregarPartido(Partido* partido)
+bool Grupo::agregarPartido(Partido* partido)
 {
-    if (partido == nullptr)
+    if (partido == 0)
     {
-        return;
+        return false;
     }
 
     for (int i = 0; i < partidos.getCantidad(); i++)
     {
         if (partidos[i] == partido)
         {
-            return;
+            return false;
         }
     }
 
     partidos.agregar(partido);
-}
-
-void Grupo::generarPartidos(const Fecha& fechaBase, const std::string& etapa)
-{
-    // Se usa un todos-contra-todos fijo de 6 partidos con 3 días de descanso entre jornadas.
-    if (equipos.getCantidad() != 4)
-    {
-        return;
-    }
-
-    int cruces[6][2] = {{0, 1}, {2, 3}, {0, 2}, {1, 3}, {0, 3}, {1, 2}};
-    int dias[6] = {0, 0, 3, 3, 6, 6};
-
-    for (int i = 0; i < 6; i++)
-    {
-        Fecha fechaPartido = fechaBase;
-        fechaPartido.avanzarDias(dias[i]);
-        Partido* nuevo = new Partido(equipos[cruces[i][0]], equipos[cruces[i][1]], fechaPartido, etapa);
-        nuevo->configurar("nombreSede", "00:00");
-        nuevo->setArbitros("codArbitro1", "codArbitro2", "codArbitro3");
-        partidos.agregar(nuevo);
-    }
+    return true;
 }
 
 void Grupo::simularPartidos()
@@ -150,37 +121,105 @@ void Grupo::simularPartidos()
     }
 }
 
+int Grupo::getPuntosDeEquipo(Equipo* equipo) const
+{
+    int puntos = 0;
+
+    for (int i = 0; i < partidos.getCantidad(); i++)
+    {
+        Partido* partido = partidos[i];
+        if (partido == 0 || !partido->fueSimulado()) continue;
+
+        Equipo* e1 = partido->getEquipo1();
+        Equipo* e2 = partido->getEquipo2();
+        int g1 = partido->getGolesEquipo1();
+        int g2 = partido->getGolesEquipo2();
+
+        if (e1 == equipo)
+        {
+            if (g1 > g2) puntos += 3;
+            else if (g1 == g2) puntos += 1;
+        }
+        else if (e2 == equipo)
+        {
+            if (g2 > g1) puntos += 3;
+            else if (g1 == g2) puntos += 1;
+        }
+    }
+
+    return puntos;
+}
+
+int Grupo::getGolesFavorGrupo(Equipo* equipo) const
+{
+    int goles = 0;
+
+    for (int i = 0; i < partidos.getCantidad(); i++)
+    {
+        Partido* partido = partidos[i];
+        if (partido == 0 || !partido->fueSimulado()) continue;
+
+        if (partido->getEquipo1() == equipo) goles += partido->getGolesEquipo1();
+        else if (partido->getEquipo2() == equipo) goles += partido->getGolesEquipo2();
+    }
+
+    return goles;
+}
+
+int Grupo::getGolesContraGrupo(Equipo* equipo) const
+{
+    int goles = 0;
+
+    for (int i = 0; i < partidos.getCantidad(); i++)
+    {
+        Partido* partido = partidos[i];
+        if (partido == 0 || !partido->fueSimulado()) continue;
+
+        if (partido->getEquipo1() == equipo) goles += partido->getGolesEquipo2();
+        else if (partido->getEquipo2() == equipo) goles += partido->getGolesEquipo1();
+    }
+
+    return goles;
+}
+
+int Grupo::getDiferenciaGolGrupo(Equipo* equipo) const
+{
+    return getGolesFavorGrupo(equipo) - getGolesContraGrupo(equipo);
+}
+
 Lista<Equipo*> Grupo::ordenarEquipos() const
 {
-    // El desempate sigue el orden básico: puntos, diferencia de gol, goles a favor y país.
-    Lista<Equipo*> orden = equipos;
+    Lista<Equipo*> orden;
+
+    for (int i = 0; i < equipos.getCantidad(); i++)
+    {
+        orden.agregar(equipos[i]);
+    }
 
     for (int i = 0; i < orden.getCantidad() - 1; i++)
     {
         for (int j = i + 1; j < orden.getCantidad(); j++)
         {
+            int puntosI = getPuntosDeEquipo(orden[i]);
+            int puntosJ = getPuntosDeEquipo(orden[j]);
+            int dgI = getDiferenciaGolGrupo(orden[i]);
+            int dgJ = getDiferenciaGolGrupo(orden[j]);
+            int gfI = getGolesFavorGrupo(orden[i]);
+            int gfJ = getGolesFavorGrupo(orden[j]);
+
             bool intercambiar = false;
 
-            if (orden[j]->getPuntosGrupo() > orden[i]->getPuntosGrupo())
+            if (puntosJ > puntosI) intercambiar = true;
+            else if (puntosJ == puntosI)
             {
-                intercambiar = true;
-            }
-            else if (orden[j]->getPuntosGrupo() == orden[i]->getPuntosGrupo())
-            {
-                if (orden[j]->getDiferenciaGol() > orden[i]->getDiferenciaGol())
+                if (dgJ > dgI) intercambiar = true;
+                else if (dgJ == dgI)
                 {
-                    intercambiar = true;
-                }
-                else if (orden[j]->getDiferenciaGol() == orden[i]->getDiferenciaGol())
-                {
-                    if (orden[j]->getGolesFavor() > orden[i]->getGolesFavor())
+                    if (gfJ > gfI) intercambiar = true;
+                    else if (gfJ == gfI)
                     {
-                        intercambiar = true;
-                    }
-                    else if (orden[j]->getGolesFavor() == orden[i]->getGolesFavor() &&
-                             orden[j]->getPais() < orden[i]->getPais())
-                    {
-                        intercambiar = true;
+                        // Sorteo final en caso de empate total.
+                        if ((rand() % 2) == 1) intercambiar = true;
                     }
                 }
             }
@@ -200,69 +239,57 @@ Lista<Equipo*> Grupo::ordenarEquipos() const
 Equipo* Grupo::getPrimero() const
 {
     Lista<Equipo*> orden = ordenarEquipos();
-
-    if (orden.getCantidad() >= 1)
-    {
-        return orden[0];
-    }
-
-    return nullptr;
+    return orden.getCantidad() >= 1 ? orden[0] : 0;
 }
 
 Equipo* Grupo::getSegundo() const
 {
     Lista<Equipo*> orden = ordenarEquipos();
-
-    if (orden.getCantidad() >= 2)
-    {
-        return orden[1];
-    }
-
-    return nullptr;
+    return orden.getCantidad() >= 2 ? orden[1] : 0;
 }
 
 Equipo* Grupo::getTercero() const
 {
     Lista<Equipo*> orden = ordenarEquipos();
-
-    if (orden.getCantidad() >= 3)
-    {
-        return orden[2];
-    }
-
-    return nullptr;
+    return orden.getCantidad() >= 3 ? orden[2] : 0;
 }
 
-void Grupo::imprimirTabla(std::ostream& os) const
+void Grupo::imprimirTabla(ostream& os) const
 {
     Lista<Equipo*> orden = ordenarEquipos();
-    os << "Tabla del grupo " << letra << "\n";
+
+    os << "\nTabla Grupo " << letra << "\n";
+    os << "Pos | Equipo | Pts | GF | GC | DG | Confederacion\n";
 
     for (int i = 0; i < orden.getCantidad(); i++)
     {
-        os << i + 1 << ". " << orden[i]->getPais()
-           << " | Pts: " << orden[i]->getPuntosGrupo()
-           << " | DG: " << orden[i]->getDiferenciaGol()
-           << " | GF: " << orden[i]->getGolesFavor() << "\n";
+        os << i + 1 << " | " << orden[i]->getPais()
+           << " | " << getPuntosDeEquipo(orden[i])
+           << " | " << getGolesFavorGrupo(orden[i])
+           << " | " << getGolesContraGrupo(orden[i])
+           << " | " << getDiferenciaGolGrupo(orden[i])
+           << " | " << orden[i]->getConfederacion() << "\n";
     }
 }
 
-void Grupo::imprimirPartidos(std::ostream& os) const
+void Grupo::imprimirPartidos(ostream& os) const
 {
+    os << "\nPartidos Grupo " << letra << "\n";
+
     for (int i = 0; i < partidos.getCantidad(); i++)
     {
         os << *partidos[i] << "\n";
     }
 }
 
-std::ostream& operator<<(std::ostream& os, const Grupo& g)
+ostream& operator<<(ostream& os, const Grupo& grupo)
 {
-    os << "Grupo " << g.letra << "\n";
+    os << "Grupo " << grupo.letra << "\n";
 
-    for (int i = 0; i < g.equipos.getCantidad(); i++)
+    for (int i = 0; i < grupo.equipos.getCantidad(); i++)
     {
-        os << "- " << g.equipos[i]->getPais()
-           << " (" << g.equipos[i]->getConfederacion() << ")\n";
+        os << "- " << grupo.equipos[i]->getPais()
+           << " (" << grupo.equipos[i]->getConfederacion() << ")\n";
     }
 
     return os;

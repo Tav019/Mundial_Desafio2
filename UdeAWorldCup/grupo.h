@@ -2,13 +2,11 @@
 #define GRUPO_H
 
 #include <iostream>
-#include <string>
-
 #include "Lista.h"
 #include "equipo.h"
-#include "fecha.h"
+#include "partido.h"
 
-class Partido;
+using namespace std;
 
 class Grupo
 {
@@ -18,6 +16,7 @@ private:
     Lista<Partido*> partidos;
 
     int buscarEquipo(Equipo* equipo) const;
+    Lista<Equipo*> ordenarEquipos() const;
 
 public:
     Grupo();
@@ -27,21 +26,28 @@ public:
 
     char getLetra() const;
     Lista<Equipo*>& getEquipos();
+    const Lista<Equipo*>& getEquipos() const;
     Lista<Partido*>& getPartidos();
+    const Lista<Partido*>& getPartidos() const;
 
     bool validarConfederacion(Equipo* equipo) const;
     bool agregarEquipo(Equipo* equipo);
-    void agregarPartido(Partido* partido);
-    void generarPartidos(const Fecha& fechaBase, const std::string& etapa);
+    bool agregarPartido(Partido* partido);
     void simularPartidos();
-    Lista<Equipo*> ordenarEquipos() const;
+
+    int getPuntosDeEquipo(Equipo* equipo) const;
+    int getGolesFavorGrupo(Equipo* equipo) const;
+    int getGolesContraGrupo(Equipo* equipo) const;
+    int getDiferenciaGolGrupo(Equipo* equipo) const;
+
     Equipo* getPrimero() const;
     Equipo* getSegundo() const;
     Equipo* getTercero() const;
-    void imprimirTabla(std::ostream& os) const;
-    void imprimirPartidos(std::ostream& os) const;
 
-    friend std::ostream& operator<<(std::ostream& os, const Grupo& grupo);
+    void imprimirTabla(ostream& os) const;
+    void imprimirPartidos(ostream& os) const;
+
+    friend ostream& operator<<(ostream& os, const Grupo& grupo);
 };
 
 #endif

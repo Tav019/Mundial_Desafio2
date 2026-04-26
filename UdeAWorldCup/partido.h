@@ -4,6 +4,8 @@
 #include <iostream>
 #include <string>
 
+using namespace std;
+
 #include "Lista.h"
 #include "equipo.h"
 #include "fecha.h"
@@ -13,11 +15,11 @@ class Partido
 {
 private:
     Fecha fecha;
-    std::string hora;
-    std::string sede;
-    std::string arbitro1;
-    std::string arbitro2;
-    std::string arbitro3;
+    string hora;
+    string sede;
+    string arbitro1;
+    string arbitro2;
+    string arbitro3;
     Equipo* equipo1;
     Equipo* equipo2;
     int golesEquipo1;
@@ -25,7 +27,8 @@ private:
     float posesionEquipo1;
     float posesionEquipo2;
     bool prorroga;
-    std::string etapa;
+    string etapa;
+    bool simulado;
     Lista<RegistroJugadorPartido*> convocadosEquipo1;
     Lista<RegistroJugadorPartido*> convocadosEquipo2;
 
@@ -38,11 +41,11 @@ private:
 
 public:
     Partido();
-    Partido(Equipo* equipo1, Equipo* equipo2, const Fecha& fecha, const std::string& etapa);
+    Partido(Equipo* equipo1, Equipo* equipo2, const Fecha& fecha, const string& etapa);
     ~Partido();
 
-    void configurar(const std::string& sede, const std::string& hora);
-    void setArbitros(const std::string& arbitro1, const std::string& arbitro2, const std::string& arbitro3);
+    void configurar(const string& sede, const string& hora);
+    void setArbitros(const string& arbitro1, const string& arbitro2, const string& arbitro3);
     void seleccionarConvocados();
     void calcularPosesion();
     void simularGoles();
@@ -55,14 +58,18 @@ public:
     Equipo* getEquipo2() const;
     int getGolesEquipo1() const;
     int getGolesEquipo2() const;
+    float getPosesionEquipo1() const;
+    float getPosesionEquipo2() const;
     Equipo* getGanador() const;
+    Equipo* getPerdedor() const;
     bool huboProrroga() const;
+    bool fueSimulado() const;
     Fecha getFecha() const;
-    std::string getEtapa() const;
+    string getEtapa() const;
     const Lista<RegistroJugadorPartido*>& getConvocadosEquipo1() const;
     const Lista<RegistroJugadorPartido*>& getConvocadosEquipo2() const;
 
-    friend std::ostream& operator<<(std::ostream& os, const Partido& partido);
+    friend ostream& operator<<(ostream& os, const Partido& partido);
 };
 
 #endif
