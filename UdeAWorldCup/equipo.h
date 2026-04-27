@@ -17,6 +17,11 @@ private:
     string federacion;
     string confederacion;
     int rankingFIFA;
+    int golesFavorBase;
+    int golesContraBase;
+    int partidosGanadosBase;
+    int partidosEmpatadosBase;
+    int partidosPerdidosBase;
     int golesFavor;
     int golesContra;
     int partidosGanados;
@@ -49,6 +54,12 @@ public:
     string getFederacion() const;
     string getConfederacion() const;
     int getRankingFIFA() const;
+    int getGolesFavorBase() const;
+    int getGolesContraBase() const;
+    int getPartidosGanadosBase() const;
+    int getPartidosEmpatadosBase() const;
+    int getPartidosPerdidosBase() const;
+    int getPartidosTotalesBase() const;
     int getGolesFavor() const;
     int getGolesContra() const;
     int getDiferenciaGol() const;

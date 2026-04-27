@@ -9,9 +9,9 @@ Grupo::Grupo()
     letra = '?';
 }
 
-Grupo::Grupo(char letra)
+Grupo::Grupo(char _letra)
 {
-    this->letra = letra;
+    letra = _letra;
 }
 
 Grupo::Grupo(const Grupo& otro)
@@ -190,22 +190,39 @@ int Grupo::getDiferenciaGolGrupo(Equipo* equipo) const
 Lista<Equipo*> Grupo::ordenarEquipos() const
 {
     Lista<Equipo*> orden;
+    int cantidad = equipos.getCantidad();
 
-    for (int i = 0; i < equipos.getCantidad(); i++)
+    for (int i = 0; i < cantidad; i++)
     {
         orden.agregar(equipos[i]);
+    }
+
+    if (cantidad < 2)
+    {
+        return orden;
+    }
+
+    int* puntos = new int[cantidad];
+    int* diferencias = new int[cantidad];
+    int* golesFavor = new int[cantidad];
+
+    for (int i = 0; i < cantidad; i++)
+    {
+        puntos[i] = getPuntosDeEquipo(orden[i]);
+        diferencias[i] = getDiferenciaGolGrupo(orden[i]);
+        golesFavor[i] = getGolesFavorGrupo(orden[i]);
     }
 
     for (int i = 0; i < orden.getCantidad() - 1; i++)
     {
         for (int j = i + 1; j < orden.getCantidad(); j++)
         {
-            int puntosI = getPuntosDeEquipo(orden[i]);
-            int puntosJ = getPuntosDeEquipo(orden[j]);
-            int dgI = getDiferenciaGolGrupo(orden[i]);
-            int dgJ = getDiferenciaGolGrupo(orden[j]);
-            int gfI = getGolesFavorGrupo(orden[i]);
-            int gfJ = getGolesFavorGrupo(orden[j]);
+            int puntosI = puntos[i];
+            int puntosJ = puntos[j];
+            int dgI = diferencias[i];
+            int dgJ = diferencias[j];
+            int gfI = golesFavor[i];
+            int gfJ = golesFavor[j];
 
             bool intercambiar = false;
 
@@ -218,8 +235,7 @@ Lista<Equipo*> Grupo::ordenarEquipos() const
                     if (gfJ > gfI) intercambiar = true;
                     else if (gfJ == gfI)
                     {
-                        // Sorteo final en caso de empate total.
-                        if ((rand() % 2) == 1) intercambiar = true;
+                        if (orden[j]->getRankingFIFA() < orden[i]->getRankingFIFA()) intercambiar = true;
                     }
                 }
             }
@@ -229,9 +245,25 @@ Lista<Equipo*> Grupo::ordenarEquipos() const
                 Equipo* aux = orden[i];
                 orden[i] = orden[j];
                 orden[j] = aux;
+
+                int auxPuntos = puntos[i];
+                puntos[i] = puntos[j];
+                puntos[j] = auxPuntos;
+
+                int auxDiferencia = diferencias[i];
+                diferencias[i] = diferencias[j];
+                diferencias[j] = auxDiferencia;
+
+                int auxGolesFavor = golesFavor[i];
+                golesFavor[i] = golesFavor[j];
+                golesFavor[j] = auxGolesFavor;
             }
         }
     }
+
+    delete[] puntos;
+    delete[] diferencias;
+    delete[] golesFavor;
 
     return orden;
 }

@@ -8,10 +8,10 @@ Recursos::Recursos()
     bytes = 0;
 }
 
-Recursos::Recursos(long iteraciones, long bytes)
+Recursos::Recursos(long _iteraciones, long _bytes)
 {
-    this->iteraciones = iteraciones >= 0 ? iteraciones : 0;
-    this->bytes = bytes >= 0 ? bytes : 0;
+    iteraciones = _iteraciones >= 0 ? _iteraciones : 0;
+    bytes = _bytes >= 0 ? _bytes : 0;
 }
 
 Recursos::~Recursos()
@@ -48,9 +48,9 @@ void Recursos::liberarBytes(long cantidad)
     }
 }
 
-void Recursos::setBytes(long bytes)
+void Recursos::setBytes(long _bytes)
 {
-    this->bytes = bytes >= 0 ? bytes : 0;
+    bytes = _bytes >= 0 ? _bytes : 0;
 }
 
 void Recursos::reiniciar()

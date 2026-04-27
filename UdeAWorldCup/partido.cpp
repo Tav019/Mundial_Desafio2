@@ -3,6 +3,7 @@
 using namespace std;
 
 #include <cstdlib>
+#include <cmath>
 
 Partido::Partido()
 {
@@ -22,22 +23,22 @@ Partido::Partido()
     simulado = false;
 }
 
-Partido::Partido(Equipo* equipo1, Equipo* equipo2, const Fecha& fecha, const string& etapa)
+Partido::Partido(Equipo* _equipo1, Equipo* _equipo2, const Fecha& _fecha, const string& _etapa)
 {
-    this->fecha = fecha;
+    fecha = _fecha;
     hora = "00:00";
     sede = "nombreSede";
     arbitro1 = "codArbitro1";
     arbitro2 = "codArbitro2";
     arbitro3 = "codArbitro3";
-    this->equipo1 = equipo1;
-    this->equipo2 = equipo2;
+    equipo1 = _equipo1;
+    equipo2 = _equipo2;
     golesEquipo1 = 0;
     golesEquipo2 = 0;
     posesionEquipo1 = 50.0f;
     posesionEquipo2 = 50.0f;
     prorroga = false;
-    this->etapa = etapa;
+    etapa = _etapa;
     simulado = false;
 }
 
@@ -60,53 +61,52 @@ void Partido::liberarConvocados()
 
     convocadosEquipo1.limpiar();
     convocadosEquipo2.limpiar();
+    convocadosEquipo1.compactar();
+    convocadosEquipo2.compactar();
 }
 
-void Partido::configurar(const string& sede, const string& hora)
+void Partido::configurar(const string& _sede, const string& _hora)
 {
-    this->sede = sede;
-    this->hora = hora;
+    sede = _sede;
+    hora = _hora;
 }
 
-void Partido::setArbitros(const string& arbitro1, const string& arbitro2, const string& arbitro3)
+void Partido::setArbitros(const string& _arbitro1, const string& _arbitro2, const string& _arbitro3)
 {
-    this->arbitro1 = arbitro1;
-    this->arbitro2 = arbitro2;
-    this->arbitro3 = arbitro3;
+    arbitro1 = _arbitro1;
+    arbitro2 = _arbitro2;
+    arbitro3 = _arbitro3;
 }
 
-int Partido::calcularGolesEsperados(Equipo* atacante, Equipo* defensor) const
+double Partido::calcularGolesEsperados(Equipo* atacante, Equipo* defensor) const
 {
     if (atacante == 0 || defensor == 0)
     {
-        return 0;
+        return 0.0;
     }
 
-    int partidosAtacante = atacante->getPartidosTotales();
-    int partidosDefensor = defensor->getPartidosTotales();
+    int partidosAtacante = atacante->getPartidosTotalesBase();
+    int partidosDefensor = defensor->getPartidosTotalesBase();
 
-    float promedioGF = partidosAtacante > 0 ? static_cast<float>(atacante->getGolesFavor()) / partidosAtacante : 1.0f;
-    float promedioGC = partidosDefensor > 0 ? static_cast<float>(defensor->getGolesContra()) / partidosDefensor : 1.0f;
+    double mu = 1.15;
+    double alpha = 0.60;
+    double beta = 0.40;
 
-    // Modelo simple basado en la ecuación pedida: mezcla ofensiva del atacante y defensiva del rival.
-    float lambda = (0.60f * promedioGF + 0.40f * promedioGC) * 1.15f;
+    double promedioGF = partidosAtacante > 0 ? static_cast<double>(atacante->getGolesFavorBase()) / partidosAtacante:mu;
 
-    if (lambda < 0.20f) lambda = 0.20f;
-    if (lambda > 5.00f) lambda = 5.00f;
+    double promedioGC = partidosDefensor > 0 ? static_cast<double>(defensor->getGolesContraBase()) / partidosDefensor:mu;
 
-    int goles = static_cast<int>(lambda);
-    int probabilidadDecimal = static_cast<int>((lambda - goles) * 100.0f);
+    if (promedioGF < 0.25) promedioGF = 0.25;
+    if (promedioGC < 0.25) promedioGC = 0.25;
 
-    if ((rand() % 100) < probabilidadDecimal)
-    {
-        goles++;
-    }
+    double lambda = mu * pow(promedioGF / mu, alpha) * pow(promedioGC / mu, beta);
 
-    // Pequeña variación aleatoria para que no todos los partidos sean demasiado repetitivos.
-    if ((rand() % 100) < 18 && goles > 0) goles--;
-    if ((rand() % 100) < 22) goles++;
+    int diferenciaRanking = defensor->getRankingFIFA() - atacante->getRankingFIFA();
+    lambda += static_cast<double>(diferenciaRanking) / 120.0;
 
-    return goles;
+    if (lambda < 0.25) lambda = 0.25;
+
+    return lambda;
 }
 
 void Partido::seleccionarConvocados()
@@ -173,7 +173,9 @@ void Partido::calcularPosesion()
 
 void Partido::asignarEventosJugadores(Lista<RegistroJugadorPartido*>& convocados, int golesDelEquipo, int minutosBase)
 {
-    for (int i = 0; i < convocados.getCantidad(); i++)
+    int cantidadConvocados = convocados.getCantidad();
+
+    for (int i = 0; i < cantidadConvocados; i++)
     {
         convocados[i]->setMinutos(minutosBase);
 
@@ -204,35 +206,20 @@ void Partido::asignarEventosJugadores(Lista<RegistroJugadorPartido*>& convocados
         }
     }
 
-    for (int g = 0; g < golesDelEquipo && convocados.getCantidad() > 0; g++)
+    for (int g = 0; g < golesDelEquipo && cantidadConvocados > 0; g++)
     {
-        int intentos = 0;
-        bool asignado = false;
-
-        while (!asignado && intentos < 40)
-        {
-            int indice = rand() % convocados.getCantidad();
-
-            if ((rand() % 10000) < 400)
-            {
-                convocados[indice]->incrementarGol();
-                asignado = true;
-            }
-
-            intentos++;
-        }
-
-        if (!asignado)
-        {
-            convocados[g % convocados.getCantidad()]->incrementarGol();
-        }
+        int indice = rand() % cantidadConvocados;
+        convocados[indice]->incrementarGol();
     }
 }
 
 void Partido::simularGoles()
 {
-    golesEquipo1 = calcularGolesEsperados(equipo1, equipo2);
-    golesEquipo2 = calcularGolesEsperados(equipo2, equipo1);
+    double esperadosEquipo1 = calcularGolesEsperados(equipo1, equipo2);
+    double esperadosEquipo2 = calcularGolesEsperados(equipo2, equipo1);
+
+    golesEquipo1 = (int)round(esperadosEquipo1);
+    golesEquipo2 = (int)round(esperadosEquipo2);
 }
 
 void Partido::simularTarjetasYFaltas()
@@ -323,6 +310,11 @@ void Partido::simular()
     resolverEmpate();
     simularTarjetasYFaltas();
     actualizarHistoricos();
+}
+
+void Partido::liberarDetalleSimulacion()
+{
+    liberarConvocados();
 }
 
 Equipo* Partido::getEquipo1() const { return equipo1; }

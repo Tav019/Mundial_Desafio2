@@ -9,6 +9,11 @@ Equipo::Equipo()
     federacion = "";
     confederacion = "";
     rankingFIFA = 0;
+    golesFavorBase = 0;
+    golesContraBase = 0;
+    partidosGanadosBase = 0;
+    partidosEmpatadosBase = 0;
+    partidosPerdidosBase = 0;
     golesFavor = 0;
     golesContra = 0;
     partidosGanados = 0;
@@ -20,13 +25,18 @@ Equipo::Equipo()
     puntosGrupo = 0;
 }
 
-Equipo::Equipo(const string& pais, int rankingFIFA, const string& confederacion)
+Equipo::Equipo(const string& _pais, int _rankingFIFA, const string& _confederacion)
 {
-    this->pais = pais;
+    pais = _pais;
     directorTecnico = "DT_" + pais;
     federacion = "Federacion_" + pais;
-    this->confederacion = confederacion;
-    this->rankingFIFA = rankingFIFA;
+    confederacion = _confederacion;
+    rankingFIFA = _rankingFIFA;
+    golesFavorBase = 0;
+    golesContraBase = 0;
+    partidosGanadosBase = 0;
+    partidosEmpatadosBase = 0;
+    partidosPerdidosBase = 0;
     golesFavor = 0;
     golesContra = 0;
     partidosGanados = 0;
@@ -38,27 +48,25 @@ Equipo::Equipo(const string& pais, int rankingFIFA, const string& confederacion)
     puntosGrupo = 0;
 }
 
-Equipo::Equipo(const string& pais,
-               const string& directorTecnico,
-               const string& federacion,
-               const string& confederacion,
-               int rankingFIFA,
-               int golesFavor,
-               int golesContra,
-               int partidosGanados,
-               int partidosEmpatados,
-               int partidosPerdidos)
+Equipo::Equipo(const string& _pais,const string& _directorTecnico, const string& _federacion,const string& _confederacion,
+               int _rankingFIFA,int _golesFavor,int _golesContra,int _partidosGanados,int _partidosEmpatados,
+               int _partidosPerdidos)
 {
-    this->pais = pais;
-    this->directorTecnico = directorTecnico;
-    this->federacion = federacion;
-    this->confederacion = confederacion;
-    this->rankingFIFA = rankingFIFA;
-    this->golesFavor = golesFavor;
-    this->golesContra = golesContra;
-    this->partidosGanados = partidosGanados;
-    this->partidosEmpatados = partidosEmpatados;
-    this->partidosPerdidos = partidosPerdidos;
+    pais = _pais;
+    directorTecnico = _directorTecnico;
+    federacion = _federacion;
+    confederacion = _confederacion;
+    rankingFIFA = _rankingFIFA;
+    golesFavorBase = _golesFavor;
+    golesContraBase = _golesContra;
+    partidosGanadosBase = _partidosGanados;
+    partidosEmpatadosBase = _partidosEmpatados;
+    partidosPerdidosBase = _partidosPerdidos;
+    golesFavor = _golesFavor;
+    golesContra = _golesContra;
+    partidosGanados = _partidosGanados;
+    partidosEmpatados = _partidosEmpatados;
+    partidosPerdidos = _partidosPerdidos;
     tarjetasAmarillas = 0;
     tarjetasRojas = 0;
     faltas = 0;
@@ -72,6 +80,11 @@ Equipo::Equipo(const Equipo& otro)
     federacion = otro.federacion;
     confederacion = otro.confederacion;
     rankingFIFA = otro.rankingFIFA;
+    golesFavorBase = otro.golesFavorBase;
+    golesContraBase = otro.golesContraBase;
+    partidosGanadosBase = otro.partidosGanadosBase;
+    partidosEmpatadosBase = otro.partidosEmpatadosBase;
+    partidosPerdidosBase = otro.partidosPerdidosBase;
     golesFavor = otro.golesFavor;
     golesContra = otro.golesContra;
     partidosGanados = otro.partidosGanados;
@@ -101,6 +114,12 @@ string Equipo::getDirectorTecnico() const { return directorTecnico; }
 string Equipo::getFederacion() const { return federacion; }
 string Equipo::getConfederacion() const { return confederacion; }
 int Equipo::getRankingFIFA() const { return rankingFIFA; }
+int Equipo::getGolesFavorBase() const { return golesFavorBase; }
+int Equipo::getGolesContraBase() const { return golesContraBase; }
+int Equipo::getPartidosGanadosBase() const { return partidosGanadosBase; }
+int Equipo::getPartidosEmpatadosBase() const { return partidosEmpatadosBase; }
+int Equipo::getPartidosPerdidosBase() const { return partidosPerdidosBase; }
+int Equipo::getPartidosTotalesBase() const { return partidosGanadosBase + partidosEmpatadosBase + partidosPerdidosBase; }
 int Equipo::getGolesFavor() const { return golesFavor; }
 int Equipo::getGolesContra() const { return golesContra; }
 int Equipo::getDiferenciaGol() const { return golesFavor - golesContra; }
@@ -113,10 +132,10 @@ int Equipo::getTarjetasRojas() const { return tarjetasRojas; }
 int Equipo::getFaltas() const { return faltas; }
 int Equipo::getPuntosGrupo() const { return puntosGrupo; }
 
-void Equipo::setDirectorTecnico(const string& directorTecnico) { this->directorTecnico = directorTecnico; }
-void Equipo::setFederacion(const string& federacion) { this->federacion = federacion; }
-void Equipo::setConfederacion(const string& confederacion) { this->confederacion = confederacion; }
-void Equipo::setRankingFIFA(int rankingFIFA) { this->rankingFIFA = rankingFIFA; }
+void Equipo::setDirectorTecnico(const string& _directorTecnico) { directorTecnico = _directorTecnico; }
+void Equipo::setFederacion(const string& _federacion) { federacion = _federacion; }
+void Equipo::setConfederacion(const string& _confederacion) { confederacion = _confederacion; }
+void Equipo::setRankingFIFA(int _rankingFIFA) { rankingFIFA = _rankingFIFA; }
 
 void Equipo::agregarJugador(Jugador* jugador)
 {
@@ -140,13 +159,13 @@ int Equipo::getCantidadJugadores() const { return jugadores.getCantidad(); }
 Lista<Jugador*>& Equipo::getJugadores() { return jugadores; }
 const Lista<Jugador*>& Equipo::getJugadores() const { return jugadores; }
 
-void Equipo::actualizarEstadisticas(int gf, int gc, int amarillas, int rojas, int faltas)
+void Equipo::actualizarEstadisticas(int gf, int gc, int amarillas, int rojas, int _faltas)
 {
     golesFavor += gf;
     golesContra += gc;
     tarjetasAmarillas += amarillas;
     tarjetasRojas += rojas;
-    this->faltas += faltas;
+    faltas += _faltas;
 
     if (gf > gc) partidosGanados++;
     else if (gf < gc) partidosPerdidos++;

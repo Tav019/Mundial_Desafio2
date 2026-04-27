@@ -9,19 +9,19 @@ Fecha::Fecha()
     anio = 2026;
 }
 
-Fecha::Fecha(int dia, int mes, int anio)
+Fecha::Fecha(int _dia, int _mes, int _anio)
 {
-    if (esValidaInterna(dia, mes, anio))
+    if (esValidaInterna(_dia, _mes, _anio))
     {
-        this->dia = dia;
-        this->mes = mes;
-        this->anio = anio;
+        dia = _dia;
+        mes = _mes;
+        anio = _anio;
     }
     else
     {
-        this->dia = 1;
-        this->mes = 1;
-        this->anio = 2026;
+        dia = 1;
+        mes = 1;
+        anio = 2026;
     }
 }
 
@@ -43,7 +43,7 @@ int Fecha::diasDelMes(int mes, int anio) const
 
 bool Fecha::esValidaInterna(int dia, int mes, int anio) const
 {
-    if (anio < 1 || mes < 1 || mes > 12 || dia < 1) return false;
+    if (anio < 1 || mes < 1 || (mes > 12 )|| dia < 1) return false;
     return dia <= diasDelMes(mes, anio);
 }
 

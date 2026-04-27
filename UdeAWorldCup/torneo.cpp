@@ -5,7 +5,6 @@ using namespace std;
 #include <cstdlib>
 #include <ctime>
 #include <fstream>
-#include <sstream>
 
 Torneo::Torneo()
 {
@@ -25,9 +24,9 @@ Torneo::Torneo()
     srand(static_cast<unsigned int>(time(0)));
 }
 
-Torneo::Torneo(const string& nombre)
+Torneo::Torneo(const string& _nombre)
 {
-    this->nombre = nombre;
+    nombre = _nombre;
     campeon = 0;
     subcampeon = 0;
     tercerLugar = 0;
@@ -90,23 +89,6 @@ void Torneo::limpiarClasificados()
     tercerLugar = 0;
     cuartoLugar = 0;
 }
-
-void Torneo::ordenarEquiposPorRanking(Lista<Equipo*>& lista) const
-{
-    for (int i = 0; i < lista.getCantidad() - 1; i++)
-    {
-        for (int j = i + 1; j < lista.getCantidad(); j++)
-        {
-            if (*lista[j] < *lista[i])
-            {
-                Equipo* aux = lista[i];
-                lista[i] = lista[j];
-                lista[j] = aux;
-            }
-        }
-    }
-}
-
 Grupo* Torneo::buscarGrupoDeEquipo(Equipo* equipo) const
 {
     for (int i = 0; i < grupos.getCantidad(); i++)
@@ -125,20 +107,48 @@ Grupo* Torneo::buscarGrupoDeEquipo(Equipo* equipo) const
 
 void Torneo::ordenarEquiposPorDesempeno(Lista<Equipo*>& lista, bool descendente) const
 {
+    int cantidad = lista.getCantidad();
+    if (cantidad < 2)
+    {
+        return;
+    }
+
+    Grupo** gruposPorEquipo = new Grupo*[cantidad];
+    int* puntos = new int[cantidad];
+    int* diferencias = new int[cantidad];
+    int* golesFavor = new int[cantidad];
+
+    for (int i = 0; i < cantidad; i++)
+    {
+        gruposPorEquipo[i] = buscarGrupoDeEquipo(lista[i]);
+
+        if (gruposPorEquipo[i] == 0)
+        {
+            puntos[i] = 0;
+            diferencias[i] = 0;
+            golesFavor[i] = 0;
+            continue;
+        }
+
+        puntos[i] = gruposPorEquipo[i]->getPuntosDeEquipo(lista[i]);
+        diferencias[i] = gruposPorEquipo[i]->getDiferenciaGolGrupo(lista[i]);
+        golesFavor[i] = gruposPorEquipo[i]->getGolesFavorGrupo(lista[i]);
+    }
+
     for (int i = 0; i < lista.getCantidad() - 1; i++)
     {
         for (int j = i + 1; j < lista.getCantidad(); j++)
         {
-            Grupo* grupoI = buscarGrupoDeEquipo(lista[i]);
-            Grupo* grupoJ = buscarGrupoDeEquipo(lista[j]);
+            Grupo* grupoI = gruposPorEquipo[i];
+            Grupo* grupoJ = gruposPorEquipo[j];
             if (grupoI == 0 || grupoJ == 0) continue;
 
-            int puntosI = grupoI->getPuntosDeEquipo(lista[i]);
-            int puntosJ = grupoJ->getPuntosDeEquipo(lista[j]);
-            int dgI = grupoI->getDiferenciaGolGrupo(lista[i]);
-            int dgJ = grupoJ->getDiferenciaGolGrupo(lista[j]);
-            int gfI = grupoI->getGolesFavorGrupo(lista[i]);
-            int gfJ = grupoJ->getGolesFavorGrupo(lista[j]);
+            int puntosI = puntos[i];
+            int puntosJ = puntos[j];
+            int dgI = diferencias[i];
+            int dgJ = diferencias[j];
+            int gfI = golesFavor[i];
+            int gfJ = golesFavor[j];
 
             bool intercambiar = false;
 
@@ -174,28 +184,30 @@ void Torneo::ordenarEquiposPorDesempeno(Lista<Equipo*>& lista, bool descendente)
                 Equipo* aux = lista[i];
                 lista[i] = lista[j];
                 lista[j] = aux;
+
+                Grupo* auxGrupo = gruposPorEquipo[i];
+                gruposPorEquipo[i] = gruposPorEquipo[j];
+                gruposPorEquipo[j] = auxGrupo;
+
+                int auxPuntos = puntos[i];
+                puntos[i] = puntos[j];
+                puntos[j] = auxPuntos;
+
+                int auxDiferencia = diferencias[i];
+                diferencias[i] = diferencias[j];
+                diferencias[j] = auxDiferencia;
+
+                int auxGolesFavor = golesFavor[i];
+                golesFavor[i] = golesFavor[j];
+                golesFavor[j] = auxGolesFavor;
             }
         }
     }
-}
 
-Equipo* Torneo::extraerAleatorioDeLista(Lista<Equipo*>& lista)
-{
-    if (lista.estaVacia()) return 0;
-
-    int indice = rand() % lista.getCantidad();
-    Equipo* equipo = lista[indice];
-    lista.eliminar(indice);
-    return equipo;
-}
-
-Lista<Equipo*>* Torneo::obtenerBombo(int numeroBombo)
-{
-    if (numeroBombo == 1) return &bombo1;
-    if (numeroBombo == 2) return &bombo2;
-    if (numeroBombo == 3) return &bombo3;
-    if (numeroBombo == 4) return &bombo4;
-    return 0;
+    delete[] gruposPorEquipo;
+    delete[] puntos;
+    delete[] diferencias;
+    delete[] golesFavor;
 }
 
 bool Torneo::mismoGrupo(Equipo* a, Equipo* b) const
@@ -204,104 +216,68 @@ bool Torneo::mismoGrupo(Equipo* a, Equipo* b) const
     return buscarGrupoDeEquipo(a) != 0 && buscarGrupoDeEquipo(a) == buscarGrupoDeEquipo(b);
 }
 
-int Torneo::buscarIndiceEquipo(const Lista<Equipo*>& lista, Equipo* equipo) const
+bool Torneo::emparejarDieciseisavosPorBloques(const Lista<Equipo*>& primeros, const Lista<Equipo*>& segundosDisponibles,
+    const Lista<Equipo*>& tercerosDisponibles, int indicePrimero, int cantidadPrimerosVsTerceros, Lista<Equipo*>& cuadro) const
 {
-    for (int i = 0; i < lista.getCantidad(); i++)
+    if (indicePrimero >= primeros.getCantidad())
     {
-        if (lista[i] == equipo) return i;
+        return emparejarDieciseisavos(segundosDisponibles, cuadro);
     }
 
-    return -1;
-}
+    Equipo* equipoA = primeros[indicePrimero];
 
-bool Torneo::asignarEquiposAGrupos(int indiceSlot)
-{
-    const int cantidadGrupos = grupos.getCantidad();
-    if (cantidadGrupos == 0) return false;
-    if (indiceSlot >= cantidadGrupos * 4) return true;
-
-    int numeroBombo = (indiceSlot / cantidadGrupos) + 1;
-    int indiceGrupo = indiceSlot % cantidadGrupos;
-
-    Lista<Equipo*>* bombo = obtenerBombo(numeroBombo);
-    if (bombo == 0 || bombo->estaVacia()) return false;
-
-    Grupo* grupo = grupos[indiceGrupo];
-    Lista<Equipo*> candidatos = *bombo;
-
-    for (int i = candidatos.getCantidad() - 1; i > 0; i--)
+    if (indicePrimero < cantidadPrimerosVsTerceros)
     {
-        int j = rand() % (i + 1);
-        Equipo* aux = candidatos[i];
-        candidatos[i] = candidatos[j];
-        candidatos[j] = aux;
+        for (int i = 0; i < tercerosDisponibles.getCantidad(); i++)
+        {
+            Equipo* equipoB = tercerosDisponibles[i];
+            if (mismoGrupo(equipoA, equipoB))
+            {
+                continue;
+            }
+
+            Lista<Equipo*> siguientesTerceros = tercerosDisponibles;
+            siguientesTerceros.eliminar(i);
+            cuadro.agregar(equipoA);
+            cuadro.agregar(equipoB);
+
+            if (emparejarDieciseisavosPorBloques(primeros, segundosDisponibles, siguientesTerceros,indicePrimero + 1,
+            cantidadPrimerosVsTerceros, cuadro))
+            {
+                return true;
+            }
+
+            cuadro.eliminar(cuadro.getCantidad() - 1);
+            cuadro.eliminar(cuadro.getCantidad() - 1);
+        }
+
+        return false;
     }
 
-    for (int i = 0; i < candidatos.getCantidad(); i++)
+    for (int i = 0; i < segundosDisponibles.getCantidad(); i++)
     {
-        Equipo* candidato = candidatos[i];
-        int indiceCandidato = buscarIndiceEquipo(*bombo, candidato);
-
-        if (indiceCandidato == -1 || !grupo->validarConfederacion(candidato))
+        Equipo* equipoB = segundosDisponibles[i];
+        if (mismoGrupo(equipoA, equipoB))
         {
             continue;
         }
 
-        bombo->eliminar(indiceCandidato);
-        grupo->agregarEquipo(candidato);
-        recursos.contarIteracion();
+        Lista<Equipo*> siguientesSegundos = segundosDisponibles;
+        siguientesSegundos.eliminar(i);
+        cuadro.agregar(equipoA);
+        cuadro.agregar(equipoB);
 
-        if (asignarEquiposAGrupos(indiceSlot + 1))
+        if (emparejarDieciseisavosPorBloques(primeros, siguientesSegundos, tercerosDisponibles,indicePrimero + 1,
+        cantidadPrimerosVsTerceros, cuadro))
         {
             return true;
         }
 
-        grupo->getEquipos().eliminar(grupo->getEquipos().getCantidad() - 1);
-        bombo->agregar(candidato);
+        cuadro.eliminar(cuadro.getCantidad() - 1);
+        cuadro.eliminar(cuadro.getCantidad() - 1);
     }
 
     return false;
-}
-
-bool Torneo::gruposCompletosYValidos() const
-{
-    for (int i = 0; i < grupos.getCantidad(); i++)
-    {
-        const Lista<Equipo*>& equiposGrupo = grupos[i]->getEquipos();
-        if (equiposGrupo.getCantidad() != 4)
-        {
-            return false;
-        }
-
-        for (int j = 0; j < equiposGrupo.getCantidad(); j++)
-        {
-            if (equiposGrupo[j] == 0)
-            {
-                return false;
-            }
-
-            int cantidadMismaConfederacion = 0;
-            for (int k = 0; k < equiposGrupo.getCantidad(); k++)
-            {
-                if (equiposGrupo[k] != 0 &&
-                    equiposGrupo[k]->getConfederacion() == equiposGrupo[j]->getConfederacion())
-                {
-                    cantidadMismaConfederacion++;
-                }
-            }
-
-            if (equiposGrupo[j]->getConfederacion() == "UEFA")
-            {
-                if (cantidadMismaConfederacion > 2) return false;
-            }
-            else if (cantidadMismaConfederacion > 1)
-            {
-                return false;
-            }
-        }
-    }
-
-    return true;
 }
 
 bool Torneo::emparejarDieciseisavos(const Lista<Equipo*>& disponibles, Lista<Equipo*>& cuadro) const
@@ -372,6 +348,7 @@ void Torneo::simularRonda(const Lista<Equipo*>& participantes, Lista<Equipo*>& g
         if (perdedores != 0) perdedores->agregar(partido->getPerdedor());
         recursos.contarIteraciones(1);
         cout << *partido << "\n\n";
+        partido->liberarDetalleSimulacion();
     }
 
     actualizarMemoria();
@@ -476,54 +453,14 @@ void Torneo::cargarDatosEquipos(const string& archivo)
     liberarTodo();
     recursos.reiniciar();
 
-    ifstream entrada(archivo.c_str());
-    if (!entrada.is_open())
+    if (!OrganizadorTorneo::cargarEquiposDesdeCSV(archivo, equipos))
     {
         cout << "No se pudo abrir el archivo: " << archivo << "\n";
         return;
     }
-
-    string linea;
-    getline(entrada, linea);
-
-    while (getline(entrada, linea))
-    {
-        if (linea.empty()) continue;
-
-        char separador = ',';
-        for (int i = 0; i < static_cast<int>(linea.length()); i++)
-        {
-            if (linea[i] == ';')
-            {
-                separador = ';';
-                break;
-            }
-        }
-
-        stringstream ss(linea);
-        string pais, director, federacion, confederacion, dato;
-        int ranking = 0, gf = 0, gc = 0, pg = 0, pe = 0, pp = 0;
-
-        getline(ss, pais, separador);
-        getline(ss, director, separador);
-        getline(ss, federacion, separador);
-        getline(ss, confederacion, separador);
-
-        getline(ss, dato, separador); if (!dato.empty()) ranking = atoi(dato.c_str());
-        getline(ss, dato, separador); if (!dato.empty()) gf = atoi(dato.c_str());
-        getline(ss, dato, separador); if (!dato.empty()) gc = atoi(dato.c_str());
-        getline(ss, dato, separador); if (!dato.empty()) pg = atoi(dato.c_str());
-        getline(ss, dato, separador); if (!dato.empty()) pe = atoi(dato.c_str());
-        getline(ss, dato, separador); if (!dato.empty()) pp = atoi(dato.c_str());
-
-        if (!pais.empty())
-        {
-            agregarEquipo(new Equipo(pais, director, federacion, confederacion, ranking, gf, gc, pg, pe, pp));
-        }
-    }
-
-    entrada.close();
+    recursos.contarIteraciones(equipos.getCantidad());
     datosCargados = equipos.getCantidad() > 0;
+    equipos.compactar();
     actualizarMemoria();
     cout << "Equipos cargados: " << equipos.getCantidad() << "\n";
     mostrarRecursos(cout);
@@ -545,21 +482,26 @@ void Torneo::crearJugadoresArtificiales()
 
         for (int j = 1; j <= 26; j++)
         {
-            stringstream numero;
-            numero << j;
-            equipo->agregarJugador(new Jugador("nombre" + numero.str(), "apellido" + numero.str(), j));
-            recursos.contarIteracion();
+            string numero = to_string(j);
+            equipo->agregarJugador(new Jugador("nombre" + numero, "apellido" + numero, j));
         }
 
+        int cantidadJugadores = equipo->getCantidadJugadores();
         int golesPorRepartir = equipo->getGolesFavor();
-        int indice = 0;
-        while (golesPorRepartir > 0 && equipo->getCantidadJugadores() > 0)
+        if (cantidadJugadores > 0)
         {
-            equipo->getJugador(indice)->sumarGol();
-            golesPorRepartir--;
-            indice = (indice + 1) % equipo->getCantidadJugadores();
-            recursos.contarIteracion();
+            int baseGolesPorJugador = golesPorRepartir / cantidadJugadores;
+            int golesExtra = golesPorRepartir % cantidadJugadores;
+
+            for (int j = 0; j < cantidadJugadores; j++)
+            {
+                int golesJugador = baseGolesPorJugador + (j < golesExtra ? 1 : 0);
+                equipo->getJugador(j)->setGoles(golesJugador);
+            }
         }
+
+        recursos.contarIteracion();
+        equipo->getJugadores().compactar();
     }
 
     jugadoresCreados = true;
@@ -605,6 +547,39 @@ void Torneo::guardarDatosJugadores(const string& archivo)
     mostrarRecursos(cout);
 }
 
+void Torneo::guardarDatosHistoricosEquipos(const string& archivo)
+{
+    ofstream salida(archivo.c_str());
+    if (!salida.is_open())
+    {
+        cout << "No se pudo crear el archivo historico de equipos.\n";
+        return;
+    }
+
+    salida << "Ranking FIFA,País,Director técnico,Federación de fútbol,Confederación,Goles a favor,Goles en contra,Partidos ganados,Partidos empatados,Partidos perdidos\n";
+
+    for (int i = 0; i < equipos.getCantidad(); i++)
+    {
+        Equipo* equipo = equipos[i];
+        salida << equipo->getRankingFIFA() << ","
+               << equipo->getPais() << ","
+               << equipo->getDirectorTecnico() << ","
+               << equipo->getFederacion() << ","
+               << equipo->getConfederacion() << ","
+               << equipo->getGolesFavor() << ","
+               << equipo->getGolesContra() << ","
+               << equipo->getPartidosGanados() << ","
+               << equipo->getPartidosEmpatados() << ","
+               << equipo->getPartidosPerdidos() << "\n";
+        recursos.contarIteracion();
+    }
+
+    salida.close();
+    actualizarMemoria();
+    cout << "Historico de equipos guardado en: " << archivo << "\n";
+    mostrarRecursos(cout);
+}
+
 void Torneo::crearBombos()
 {
     if (!datosCargados)
@@ -614,36 +589,14 @@ void Torneo::crearBombos()
     }
 
     limpiarBombos();
-    Lista<Equipo*> ordenados = equipos;
-    ordenarEquiposPorRanking(ordenados);
-
-    int indiceAnfitrion = -1;
-    for (int i = 0; i < ordenados.getCantidad(); i++)
-    {
-        string pais = ordenados[i]->getPais();
-        if (pais == "Estados Unidos" || pais == "EE. UU." || pais == "USA" || pais == "United States")
-        {
-            indiceAnfitrion = i;
-            break;
-        }
-    }
-
-    if (indiceAnfitrion != -1)
-    {
-        bombo1.agregar(ordenados[indiceAnfitrion]);
-        ordenados.eliminar(indiceAnfitrion);
-    }
-
-    for (int i = 0; i < ordenados.getCantidad(); i++)
-    {
-        if (bombo1.getCantidad() < 12) bombo1.agregar(ordenados[i]);
-        else if (bombo2.getCantidad() < 12) bombo2.agregar(ordenados[i]);
-        else if (bombo3.getCantidad() < 12) bombo3.agregar(ordenados[i]);
-        else if (bombo4.getCantidad() < 12) bombo4.agregar(ordenados[i]);
-        recursos.contarIteracion();
-    }
+    OrganizadorTorneo::crearBombos(equipos, bombo1, bombo2, bombo3, bombo4);
+    recursos.contarIteraciones(equipos.getCantidad());
 
     bombosCreados = bombo1.getCantidad() > 0 && bombo2.getCantidad() > 0 && bombo3.getCantidad() > 0 && bombo4.getCantidad() > 0;
+    bombo1.compactar();
+    bombo2.compactar();
+    bombo3.compactar();
+    bombo4.compactar();
     actualizarMemoria();
 
     cout << "Bombos creados.\n";
@@ -654,9 +607,18 @@ void Torneo::crearBombos()
 
 Equipo* Torneo::extraerEquipoDeBombo(int numeroBombo)
 {
-    Lista<Equipo*>* bombo = obtenerBombo(numeroBombo);
+    Lista<Equipo*>* bombo = 0;
+    if (numeroBombo == 1) bombo = &bombo1;
+    else if (numeroBombo == 2) bombo = &bombo2;
+    else if (numeroBombo == 3) bombo = &bombo3;
+    else if (numeroBombo == 4) bombo = &bombo4;
     if (bombo == 0) return 0;
-    return extraerAleatorioDeLista(*bombo);
+    if (bombo->estaVacia()) return 0;
+
+    int indice = rand() % bombo->getCantidad();
+    Equipo* equipo = (*bombo)[indice];
+    bombo->eliminar(indice);
+    return equipo;
 }
 
 void Torneo::formarGrupos()
@@ -675,7 +637,8 @@ void Torneo::formarGrupos()
         grupos.agregar(new Grupo(static_cast<char>('A' + i)));
     }
 
-    if (!asignarEquiposAGrupos(0) || !gruposCompletosYValidos())
+    if (!OrganizadorTorneo::formarGrupos(grupos, bombo1, bombo2, bombo3, bombo4, recursos) ||
+        !OrganizadorTorneo::gruposCompletosYValidos(grupos))
     {
         gruposFormados = false;
         cout << "No fue posible formar grupos validos con las restricciones de confederacion.\n";
@@ -683,6 +646,12 @@ void Torneo::formarGrupos()
     }
 
     gruposFormados = true;
+    recursos.contarIteraciones(grupos.getCantidad() * 4);
+    grupos.compactar();
+    for (int i = 0; i < grupos.getCantidad(); i++)
+    {
+        grupos[i]->getEquipos().compactar();
+    }
     actualizarMemoria();
 
     cout << "\nGrupos conformados:\n";
@@ -695,14 +664,14 @@ void Torneo::formarGrupos()
 
 void Torneo::configurarPartidosGrupos()
 {
-    if (!gruposFormados || !gruposCompletosYValidos())
+    if (!gruposFormados || !OrganizadorTorneo::gruposCompletosYValidos(grupos))
     {
         cout << "Primero debe formar grupos validos.\n";
         return;
     }
 
-    // El patrón de rondas garantiza que cada equipo juegue una vez por ronda.
-    // Como se programan 4 partidos por día, los 72 partidos caben en 18 días.
+
+
     int combinaciones[6][2] = {{0,1}, {2,3}, {0,2}, {1,3}, {0,3}, {1,2}};
     Fecha inicio(20, 6, 2026);
     int contadorPartidos = 0;
@@ -724,13 +693,17 @@ void Torneo::configurarPartidosGrupos()
                     Partido* partido = registrarPartido(grupos[g]->getEquipos()[a], grupos[g]->getEquipos()[b], fecha, "GRUPOS");
                     grupos[g]->agregarPartido(partido);
                     contadorPartidos++;
-                    recursos.contarIteracion();
                 }
             }
         }
     }
 
     partidosGruposConfigurados = true;
+    recursos.contarIteraciones(contadorPartidos);
+    for (int i = 0; i < grupos.getCantidad(); i++)
+    {
+        grupos[i]->getPartidos().compactar();
+    }
     actualizarMemoria();
     cout << "Partidos de grupos configurados: " << contadorPartidos << "\n";
     mostrarRecursos(cout);
@@ -749,10 +722,14 @@ void Torneo::simularFaseGrupos()
         grupos[i]->simularPartidos();
         grupos[i]->imprimirPartidos(cout);
         grupos[i]->imprimirTabla(cout);
-        recursos.contarIteraciones(grupos[i]->getPartidos().getCantidad());
+        for (int j = 0; j < grupos[i]->getPartidos().getCantidad(); j++)
+        {
+            grupos[i]->getPartidos()[j]->liberarDetalleSimulacion();
+        }
     }
 
     faseGruposSimulada = true;
+    recursos.contarIteraciones(grupos.getCantidad());
     actualizarMemoria();
     mostrarRecursos(cout);
 }
@@ -772,15 +749,16 @@ void Torneo::clasificarADieciseisavos()
 
     for (int i = 0; i < grupos.getCantidad(); i++)
     {
-        if (grupos[i]->getPrimero() == 0 || grupos[i]->getSegundo() == 0 || grupos[i]->getTercero() == 0)
+        Lista<Equipo*> ordenGrupo = grupos[i]->ordenarEquipos();
+        if (ordenGrupo.getCantidad() < 3 || ordenGrupo[0] == 0 || ordenGrupo[1] == 0 || ordenGrupo[2] == 0)
         {
             clasificadosR16.limpiar();
             cout << "No se pudo clasificar a dieciseisavos porque hay grupos incompletos o invalidos.\n";
             return;
         }
-        primeros.agregar(grupos[i]->getPrimero());
-        segundos.agregar(grupos[i]->getSegundo());
-        terceros.agregar(grupos[i]->getTercero());
+        primeros.agregar(ordenGrupo[0]);
+        segundos.agregar(ordenGrupo[1]);
+        terceros.agregar(ordenGrupo[2]);
     }
 
     ordenarEquiposPorDesempeno(terceros, true);
@@ -813,8 +791,27 @@ void Torneo::configurarDieciseisavos()
     }
 
     Lista<Equipo*> clasificados = clasificadosR16;
+    Lista<Equipo*> primeros;
+    Lista<Equipo*> segundos;
+    Lista<Equipo*> terceros;
+
+    for (int i = 0; i < grupos.getCantidad() && i < clasificados.getCantidad(); i++)
+    {
+        primeros.agregar(clasificados[i]);
+    }
+
+    for (int i = grupos.getCantidad(); i < grupos.getCantidad() * 2 && i < clasificados.getCantidad(); i++)
+    {
+        segundos.agregar(clasificados[i]);
+    }
+
+    for (int i = grupos.getCantidad() * 2; i < clasificados.getCantidad(); i++)
+    {
+        terceros.agregar(clasificados[i]);
+    }
+
     clasificadosR16.limpiar();
-    bool cuadroValido = emparejarDieciseisavos(clasificados, clasificadosR16);
+    bool cuadroValido = emparejarDieciseisavosPorBloques(primeros, segundos, terceros, 0, terceros.getCantidad(), clasificadosR16);
 
     cuadroValido = cuadroValido && clasificadosR16.getCantidad() == 32;
     for (int i = 0; i < clasificadosR16.getCantidad() && cuadroValido; i++)
@@ -1021,8 +1018,9 @@ void Torneo::menu()
         cout << "8. Simular eliminatorias\n";
         cout << "9. Mostrar estadisticas finales\n";
         cout << "10. Guardar datos de jugadores\n";
-        cout << "11. Mostrar recursos\n";
-        cout << "12. Ejecutar flujo completo\n";
+        cout << "11. Guardar historico de equipos\n";
+        cout << "12. Mostrar recursos\n";
+        cout << "13. Ejecutar flujo completo\n";
         cout << "0. Salir\n";
         cout << "Opcion: ";
         cin >> opcion;
@@ -1051,8 +1049,14 @@ void Torneo::menu()
             cin >> archivo;
             guardarDatosJugadores(archivo);
         }
-        else if (opcion == 11) mostrarRecursos(cout);
-        else if (opcion == 12)
+        else if (opcion == 11)
+        {
+            cout << "Archivo historico de equipos: ";
+            cin >> archivo;
+            guardarDatosHistoricosEquipos(archivo);
+        }
+        else if (opcion == 12) mostrarRecursos(cout);
+        else if (opcion == 13)
         {
             cout << "Ruta del CSV: ";
             cin >> archivo;
@@ -1067,6 +1071,7 @@ void Torneo::menu()
             simularEliminatorias();
             generarEstadisticasFinales(cout);
             guardarDatosJugadores("jugadores_actualizados.csv");
+            guardarDatosHistoricosEquipos("selecciones_clasificadas_mundial_actualizado.csv");
         }
     }
 }

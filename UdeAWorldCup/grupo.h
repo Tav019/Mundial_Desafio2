@@ -16,7 +16,6 @@ private:
     Lista<Partido*> partidos;
 
     int buscarEquipo(Equipo* equipo) const;
-    Lista<Equipo*> ordenarEquipos() const;
 
 public:
     Grupo();
@@ -39,6 +38,7 @@ public:
     int getGolesFavorGrupo(Equipo* equipo) const;
     int getGolesContraGrupo(Equipo* equipo) const;
     int getDiferenciaGolGrupo(Equipo* equipo) const;
+    Lista<Equipo*> ordenarEquipos() const;
 
     Equipo* getPrimero() const;
     Equipo* getSegundo() const;

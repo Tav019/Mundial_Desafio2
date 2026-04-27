@@ -16,11 +16,11 @@ Jugador::Jugador()
     faltas = 0;
 }
 
-Jugador::Jugador(const string& nombre, const string& apellido, int numeroCamiseta)
+Jugador::Jugador(const string& _nombre, const string& _apellido, int _numeroCamiseta)
 {
-    this->nombre = nombre;
-    this->apellido = apellido;
-    this->numeroCamiseta = numeroCamiseta;
+    nombre = _nombre;
+    apellido = _apellido;
+    numeroCamiseta = _numeroCamiseta;
     partidosJugados = 0;
     goles = 0;
     minutosJugados = 0;
@@ -70,7 +70,7 @@ void Jugador::setGoles(int golesIniciales)
     }
 }
 
-void Jugador::actualizarEstadisticas(int goles, int amarillas, int rojas, int faltas, int minutos)
+void Jugador::actualizarEstadisticas(int _goles, int amarillas, int rojas, int _faltas, int minutos)
 {
     if (minutos > 0)
     {
@@ -78,10 +78,10 @@ void Jugador::actualizarEstadisticas(int goles, int amarillas, int rojas, int fa
         minutosJugados += minutos;
     }
 
-    if (goles > 0) this->goles += goles;
+    if (_goles > 0) goles += _goles;
     if (amarillas > 0) tarjetasAmarillas += amarillas;
     if (rojas > 0) tarjetasRojas += rojas;
-    if (faltas > 0) this->faltas += faltas;
+    if (_faltas > 0) faltas += _faltas;
 }
 
 void Jugador::registrarPartido(int minutos)

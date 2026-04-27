@@ -7,6 +7,7 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 add_executable(UdeAWorldCup main.cpp
     Lista.h
+    Lista.cpp
     equipo.h
     equipo.cpp
     fecha.h
@@ -15,6 +16,8 @@ add_executable(UdeAWorldCup main.cpp
     grupo.cpp
     jugador.h
     jugador.cpp
+    organizadortorneo.h
+    organizadortorneo.cpp
     partido.h
     partido.cpp
     recursos.h
@@ -28,7 +31,7 @@ add_executable(UdeAWorldCup main.cpp
 
 add_custom_command(TARGET UdeAWorldCup POST_BUILD
     COMMAND ${CMAKE_COMMAND} -E copy_if_different
-            ${CMAKE_CURRENT_SOURCE_DIR}/../selecciones_clasificadas_mundial.csv
+            ${CMAKE_CURRENT_SOURCE_DIR}/selecciones_clasificadas_mundial.csv
             $<TARGET_FILE_DIR:UdeAWorldCup>/selecciones_clasificadas_mundial.csv
 )
 

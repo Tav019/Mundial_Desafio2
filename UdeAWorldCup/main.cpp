@@ -4,14 +4,9 @@
 
 using namespace std;
 
-int main(int argc, char* argv[])
+int main()
 {
     string archivoEntrada = "selecciones_clasificadas_mundial.csv";
-
-    if (argc > 1)
-    {
-        archivoEntrada = argv[1];
-    }
 
     Torneo mundial("UdeAWorldCup");
 
@@ -34,6 +29,7 @@ int main(int argc, char* argv[])
     mundial.generarEstadisticasFinales(cout);
 
     mundial.guardarDatosJugadores("jugadores_actualizados.csv");
+    mundial.guardarDatosHistoricosEquipos("selecciones_clasificadas_mundial_actualizado.csv");
 
     mundial.mostrarRecursos(cout);
 

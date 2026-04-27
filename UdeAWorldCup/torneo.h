@@ -9,6 +9,7 @@ using namespace std;
 #include "Lista.h"
 #include "equipo.h"
 #include "grupo.h"
+#include "organizadortorneo.h"
 #include "partido.h"
 #include "recursos.h"
 
@@ -46,15 +47,12 @@ private:
     void liberarTodo();
     void limpiarBombos();
     void limpiarClasificados();
-    void ordenarEquiposPorRanking(Lista<Equipo*>& lista) const;
     void ordenarEquiposPorDesempeno(Lista<Equipo*>& lista, bool descendente) const;
-    Equipo* extraerAleatorioDeLista(Lista<Equipo*>& lista);
     Grupo* buscarGrupoDeEquipo(Equipo* equipo) const;
-    Lista<Equipo*>* obtenerBombo(int numeroBombo);
     bool mismoGrupo(Equipo* a, Equipo* b) const;
-    int buscarIndiceEquipo(const Lista<Equipo*>& lista, Equipo* equipo) const;
-    bool asignarEquiposAGrupos(int indiceSlot);
-    bool gruposCompletosYValidos() const;
+    bool emparejarDieciseisavosPorBloques(const Lista<Equipo*>& primeros, const Lista<Equipo*>& segundosDisponibles,
+                                          const Lista<Equipo*>& tercerosDisponibles, int indicePrimero,
+                                          int cantidadPrimerosVsTerceros, Lista<Equipo*>& cuadro) const;
     bool emparejarDieciseisavos(const Lista<Equipo*>& disponibles, Lista<Equipo*>& cuadro) const;
     void agregarPareja(Lista<Equipo*>& destino, Equipo* a, Equipo* b);
     Partido* registrarPartido(Equipo* equipo1, Equipo* equipo2, const Fecha& fecha, const string& etapa);
@@ -73,6 +71,7 @@ public:
     void cargarDatosEquipos(const string& archivo);
     void crearJugadoresArtificiales();
     void guardarDatosJugadores(const string& archivo);
+    void guardarDatosHistoricosEquipos(const string& archivo);
     void crearBombos();
     Equipo* extraerEquipoDeBombo(int numeroBombo);
     void formarGrupos();

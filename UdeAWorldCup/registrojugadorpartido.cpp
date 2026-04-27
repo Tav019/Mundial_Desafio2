@@ -12,9 +12,9 @@ RegistroJugadorPartido::RegistroJugadorPartido()
     minutosJugados = 0;
 }
 
-RegistroJugadorPartido::RegistroJugadorPartido(Jugador* jugador)
+RegistroJugadorPartido::RegistroJugadorPartido(Jugador* _jugador)
 {
-    this->jugador = jugador;
+    jugador = _jugador;
     goles = 0;
     tarjetasAmarillas = 0;
     tarjetasRojas = 0;

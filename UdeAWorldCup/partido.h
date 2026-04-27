@@ -32,7 +32,7 @@ private:
     Lista<RegistroJugadorPartido*> convocadosEquipo1;
     Lista<RegistroJugadorPartido*> convocadosEquipo2;
 
-    int calcularGolesEsperados(Equipo* atacante, Equipo* defensor) const;
+    double calcularGolesEsperados(Equipo* atacante, Equipo* defensor) const;
     void asignarEventosJugadores(Lista<RegistroJugadorPartido*>& convocados, int golesDelEquipo, int minutosBase);
     int sumarTarjetas(const Lista<RegistroJugadorPartido*>& convocados) const;
     int sumarRojas(const Lista<RegistroJugadorPartido*>& convocados) const;
@@ -53,6 +53,7 @@ public:
     void resolverEmpate();
     void actualizarHistoricos();
     void simular();
+    void liberarDetalleSimulacion();
 
     Equipo* getEquipo1() const;
     Equipo* getEquipo2() const;
